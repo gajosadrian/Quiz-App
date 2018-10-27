@@ -21,7 +21,10 @@ Route::post('/uczestnik', 'UczestnikController@post')->name('uczestnik.post');
 Route::get('/admin', 'LoginController@index')->name('admin');
 
 // uczestnik
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/test', 'TestController@index')->name('test');
+Route::get('/test_kontrolny', 'TestKontrolnyController@index')->name('test_kontrolny');
+Route::get('/quiz', 'QuizController@getQuestions')->name('quiz.questions');
+
 
 
 Route::post('/user/tryLogin', 'UserController@tryLogin')->name('user.tryLogin');

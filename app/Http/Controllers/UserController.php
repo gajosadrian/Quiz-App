@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Session;
+use Carbon\Carbon;
 use App\Uczestnik;
 
 class UserController extends Controller
@@ -19,16 +19,20 @@ class UserController extends Controller
         $uczestnik = Uczestnik::where('nazwa', $login)->first();
 
         if ($uczestnik) {
-            Session::put('uczestnik', $login);
-            return redirect()->route('home');
+            $uczestnik->last_ip = $request->ip();
+            $uczestnik->data_ostatniego_logowania = Carbon::now()->toDateTimeString();
+            $uczestnik->user_agent = $request->header('User-Agent');
+            $uczestnik->save();
+            session([ 'uczestnik' => $login ]);
+            return redirect()->route('test_kontrolny');
         } else {
-            return redirect()->back()->withErrors(['Podany login nie istnieje!']);
+            return redirect()->back()->withErrors([ 'Podany login jest błędny!' ]);
         }
     }
 
     public function logout(Request $request)
     {
-        Session::pull('uczestnik');
+        UczestnikLogout();
         return redirect()->route('index');
     }
 }

@@ -1,6 +1,6 @@
 <template>
-    <div class="block block-rounded" :class="{'block-themed': theme, 'block-fx-shadow': shadow}">
-        <div class="block-header" :class="[theme, {'block-header-default': !theme}]">
+    <div class="block block-rounded" :class="{'block-themed': theme, 'block-fx-shadow': shadow, 'block-bordered': !shadow}">
+        <div v-if="title" class="block-header" :class="[theme, {'block-header-default': !theme}]">
             <h3 class="block-title">{{ title }}</h3>
             <div v-if="hasOptionsSlot" class="block-options">
                 <slot name="options"></slot>
@@ -16,15 +16,21 @@
 </template>
 
 <script>
-    export default {
-        props: {'full': Boolean, 'shadow': Boolean, 'title': String, 'theme': String},
-        computed: {
-            hasOptionsSlot() {
-                return !!this.$slots.options;
-            },
-            hasFooterSlot() {
-                return !!this.$slots.footer;
-            }
+export default {
+    props: {
+        'noborder': Boolean,
+        'full': Boolean,
+        'shadow': Boolean,
+        'title': String,
+        'theme': String
+    },
+    computed: {
+        hasOptionsSlot() {
+            return !!this.$slots.options;
+        },
+        hasFooterSlot() {
+            return !!this.$slots.footer;
         }
     }
+}
 </script>

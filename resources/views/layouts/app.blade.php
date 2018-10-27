@@ -21,6 +21,8 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 <body>
+    @routes
+
     <div id="page-container" class="sidebar-inverse side-scroll page-header-fixed page-header-glass page-header-inverse main-content-boxed">
 
         <main id="main-container">

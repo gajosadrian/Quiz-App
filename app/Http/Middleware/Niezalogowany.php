@@ -15,8 +15,9 @@ class Niezalogowany
      */
     public function handle($request, Closure $next)
     {
-        if ($request->session()->exists('uczestnik')) {
-            return redirect('/home');
+        $uczestnik = Uczestnik();
+        if ($uczestnik) {
+            return redirect()->route('test_kontrolny');
         }
 
         return $next($request);

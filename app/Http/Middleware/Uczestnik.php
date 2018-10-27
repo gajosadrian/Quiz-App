@@ -15,8 +15,8 @@ class Uczestnik
      */
     public function handle($request, Closure $next)
     {
-        if (!$request->session()->exists('uczestnik')) {
-            return redirect('/');
+        if ( !Uczestnik() ) {
+            return redirect()->route('index')->withErrors([ 'Najpierw musisz się zalogować!' ]);
         }
 
         return $next($request);

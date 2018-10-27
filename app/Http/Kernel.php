@@ -51,6 +51,7 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
+        'test' => \App\Http\Middleware\Test::class,
         'uczestnik' => \App\Http\Middleware\Uczestnik::class,
         'niezalogowany' => \App\Http\Middleware\Niezalogowany::class,
         'ajax' => \App\Http\Middleware\OnlyAjax::class,
