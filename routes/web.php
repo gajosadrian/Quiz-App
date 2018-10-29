@@ -24,6 +24,8 @@ Route::get('/admin', 'LoginController@index')->name('admin');
 Route::get('/test', 'TestController@index')->name('test');
 Route::get('/test_kontrolny', 'TestKontrolnyController@index')->name('test_kontrolny');
 Route::get('/quiz', 'QuizController@getQuestions')->name('quiz.questions');
+Route::post('/quiz/start', 'QuizController@start')->name('quiz.start');
+Route::post('/quiz/finish', 'QuizController@finish')->name('quiz.finish');
 
 
 

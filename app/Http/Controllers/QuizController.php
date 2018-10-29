@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class QuizController extends Controller
 {
@@ -12,20 +13,33 @@ class QuizController extends Controller
         $this->middleware('test');
     }
 
-    public function getQuestions(Request $request)
+    public function start(Request $request)
     {
         $uczestnik = Uczestnik();
         $uczestnik->banned = true;
-        $uczestnik->save();
+        $uczestnik->data_rozpoczecia_testu = Carbon::now();
+        // TODO:
+        // $uczestnik->save();
+        return response()->json('success', 200);
+    }
 
+    public function finish(Request $request)
+    {
+        //
+    }
+
+    public function getQuestions(Request $request)
+    {
         return response()->json([
             [
+                'id' => 23,
                 'text' => 'Pytanie 1',
-                'responses' => ['Odpowiedź 1.1', 'Odpowiedź 1.2', 'Odpowiedź 1.3'],
+                'responses' => [['id' => 1, 'text' => 'Odpowiedź 1.1'], ['id' => 2, 'text' => 'Odpowiedź 1.2'], ['id' => 3, 'text' => 'Odpowiedź 1.3'], ['id' => 4, 'text' => 'Odpowiedź 1.4']],
             ],
             [
+                'id' => 12,
                 'text' => 'Pytanie 2',
-                'responses' => ['Odpowiedź 2.1', 'Odpowiedź 2.2', 'Odpowiedź 2.3'],
+                'responses' => [['id' => 1, 'text' => 'Odpowiedź 2.1'], ['id' => 2, 'text' => 'Odpowiedź 2.2'], ['id' => 3, 'text' => 'Odpowiedź 2.3'], ['id' => 4, 'text' => 'Odpowiedź 2.4']],
             ],
         ]);
     }

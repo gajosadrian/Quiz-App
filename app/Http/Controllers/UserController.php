@@ -20,7 +20,7 @@ class UserController extends Controller
 
         if ($uczestnik) {
             $uczestnik->last_ip = $request->ip();
-            $uczestnik->data_ostatniego_logowania = Carbon::now()->toDateTimeString();
+            $uczestnik->data_ostatniego_logowania = Carbon::now();
             $uczestnik->user_agent = $request->header('User-Agent');
             $uczestnik->save();
             session([ 'uczestnik' => $login ]);

@@ -47672,7 +47672,7 @@ exports = module.exports = __webpack_require__(49)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -48061,44 +48061,112 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+// window.onbeforeunload = function() {
+//     return 'Czy na pewno chcesz opuścić tą stronę?';
+// };
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
+            finished: false,
             loading: true,
             started: false,
             questionIndex: 0,
-            userResponses: Array(45).fill(false),
+            userResponses: Array(45).fill(0),
             disableNext: false,
-            timer: 50,
-            questions: Array(45)
+            disableStart: false,
+            timer: 30,
+            questions: []
         };
     },
 
     methods: {
-        getQuestions: function getQuestions() {
+        start: function start() {
             var _this = this;
+
+            this.disableStart = true;
+            axios.post(route('quiz.start')).then(function (response) {
+                _this.started = true;
+            }, function (error) {
+                //
+            });
+        },
+        finish: function finish() {
+            console.log('finished');
+        },
+        tryFinish: function tryFinish() {
+            if (this.isFinished() && !this.finished) {
+                this.finished = true;
+                this.finish();
+            }
+        },
+        isFinished: function isFinished() {
+            return this.questionIndex >= this.questions.length || this.timer <= 0;
+        },
+        countDown: function countDown() {
+            if (this.timer > 0 && this.started && !this.finished) {
+                this.timer--;
+                this.tryFinish();
+            }
+        },
+        getQuestions: function getQuestions() {
+            var _this2 = this;
 
             this.loading = true;
             axios.get(route('quiz.questions')).then(function (response) {
-                _this.loading = false;
-                _this.questions = response.data;
+                _this2.loading = false;
+                _this2.questions = response.data;
+                _this2.fillResponses();
             }, function (error) {
-                // this.loading = false;
+                //
             });
         },
+        fillResponses: function fillResponses() {
+            var self = this;
+            this.questions.forEach(function (question) {
+                self.userResponses[question.id] = 0;
+            });
+        },
+        click: function click(question_id, response_id) {
+            console.log(question_id, response_id);
+            this.userResponses[question_id] = response_id;
+        },
         next: function next() {
-            var _this2 = this;
+            var _this3 = this;
 
             this.disableNext = true;
             setTimeout(function () {
-                return _this2.disableNext = false;
+                return _this3.disableNext = false;
             }, 1000);
             this.questionIndex++;
+            this.tryFinish();
         }
     },
     mounted: function mounted() {
         this.getQuestions();
+        this.$nextTick(function () {
+            var _this4 = this;
+
+            window.setInterval(function () {
+                _this4.countDown();
+            }, 1000);
+        });
     }
 });
 
@@ -48114,11 +48182,45 @@ var render = function() {
     ? _c(
         "div",
         [
+          _c(
+            "b-block",
+            { attrs: { full: "" } },
+            [
+              _c("template", { slot: "content" }, [
+                _c("div", { staticClass: "clearfix" }, [
+                  _c("div", { staticClass: "float-left" }, [
+                    _vm._v("\n                    Pytanie: "),
+                    _c("span", { staticClass: "text-primary font-w600" }, [
+                      !_vm.isFinished()
+                        ? _c("span", [
+                            _vm._v(
+                              _vm._s(_vm.questionIndex + 1) +
+                                "/" +
+                                _vm._s(_vm.questions.length)
+                            )
+                          ])
+                        : _c("span", [_vm._v("-")])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "float-right" }, [
+                    _vm._v("\n                    Pozostały czas: "),
+                    _c("span", { staticClass: "text-primary font-w600" }, [
+                      _vm._v(_vm._s(_vm.timer) + " min")
+                    ])
+                  ])
+                ])
+              ])
+            ],
+            2
+          ),
+          _vm._v(" "),
           _vm._l(_vm.questions, function(question, index) {
             return _c(
               "div",
+              { key: index },
               [
-                index === _vm.questionIndex
+                index === _vm.questionIndex && !_vm.isFinished()
                   ? _c(
                       "b-block",
                       { attrs: { full: "" } },
@@ -48129,18 +48231,32 @@ var render = function() {
                           _c(
                             "div",
                             { staticClass: "list-group push" },
-                            _vm._l(question.responses, function(response) {
+                            _vm._l(question.responses, function(
+                              response,
+                              index2
+                            ) {
                               return _c(
                                 "a",
                                 {
+                                  key: index2,
                                   staticClass:
                                     "list-group-item list-group-item-action",
-                                  attrs: { href: "javascript:void(0)" }
+                                  class: {
+                                    active:
+                                      _vm.userResponses[question.id] ===
+                                      response.id
+                                  },
+                                  attrs: { href: "javascript:void(0)" },
+                                  on: {
+                                    click: function($event) {
+                                      _vm.click(question.id, response.id)
+                                    }
+                                  }
                                 },
                                 [
                                   _vm._v(
                                     "\n                        " +
-                                      _vm._s(response) +
+                                      _vm._s(response.text) +
                                       "\n                    "
                                   )
                                 ]
@@ -48172,18 +48288,18 @@ var render = function() {
             )
           }),
           _vm._v(" "),
-          _vm.questionIndex === _vm.questions.length
+          _vm.isFinished()
             ? _c(
                 "div",
                 [
                   _c(
                     "b-block",
-                    { attrs: { full: "" } },
                     [
                       _c("template", { slot: "content" }, [
-                        _vm._v(
-                          "\n                Wysyłanie wyniku. Proszę czekać...\n            "
-                        )
+                        _c("h4", [
+                          _c("i", { staticClass: "fa fa-spinner fa-pulse" }),
+                          _vm._v(" Proszę czekać...")
+                        ])
                       ])
                     ],
                     2
@@ -48197,18 +48313,14 @@ var render = function() {
       )
     : _c("div", [
         _vm.loading
-          ? _c("div", [_vm._v("\n        Ładowanie testu\n    ")])
+          ? _c("div", [_vm._v("\n        Ładowanie testu...\n    ")])
           : _c("div", [
               _c(
                 "button",
                 {
                   staticClass: "btn btn-primary",
-                  attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      _vm.started = true
-                    }
-                  }
+                  attrs: { type: "button", disabled: _vm.disableStart },
+                  on: { click: _vm.start }
                 },
                 [_vm._v("Rozpocznij test")]
               )
