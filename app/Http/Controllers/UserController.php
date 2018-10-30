@@ -19,12 +19,16 @@ class UserController extends Controller
         $uczestnik = Uczestnik::where('nazwa', $login)->first();
 
         if ($uczestnik) {
-            $uczestnik->last_ip = $request->ip();
-            $uczestnik->data_ostatniego_logowania = Carbon::now();
-            $uczestnik->user_agent = $request->header('User-Agent');
-            $uczestnik->save();
-            session([ 'uczestnik' => $login ]);
-            return redirect()->route('test_kontrolny');
+            if ($uczestnik->loggable) {
+                $uczestnik->last_ip = $request->ip();
+                $uczestnik->data_ostatniego_logowania = Carbon::now();
+                $uczestnik->user_agent = $request->header('User-Agent');
+                $uczestnik->save();
+                session([ 'uczestnik' => $login ]);
+                return redirect()->route('test_kontrolny');
+            } else {
+                return redirect()->back()->withErrors([ 'Logowanie o tej godzinie jest niemożliwe!' ]);
+            }
         } else {
             return redirect()->back()->withErrors([ 'Podany login jest błędny!' ]);
         }

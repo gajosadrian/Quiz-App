@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Uczestnik extends Model
 {
@@ -21,4 +22,16 @@ class Uczestnik extends Model
     protected $casts = [
         'odpowiedzi' => 'array',
     ];
+
+    public function getLoggableAttribute()
+    {
+        $now = Carbon::now();
+        $start = Carbon::createFromTimeString('8:00');
+        $end = Carbon::createFromTimeString('20:00');
+        if ($now >= $start and $now <= $end) {
+            return true;
+        }
+        // return false;
+        return true;
+    }
 }

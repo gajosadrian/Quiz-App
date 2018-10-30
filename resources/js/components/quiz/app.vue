@@ -40,17 +40,17 @@
     </div>
     <div v-else>
         <div v-if="loading">
-            Ładowanie testu...
+            Ładowanie quizu...
         </div>
         <div v-else>
-            <button type="button" class="btn btn-primary" :disabled="disableStart" @click="start">Rozpocznij test</button>
+            <button type="button" class="btn btn-primary" :disabled="disableStart" @click="start">Rozpocznij quiz</button>
         </div>
     </div>
 </template>
 
 <script>
 // window.onbeforeunload = function() {
-//     return 'Czy na pewno chcesz opuścić tą stronę?';
+//     return true;
 // };
 
 export default {
