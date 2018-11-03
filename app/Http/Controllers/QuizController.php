@@ -30,15 +30,19 @@ class QuizController extends Controller
 
     public function getQuestions(Request $request)
     {
+        $pytania1 = include storage_path('app/pytania1.php');
+
         return response()->json([
             [
                 'id' => 23,
                 'text' => 'Pytanie 1',
+                'image' => null,
                 'responses' => [['id' => 1, 'text' => 'Odpowiedź 1.1'], ['id' => 2, 'text' => 'Odpowiedź 1.2'], ['id' => 3, 'text' => 'Odpowiedź 1.3'], ['id' => 4, 'text' => 'Odpowiedź 1.4']],
             ],
             [
                 'id' => 12,
                 'text' => 'Pytanie 2',
+                'image' => 'https://www.happybarok.pl/images/happybarok/2000-3000/Tapeta-scienna-Sauvage_%5B2572%5D_480.jpg',
                 'responses' => [['id' => 1, 'text' => 'Odpowiedź 2.1'], ['id' => 2, 'text' => 'Odpowiedź 2.2'], ['id' => 3, 'text' => 'Odpowiedź 2.3'], ['id' => 4, 'text' => 'Odpowiedź 2.4']],
             ],
         ]);
