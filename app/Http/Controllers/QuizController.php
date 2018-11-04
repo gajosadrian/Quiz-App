@@ -28,9 +28,9 @@ class QuizController extends Controller
         //
     }
 
-    public function getQuestions(Request $request)
+    public function getQuestions()
     {
-        $pytania1 = include storage_path('app/pytania1.php');
+        $pytania1 = include public_path('quiz-app/pytania1.php');
 
         return response()->json([
             [

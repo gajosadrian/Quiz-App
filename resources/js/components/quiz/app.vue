@@ -24,8 +24,13 @@
                             {{ response.text }}
                         </a>
                     </div>
-                    <div class="text-right">
-                        <button type="button" class="btn btn-primary" :disabled="disableNext" @click="next">Dalej</button>
+                    <div class="clearfix">
+                        <div class="float-left">
+                            <button type="button" class="btn btn-secondary" @click="prev">Cofnij</button>
+                        </div>
+                        <div class="float-right">
+                            <button type="button" class="btn btn-primary" @click="next">Dalej</button>
+                        </div>
                     </div>
                 </template>
             </b-block>
@@ -60,7 +65,6 @@ export default {
         started: false,
         questionIndex: 0,
         userResponses: Array(45).fill(0),
-        disableNext: false,
         disableStart: false,
         timer: 30,
         questions: [],
@@ -115,10 +119,11 @@ export default {
             this.userResponses[question_id] = response_id;
         },
         next() {
-            this.disableNext = true;
-            setTimeout(() => this.disableNext = false, 1000);
             this.questionIndex++;
             this.tryFinish();
+        },
+        prev() {
+            this.questionIndex--;
         },
     },
     mounted() {

@@ -47672,7 +47672,7 @@ exports = module.exports = __webpack_require__(49)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -48076,9 +48076,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 // window.onbeforeunload = function() {
-//     return 'Czy na pewno chcesz opuścić tą stronę?';
+//     return true;
 // };
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -48089,7 +48094,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             started: false,
             questionIndex: 0,
             userResponses: Array(45).fill(0),
-            disableNext: false,
             disableStart: false,
             timer: 30,
             questions: []
@@ -48148,23 +48152,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.userResponses[question_id] = response_id;
         },
         next: function next() {
-            var _this3 = this;
-
-            this.disableNext = true;
-            setTimeout(function () {
-                return _this3.disableNext = false;
-            }, 1000);
             this.questionIndex++;
             this.tryFinish();
+        },
+        prev: function prev() {
+            this.questionIndex--;
         }
     },
     mounted: function mounted() {
         this.getQuestions();
         this.$nextTick(function () {
-            var _this4 = this;
+            var _this3 = this;
 
             window.setInterval(function () {
-                _this4.countDown();
+                _this3.countDown();
             }, 1000);
         });
     }
@@ -48264,19 +48265,30 @@ var render = function() {
                             })
                           ),
                           _vm._v(" "),
-                          _c("div", { staticClass: "text-right" }, [
-                            _c(
-                              "button",
-                              {
-                                staticClass: "btn btn-primary",
-                                attrs: {
-                                  type: "button",
-                                  disabled: _vm.disableNext
+                          _c("div", { staticClass: "clearfix" }, [
+                            _c("div", { staticClass: "float-left" }, [
+                              _c(
+                                "button",
+                                {
+                                  staticClass: "btn btn-secondary",
+                                  attrs: { type: "button" },
+                                  on: { click: _vm.prev }
                                 },
-                                on: { click: _vm.next }
-                              },
-                              [_vm._v("Dalej")]
-                            )
+                                [_vm._v("Cofnij")]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "float-right" }, [
+                              _c(
+                                "button",
+                                {
+                                  staticClass: "btn btn-primary",
+                                  attrs: { type: "button" },
+                                  on: { click: _vm.next }
+                                },
+                                [_vm._v("Dalej")]
+                              )
+                            ])
                           ])
                         ])
                       ],
@@ -48313,7 +48325,7 @@ var render = function() {
       )
     : _c("div", [
         _vm.loading
-          ? _c("div", [_vm._v("\n        Ładowanie testu...\n    ")])
+          ? _c("div", [_vm._v("\n        Ładowanie quizu...\n    ")])
           : _c("div", [
               _c(
                 "button",
@@ -48322,7 +48334,7 @@ var render = function() {
                   attrs: { type: "button", disabled: _vm.disableStart },
                   on: { click: _vm.start }
                 },
-                [_vm._v("Rozpocznij test")]
+                [_vm._v("Rozpocznij quiz")]
               )
             ])
       ])
