@@ -1,0 +1,19 @@
+body {
+    background: #fff;
+}
+
+.btn-primary {
+    background-color: #d4213d;
+    border-color: #b01c32;
+}
+.btn-primary:hover {
+    background-color: #b01c32;
+}
+.btn-primary:active {
+    background-color: #b01c32;
+}
+
+.list-group-item.active {
+    background: #d4213d;
+    border-color: #d4213d;
+}

@@ -45,6 +45,12 @@ class QuizController extends Controller
                 'image' => 'https://www.happybarok.pl/images/happybarok/2000-3000/Tapeta-scienna-Sauvage_%5B2572%5D_480.jpg',
                 'responses' => [['id' => 1, 'text' => 'Odpowiedź 2.1'], ['id' => 2, 'text' => 'Odpowiedź 2.2'], ['id' => 3, 'text' => 'Odpowiedź 2.3'], ['id' => 4, 'text' => 'Odpowiedź 2.4']],
             ],
+            [
+                'id' => 15,
+                'text' => 'Pytanie 3',
+                'image' => null,
+                'responses' => [['id' => 1, 'text' => 'Odpowiedź 3.1'], ['id' => 2, 'text' => 'Odpowiedź 3.2'], ['id' => 3, 'text' => 'Odpowiedź 3.3'], ['id' => 4, 'text' => 'Odpowiedź 3.4'], ['id' => 5, 'text' => 'Odpowiedź 3.5']],
+            ],
         ]);
     }
 }

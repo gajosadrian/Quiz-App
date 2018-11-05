@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,400i,600,700">
     <link href="{{ asset('css/codebase.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/themes/pulse.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 
     {{-- Scripts --}}
     <script src="{{ asset('js/app.js') }}" defer></script>

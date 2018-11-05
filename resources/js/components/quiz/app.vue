@@ -1,35 +1,38 @@
 <template>
     <div v-if="started">
-        <b-block full>
+        <b-block theme="czerwonetlo" noround full>
             <template slot="content">
                 <div class="clearfix">
                     <div class="float-left">
-                        Pytanie: <span class="text-primary font-w600">
+                        Pytanie: <span class="text-warning font-w600">
                             <span v-if="!isFinished()">{{ questionIndex + 1 }}/{{ questions.length }}</span>
                             <span v-else>-</span>
                         </span>
                     </div>
                     <div class="float-right">
-                        Pozostały czas: <span class="text-primary font-w600">{{ timer }} min</span>
+                        Pozostały czas: <span class="text-warning font-w600">{{ timer }} min</span>
                     </div>
                 </div>
             </template>
         </b-block>
         <div v-for="(question, index) in questions" :key="index">
-            <b-block v-if="index === questionIndex && !isFinished()" full>
+            <b-block v-if="index === questionIndex && !isFinished()" theme="obramowka" noround full>
                 <template slot="content">
                     <h4>{{ question.text }}</h4>
+                    <div v-if="question.image" class="push">
+                        <img :src="question.image" class="img-fluid" style="width:100%" :alt="question.id">
+                    </div>
                     <div class="list-group push">
                         <a v-for="(response, index2) in question.responses" :key="index2" href="javascript:void(0)" class="list-group-item list-group-item-action" :class="{'active': userResponses[question.id] === response.id}" @click="click(question.id, response.id)">
                             {{ response.text }}
                         </a>
                     </div>
                     <div class="clearfix">
-                        <div class="float-left">
+                        <div class="float-left" v-if="questionIndex > 0">
                             <button type="button" class="btn btn-secondary" @click="prev">Cofnij</button>
                         </div>
                         <div class="float-right">
-                            <button type="button" class="btn btn-primary" @click="next">Dalej</button>
+                            <button v-if="questionIndex < questions.length" type="button" class="btn btn-primary btn-noborder" @click="next">Dalej</button>
                         </div>
                     </div>
                 </template>
@@ -48,7 +51,7 @@
             Ładowanie quizu...
         </div>
         <div v-else>
-            <button type="button" class="btn btn-primary" :disabled="disableStart" @click="start">Rozpocznij quiz</button>
+            <button type="button" class="btn btn-primary btn-noborder" :disabled="disableStart" @click="start">Rozpocznij quiz</button>
         </div>
     </div>
 </template>
@@ -64,7 +67,9 @@ export default {
         loading: true,
         started: false,
         questionIndex: 0,
-        userResponses: Array(45).fill(0),
+        questionId: [],
+        userResponses: [],
+        rememberResponses: Array(45).fill(false),
         disableStart: false,
         timer: 30,
         questions: [],
@@ -112,13 +117,21 @@ export default {
             let self = this;
             this.questions.forEach(function(question) {
                 self.userResponses[question.id] = 0;
+                self.questionId.push(question.id);
             });
         },
+        rememberResponse(question_id) {
+            if (this.userResponses[question_id] > 0) {
+                this.rememberResponses[question_id] = true;
+            }
+        },
         click(question_id, response_id) {
-            console.log(question_id, response_id);
-            this.userResponses[question_id] = response_id;
+            if (!this.rememberResponses[question_id]) {
+                this.userResponses[question_id] = response_id;
+            }
         },
         next() {
+            this.rememberResponse(this.questionId[this.questionIndex]);
             this.questionIndex++;
             this.tryFinish();
         },
