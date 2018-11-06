@@ -48063,7 +48063,7 @@ exports = module.exports = __webpack_require__(12)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -48074,6 +48074,27 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -48148,7 +48169,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             userResponses: [],
             rememberResponses: Array(45).fill(false),
             disableStart: false,
-            timer: 30,
+            timer: 50,
             questions: []
         };
     },
@@ -48165,22 +48186,46 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
         },
         finish: function finish() {
+            this.finished = true;
             console.log('finished');
         },
         tryFinish: function tryFinish() {
-            if (this.isFinished() && !this.finished) {
-                this.finished = true;
+            if (this.canFinish() && !this.finished) {
                 this.finish();
             }
         },
-        isFinished: function isFinished() {
-            return this.questionIndex >= this.questions.length || this.timer <= 0;
+        canFinish: function canFinish() {
+            return this.questionIndex >= this.questions.length && this.isComplete() || this.timer <= 0 || this.finished;
         },
         countDown: function countDown() {
             if (this.timer > 0 && this.started && !this.finished) {
                 this.timer--;
                 this.tryFinish();
             }
+        },
+        getNoResponseQuestions: function getNoResponseQuestions() {
+            var ids = [];
+            this.userResponses.forEach(function (response, response_id) {
+                if (response == 0) {
+                    ids.push(response_id);
+                }
+            });
+            return ids;
+        },
+        getResponsesAmount: function getResponsesAmount() {
+            var amount = 0;
+            this.userResponses.forEach(function (response) {
+                if (response > 0) {
+                    amount++;
+                }
+            });
+            return amount;
+        },
+        getNoResponsesAmount: function getNoResponsesAmount() {
+            return this.questions.length - this.getResponsesAmount();
+        },
+        isComplete: function isComplete() {
+            return this.getNoResponsesAmount() <= 0;
         },
         getQuestions: function getQuestions() {
             var _this2 = this;
@@ -48216,8 +48261,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.questionIndex++;
             this.tryFinish();
         },
-        prev: function prev() {
-            this.questionIndex--;
+        prev: function prev(e) {
+            var toBeginning = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+            console.log(toBeginning);
+            if (!toBeginning) {
+                this.questionIndex--;
+            } else {
+                this.questionIndex = 0;
+            }
+        },
+        removeVal: function removeVal(array, element) {
+            var index = array.indexOf(element);
+            array.splice(index, 1);
         }
     },
     mounted: function mounted() {
@@ -48252,23 +48308,24 @@ var render = function() {
                 _c("div", { staticClass: "clearfix" }, [
                   _c("div", { staticClass: "float-left" }, [
                     _vm._v("\n                    Pytanie: "),
-                    _c("span", { staticClass: "text-warning font-w600" }, [
-                      !_vm.isFinished()
-                        ? _c("span", [
+                    _c("span", { staticClass: "font-w600" }, [
+                      _vm.finished ||
+                      _vm.questionIndex + 1 > _vm.questions.length
+                        ? _c("span", [_vm._v("-")])
+                        : _c("span", [
                             _vm._v(
                               _vm._s(_vm.questionIndex + 1) +
                                 "/" +
                                 _vm._s(_vm.questions.length)
                             )
                           ])
-                        : _c("span", [_vm._v("-")])
                     ])
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "float-right" }, [
                     _vm._v("\n                    Pozostały czas: "),
-                    _c("span", { staticClass: "text-warning font-w600" }, [
-                      _vm._v(_vm._s(_vm.timer) + " min")
+                    _c("span", { staticClass: "font-w600" }, [
+                      _c("u", [_vm._v(_vm._s(_vm.timer) + " min")])
                     ])
                   ])
                 ])
@@ -48282,7 +48339,7 @@ var render = function() {
               "div",
               { key: index },
               [
-                index === _vm.questionIndex && !_vm.isFinished()
+                index === _vm.questionIndex && !_vm.finished
                   ? _c(
                       "b-block",
                       { attrs: { theme: "obramowka", noround: "", full: "" } },
@@ -48379,7 +48436,7 @@ var render = function() {
             )
           }),
           _vm._v(" "),
-          _vm.isFinished()
+          _vm.finished
             ? _c(
                 "div",
                 [
@@ -48398,24 +48455,105 @@ var render = function() {
                 ],
                 1
               )
-            : _vm._e()
+            : _vm.questionIndex + 1 > _vm.questions.length
+              ? _c(
+                  "div",
+                  [
+                    _c(
+                      "b-block",
+                      { attrs: { full: "" } },
+                      [
+                        _c("template", { slot: "content" }, [
+                          _vm._v(
+                            "\n                Brakuje odpowiedzi w " +
+                              _vm._s(_vm.getNoResponsesAmount()) +
+                              " " +
+                              _vm._s(
+                                (_vm.getNoResponsesAmount() == 1 &&
+                                  "pytaniu") ||
+                                  "pytaniach"
+                              ) +
+                              ":\n                "
+                          ),
+                          _c(
+                            "ul",
+                            _vm._l(_vm.getNoResponseQuestions(), function(
+                              question_id,
+                              index
+                            ) {
+                              return _c("li", { key: index }, [
+                                _vm._v(
+                                  "Pytanie " + _vm._s(question_id) + ": text"
+                                )
+                              ])
+                            })
+                          ),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "clearfix" }, [
+                            _c("div", { staticClass: "float-left" }, [
+                              _c(
+                                "button",
+                                {
+                                  staticClass: "btn btn-secondary",
+                                  attrs: { type: "button" },
+                                  on: { click: _vm.prev }
+                                },
+                                [_vm._v("Cofnij")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "button",
+                                {
+                                  staticClass: "btn btn-secondary ml-5",
+                                  attrs: { type: "button" },
+                                  on: {
+                                    click: function($event) {
+                                      _vm.prev(null, true)
+                                    }
+                                  }
+                                },
+                                [_vm._v("Cofnij do początku")]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "float-right" }, [
+                              _c(
+                                "button",
+                                {
+                                  staticClass: "btn btn-primary btn-noborder",
+                                  attrs: { type: "button" }
+                                },
+                                [_vm._v("Zakończ quiz mimo to")]
+                              )
+                            ])
+                          ])
+                        ])
+                      ],
+                      2
+                    )
+                  ],
+                  1
+                )
+              : _vm._e()
         ],
         2
       )
     : _c("div", [
-        _vm.loading
-          ? _c("div", [_vm._v("\n        Ładowanie quizu...\n    ")])
-          : _c("div", [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-primary btn-noborder",
-                  attrs: { type: "button", disabled: _vm.disableStart },
-                  on: { click: _vm.start }
-                },
-                [_vm._v("Rozpocznij quiz")]
-              )
-            ])
+        _c("div", { staticClass: "text-center" }, [
+          _vm.loading
+            ? _c("div", [_vm._v("\n            Ładowanie quizu...\n        ")])
+            : _c("div", [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-primary btn-noborder",
+                    attrs: { type: "button", disabled: _vm.disableStart },
+                    on: { click: _vm.start }
+                  },
+                  [_vm._v("Rozpocznij quiz")]
+                )
+              ])
+        ])
       ])
 }
 var staticRenderFns = []

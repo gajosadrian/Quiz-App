@@ -4,16 +4,30 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <b-block title="Informacja" theme="czerwonetlo" noround full>
+                <b-block title="QUIZ HISTORYCZNY" theme="czerwonetlo" noround full>
                     <template slot="content">
+                        <p><em>„Póty żyć będzie, póki tylko stanie Jednego męża, jednego pałasza – To Polska! … Polska!... To Ojczyzna nasza.”</em><p>
+                        <p>
+                            Zakres tematyczny obejmuje całość dziejów Polski ze szczególnym uwzględnieniem dróg do
+                            odzyskania niepodległości w XIX i XX wieku oraz zagadnień dotyczących literatury i sztuki
+                            polskiej w okresie dwudziestolecia międzywojennego.
+                        </p>
+                        <p>
+                            <ul>
+                                <li>Poziom: podstawowy</li>
+                                <li>Ilość pytań: 45</li>
+                                <li>Limit czasu: 50 minut</li>
+                                <li>Pytania tekstowe i obrazkowe</li>
+                                <li>Pytania zamknięte - zwykle 4 odpowiedzi do wyboru (wybór jednokrotny)</li>
+                                <li>Możliwość powrotu do niezaakceptowanych odpowiedzi</li>
+                                <li>Za każdą poprawną odpowiedź otrzymuje 1 punkt, za błędną 0</li>
+                            </ul>
+                        </p>
                         {{ ini_get('session.gc_maxlifetime') }}<br>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </template>
                 </b-block>
             </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-md-6">
+            <div class="col-md-6 col-lg-4">
                 @if ($errors->any())
                     <div class="alert alert-danger alert-dismissable" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -27,6 +41,10 @@
                     <template slot="content">
                         <form action="{{ route('user.tryLogin') }}" method="post">
                             @csrf
+                            <div class="form-group">
+                                <label for="email">E-mail</label>
+                                <input type="text" class="form-control" id="email" name="email" required>
+                            </div>
                             <div class="form-group">
                                 <label for="login">Login</label>
                                 <input type="text" class="form-control" id="login" name="login" required>

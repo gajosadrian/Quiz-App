@@ -4,19 +4,19 @@
             <template slot="content">
                 <div class="clearfix">
                     <div class="float-left">
-                        Pytanie: <span class="text-warning font-w600">
-                            <span v-if="!isFinished()">{{ questionIndex + 1 }}/{{ questions.length }}</span>
-                            <span v-else>-</span>
+                        Pytanie: <span class="font-w600">
+                            <span v-if="finished || questionIndex + 1 > questions.length">-</span>
+                            <span v-else>{{ questionIndex + 1 }}/{{ questions.length }}</span>
                         </span>
                     </div>
                     <div class="float-right">
-                        Pozostały czas: <span class="text-warning font-w600">{{ timer }} min</span>
+                        Pozostały czas: <span class="font-w600"><u>{{ timer }} min</u></span>
                     </div>
                 </div>
             </template>
         </b-block>
         <div v-for="(question, index) in questions" :key="index">
-            <b-block v-if="index === questionIndex && !isFinished()" theme="obramowka" noround full>
+            <b-block v-if="index === questionIndex && !finished" theme="obramowka" noround full>
                 <template slot="content">
                     <h4>{{ question.text }}</h4>
                     <div v-if="question.image" class="push">
@@ -38,20 +38,41 @@
                 </template>
             </b-block>
         </div>
-        <div v-if="isFinished()">
+        <div v-if="finished">
             <b-block>
                 <template slot="content">
                     <h4><i class="fa fa-spinner fa-pulse"></i> Proszę czekać...</h4>
                 </template>
             </b-block>
         </div>
+        <div v-else-if="questionIndex + 1 > questions.length">
+            <b-block full>
+                <template slot="content">
+                    Brakuje odpowiedzi w {{ getNoResponsesAmount() }} {{ getNoResponsesAmount() == 1 && 'pytaniu' || 'pytaniach' }}:
+                    <ul>
+                        <li v-for="(question_id, index) in getNoResponseQuestions()" :key="index">Pytanie {{ question_id }}: text</li>
+                    </ul>
+                    <div class="clearfix">
+                        <div class="float-left">
+                            <button type="button" class="btn btn-secondary" @click="prev">Cofnij</button>
+                            <button type="button" class="btn btn-secondary ml-5" @click="prev(null, true)">Cofnij do początku</button>
+                        </div>
+                        <div class="float-right">
+                            <button type="button" class="btn btn-primary btn-noborder">Zakończ quiz mimo to</button>
+                        </div>
+                    </div>
+                </template>
+            </b-block>
+        </div>
     </div>
     <div v-else>
-        <div v-if="loading">
-            Ładowanie quizu...
-        </div>
-        <div v-else>
-            <button type="button" class="btn btn-primary btn-noborder" :disabled="disableStart" @click="start">Rozpocznij quiz</button>
+        <div class="text-center">
+            <div v-if="loading">
+                Ładowanie quizu...
+            </div>
+            <div v-else>
+                <button type="button" class="btn btn-primary btn-noborder" :disabled="disableStart" @click="start">Rozpocznij quiz</button>
+            </div>
         </div>
     </div>
 </template>
@@ -71,7 +92,7 @@ export default {
         userResponses: [],
         rememberResponses: Array(45).fill(false),
         disableStart: false,
-        timer: 30,
+        timer: 50,
         questions: [],
     }},
     methods: {
@@ -85,22 +106,46 @@ export default {
                 });
         },
         finish() {
+            this.finished = true;
             console.log('finished');
         },
         tryFinish() {
-            if (this.isFinished() && !this.finished) {
-                this.finished = true;
+            if (this.canFinish() && !this.finished) {
                 this.finish();
             }
         },
-        isFinished() {
-            return (this.questionIndex >= this.questions.length) || (this.timer <= 0);
+        canFinish() {
+            return (this.questionIndex >= this.questions.length && this.isComplete()) || (this.timer <= 0) || this.finished;
         },
         countDown() {
             if (this.timer > 0 && this.started && !this.finished) {
                 this.timer--;
                 this.tryFinish();
             }
+        },
+        getNoResponseQuestions() {
+            let ids = [];
+            this.userResponses.forEach(function(response, response_id) {
+                if (response == 0) {
+                    ids.push(response_id);
+                }
+            });
+            return ids;
+        },
+        getResponsesAmount() {
+            let amount = 0;
+            this.userResponses.forEach(function(response) {
+                if (response > 0) {
+                    amount++;
+                }
+            });
+            return amount;
+        },
+        getNoResponsesAmount() {
+            return this.questions.length - this.getResponsesAmount();
+        },
+        isComplete() {
+            return this.getNoResponsesAmount() <= 0;
         },
         getQuestions() {
             this.loading = true;
@@ -135,8 +180,16 @@ export default {
             this.questionIndex++;
             this.tryFinish();
         },
-        prev() {
-            this.questionIndex--;
+        prev(e, toBeginning = false) {
+            if (!toBeginning) {
+                this.questionIndex--;
+            } else {
+                this.questionIndex = 0;
+            }
+        },
+        removeVal(array, element) {
+            const index = array.indexOf(element);
+            array.splice(index, 1);
         },
     },
     mounted() {
