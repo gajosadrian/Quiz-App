@@ -46,11 +46,11 @@
             </b-block>
         </div>
         <div v-else-if="questionIndex + 1 > questions.length">
-            <b-block full>
+            <b-block theme="obramowka" noround full>
                 <template slot="content">
                     Brakuje odpowiedzi w {{ getNoResponsesAmount() }} {{ getNoResponsesAmount() == 1 && 'pytaniu' || 'pytaniach' }}:
                     <ul>
-                        <li v-for="(question_id, index) in getNoResponseQuestions()" :key="index">Pytanie {{ question_id }}: text</li>
+                        <li v-for="(question_index, index) in noResponseIndexes" :key="index"><span class="font-w600 text-primary">#{{ question_index + 1 }}:</span> {{ questions[question_index].text }}</li>
                     </ul>
                     <div class="clearfix">
                         <div class="float-left">
@@ -90,6 +90,7 @@ export default {
         questionIndex: 0,
         questionId: [],
         userResponses: [],
+        noResponseIndexes: [],
         rememberResponses: Array(45).fill(false),
         disableStart: false,
         timer: 50,
@@ -123,15 +124,6 @@ export default {
                 this.tryFinish();
             }
         },
-        getNoResponseQuestions() {
-            let ids = [];
-            this.userResponses.forEach(function(response, response_id) {
-                if (response == 0) {
-                    ids.push(response_id);
-                }
-            });
-            return ids;
-        },
         getResponsesAmount() {
             let amount = 0;
             this.userResponses.forEach(function(response) {
@@ -164,10 +156,14 @@ export default {
                 self.userResponses[question.id] = 0;
                 self.questionId.push(question.id);
             });
+            for (let questionIndex = 0; questionIndex < this.questions.length; questionIndex++) {
+                this.noResponseIndexes.push(questionIndex);
+            }
         },
-        rememberResponse(question_id) {
-            if (this.userResponses[question_id] > 0) {
+        rememberResponse(question_id, questionIndex) {
+            if (this.userResponses[question_id] > 0 && !this.rememberResponses[question_id]) {
                 this.rememberResponses[question_id] = true;
+                this.removeVal(this.noResponseIndexes, questionIndex);
             }
         },
         click(question_id, response_id) {
@@ -176,7 +172,7 @@ export default {
             }
         },
         next() {
-            this.rememberResponse(this.questionId[this.questionIndex]);
+            this.rememberResponse(this.questionId[this.questionIndex], this.questionIndex);
             this.questionIndex++;
             this.tryFinish();
         },

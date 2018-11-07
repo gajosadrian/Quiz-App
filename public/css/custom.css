@@ -2,6 +2,10 @@ body {
     background: #fff;
 }
 
+.text-primary {
+    color: #d4213d!important;
+}
+
 .btn-primary {
     background-color: #d4213d;
     border-color: #b01c32;

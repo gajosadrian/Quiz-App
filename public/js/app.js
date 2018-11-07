@@ -48063,7 +48063,7 @@ exports = module.exports = __webpack_require__(12)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -48167,6 +48167,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             questionIndex: 0,
             questionId: [],
             userResponses: [],
+            noResponseIndexes: [],
             rememberResponses: Array(45).fill(false),
             disableStart: false,
             timer: 50,
@@ -48203,15 +48204,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 this.tryFinish();
             }
         },
-        getNoResponseQuestions: function getNoResponseQuestions() {
-            var ids = [];
-            this.userResponses.forEach(function (response, response_id) {
-                if (response == 0) {
-                    ids.push(response_id);
-                }
-            });
-            return ids;
-        },
         getResponsesAmount: function getResponsesAmount() {
             var amount = 0;
             this.userResponses.forEach(function (response) {
@@ -48245,10 +48237,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 self.userResponses[question.id] = 0;
                 self.questionId.push(question.id);
             });
+            for (var questionIndex = 0; questionIndex < this.questions.length; questionIndex++) {
+                this.noResponseIndexes.push(questionIndex);
+            }
         },
-        rememberResponse: function rememberResponse(question_id) {
-            if (this.userResponses[question_id] > 0) {
+        rememberResponse: function rememberResponse(question_id, questionIndex) {
+            if (this.userResponses[question_id] > 0 && !this.rememberResponses[question_id]) {
                 this.rememberResponses[question_id] = true;
+                this.removeVal(this.noResponseIndexes, questionIndex);
             }
         },
         click: function click(question_id, response_id) {
@@ -48257,14 +48253,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
         },
         next: function next() {
-            this.rememberResponse(this.questionId[this.questionIndex]);
+            this.rememberResponse(this.questionId[this.questionIndex], this.questionIndex);
             this.questionIndex++;
             this.tryFinish();
         },
         prev: function prev(e) {
             var toBeginning = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
 
-            console.log(toBeginning);
             if (!toBeginning) {
                 this.questionIndex--;
             } else {
@@ -48461,7 +48456,7 @@ var render = function() {
                   [
                     _c(
                       "b-block",
-                      { attrs: { full: "" } },
+                      { attrs: { theme: "obramowka", noround: "", full: "" } },
                       [
                         _c("template", { slot: "content" }, [
                           _vm._v(
@@ -48477,13 +48472,23 @@ var render = function() {
                           ),
                           _c(
                             "ul",
-                            _vm._l(_vm.getNoResponseQuestions(), function(
-                              question_id,
+                            _vm._l(_vm.noResponseIndexes, function(
+                              question_index,
                               index
                             ) {
                               return _c("li", { key: index }, [
+                                _c(
+                                  "span",
+                                  { staticClass: "font-w600 text-primary" },
+                                  [
+                                    _vm._v(
+                                      "#" + _vm._s(question_index + 1) + ":"
+                                    )
+                                  ]
+                                ),
                                 _vm._v(
-                                  "Pytanie " + _vm._s(question_id) + ": text"
+                                  " " +
+                                    _vm._s(_vm.questions[question_index].text)
                                 )
                               ])
                             })
