@@ -48063,7 +48063,7 @@ exports = module.exports = __webpack_require__(12)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -48188,6 +48188,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         finish: function finish() {
             this.finished = true;
+            axios.post(route('quiz.finish'), {
+                responses: this.userResponses,
+                timeLeft: this.timer
+            }).then(function (response) {
+                console.log(response.data);
+            }, function (error) {
+                //
+            });
             console.log('finished');
         },
         tryFinish: function tryFinish() {
@@ -48525,10 +48533,15 @@ var render = function() {
                               _c(
                                 "button",
                                 {
-                                  staticClass: "btn btn-primary btn-noborder",
-                                  attrs: { type: "button" }
+                                  staticClass:
+                                    "btn btn-sm btn-info btn-noborder",
+                                  attrs: { type: "button" },
+                                  on: { click: _vm.finish }
                                 },
-                                [_vm._v("Zakończ quiz mimo to")]
+                                [
+                                  _c("i", { staticClass: "fa fa-warning" }),
+                                  _vm._v(" Zakończ quiz mimo to")
+                                ]
                               )
                             ])
                           ])

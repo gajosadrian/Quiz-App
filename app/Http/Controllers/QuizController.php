@@ -25,37 +25,38 @@ class QuizController extends Controller
 
     public function finish(Request $request)
     {
-        //
+        $responses = array_filter($request->input('responses'), 'strlen');
+        $timeLeft = $request->input('timeLeft');
+        $uczestnik = Uczestnik();
+        $uczestnik->czas = $timeLeft;
+        $uczestnik->data_zakonczenia_testu = Carbon::now();
+        $uczestnik->odpowiedzi = $responses;
+        $uczestnik->save();
+        return response()->json($responses);
+        // return response()->json('success', 200);
     }
 
     public function getQuestions()
     {
-        $pytania = include public_path('quiz-app/pytania1.php');
+        $pytania = include public_path('quiz-app/' . getPytaniaId() . '.php');
         $questions = [];
 
-        foreach ($pytania as $v) {
+        foreach ($pytania as $index => $v) {
             $drawnQuestionIds = randomGen(1, sizeof($v['questions']), $v['amount']);
             foreach ($drawnQuestionIds as $questionId) {
                 $question = $v['questions'][$questionId];
-                $responses = $question['responses'];
-                $correct = -1;
-                $_responses = [];
-                foreach ($responses as $responseIndex => $response) {
-                    $responseId = $responseIndex + 1;
-                    if (isset($response[1]) and $response[1]) {
-                        $correct = $responseId;
-                    }
-                    $_responses[] = [
-                        'id' => $responseId + 1,
+                $responses = [];
+                foreach ($question['responses'] as $responseIndex => $response) {
+                    $responses[] = [
+                        'id' => $responseIndex + 1,
                         'text' => $response[0],
                     ];
                 }
                 $questions[] = [
-                    'id' => $questionId,
+                    'id' => getRawQuestionId($index, $questionId),
                     'text' => $question['text'],
                     'image' => $question['image'],
-                    'correct' => $correct,
-                    'responses' => $_responses,
+                    'responses' => shuffle($responses),
                 ];
             }
         }

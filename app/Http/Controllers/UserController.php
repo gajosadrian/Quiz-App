@@ -13,10 +13,12 @@ class UserController extends Controller
         $this->middleware('niezalogowany');
         $request->validate([
             'login' => 'required|max:255',
+            'email' => 'required|max:255',
         ]);
 
         $login = $request->input('login');
-        $uczestnik = Uczestnik::where('nazwa', $login)->first();
+        $email = $request->input('email');
+        $uczestnik = Uczestnik::where('nazwa', $login)->where('email', $email)->first();
 
         if ($uczestnik) {
             if ($uczestnik->loggable) {

@@ -14,13 +14,14 @@
                         </p>
                         <p>
                             <ul>
-                                <li>Poziom: podstawowy</li>
+                                <li>Poziom: podstawowy + gimnazjalny</li>
                                 <li>Ilość pytań: 45</li>
                                 <li>Limit czasu: 50 minut</li>
                                 <li>Pytania tekstowe i obrazkowe</li>
                                 <li>Pytania zamknięte - zwykle 4 odpowiedzi do wyboru (wybór jednokrotny)</li>
                                 <li>Możliwość powrotu do niezaakceptowanych odpowiedzi</li>
                                 <li>Za każdą poprawną odpowiedź otrzymuje 1 punkt, za błędną 0</li>
+                                <li>Przycisk „Dalej” zatwierdza odpowiedź</li>
                             </ul>
                         </p>
                         {{ ini_get('session.gc_maxlifetime') }}<br>

@@ -58,7 +58,7 @@
                             <button type="button" class="btn btn-secondary ml-5" @click="prev(null, true)">Cofnij do początku</button>
                         </div>
                         <div class="float-right">
-                            <button type="button" class="btn btn-primary btn-noborder">Zakończ quiz mimo to</button>
+                            <button type="button" class="btn btn-sm btn-info btn-noborder" @click="finish"><i class="fa fa-warning"></i> Zakończ quiz mimo to</button>
                         </div>
                     </div>
                 </template>
@@ -108,6 +108,15 @@ export default {
         },
         finish() {
             this.finished = true;
+            axios.post(route('quiz.finish'), {
+                    responses: this.userResponses,
+                    timeLeft: this.timer,
+                })
+                .then((response) => {
+                    console.log(response.data);
+                }, (error) => {
+                    //
+                });
             console.log('finished');
         },
         tryFinish() {
