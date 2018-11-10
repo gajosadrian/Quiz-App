@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+use App\Uczestnik;
 
 class AdminController extends Controller
 {
@@ -23,6 +25,22 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin');
+        return view('admin', [
+            'user' => Auth::user(),
+        ]);
+    }
+
+    public function responses()
+    {
+        return view('responses', [
+            'uczestnicy' => Uczestnik::get(),
+        ]);
+    }
+
+    public function questions()
+    {
+        return view('questions', [
+            'pytania' => getPytania(),
+        ]);
     }
 }

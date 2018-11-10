@@ -48064,7 +48064,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -48075,6 +48075,10 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
 //
 //
 //
@@ -48176,7 +48180,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             disableStart: false,
             // timer: 50,
             timer: 3000, // 50 min
-            questions: []
+            questions: [],
+            correctResponsesAmount: 0,
+            time: 0
         };
     },
 
@@ -48199,7 +48205,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 responses: this.userResponses,
                 timeLeft: this.timer
             }).then(function (response) {
+                var data = response.data;
                 _this2.result = true;
+                _this2.correctResponsesAmount = data.correctResponsesAmount;
+                _this2.time = data.time;
                 console.log(response.data);
             }, function (error) {
                 //
@@ -48296,7 +48305,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         removeVal: function removeVal(array, element) {
             var index = array.indexOf(element);
             array.splice(index, 1);
-        }
+        },
+        route: function (_route) {
+            function route(_x2) {
+                return _route.apply(this, arguments);
+            }
+
+            route.toString = function () {
+                return _route.toString();
+            };
+
+            return route;
+        }(function (name) {
+            return route(name);
+        })
     },
     mounted: function mounted() {
         this.getQuestions();
@@ -48489,8 +48511,39 @@ var render = function() {
                       _c("template", { slot: "content" }, [
                         _vm.result
                           ? _c("div", [
-                              _vm._v(
-                                "\n                    WYNIK\n                "
+                              _c("ul", [
+                                _c("li", [
+                                  _vm._v("Poprawne odpowiedzi: "),
+                                  _c(
+                                    "span",
+                                    { staticClass: "font-w600 text-primary" },
+                                    [
+                                      _vm._v(
+                                        _vm._s(_vm.correctResponsesAmount) +
+                                          "/" +
+                                          _vm._s(_vm.questions.length)
+                                      )
+                                    ]
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("li", [
+                                  _vm._v("Czas rozwiązywania: "),
+                                  _c(
+                                    "span",
+                                    { staticClass: "font-w600 text-primary" },
+                                    [_vm._v(_vm._s(_vm.getTime(_vm.time)))]
+                                  )
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "btn btn-primary btn-noborder",
+                                  attrs: { href: _vm.route("user.logout") }
+                                },
+                                [_vm._v("Wyloguj")]
                               )
                             ])
                           : _c("div", [

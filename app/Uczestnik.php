@@ -33,4 +33,9 @@ class Uczestnik extends Model
         }
         return false;
     }
+
+    public function getCorrectQuestionIdsAttribute()
+    {
+        return getCorrectQuestionIds($this->odpowiedzi);
+    }
 }

@@ -16,9 +16,9 @@ function randomGen($min, $max, $quantity) {
     return array_slice($numbers, 0, $quantity);
 }
 
-function getPytaniaId()
+function getPytania()
 {
-    return 'pytania1';
+    return include public_path('quiz-app/pytania1.php');
 }
 function getGroupIndex($questionRawId)
 {
@@ -35,14 +35,14 @@ function getRawQuestionId($groupIndex, $questionId)
 function getCorrectQuestionIds($responses)
 {
     $array = [];
-    $pytania = include public_path('quiz-app/' . getPytaniaId() . '.php');
+    $pytania = getPytania();
     foreach ($responses as $questionRawId => $responseId) {
         if ($responseId > 0) {
             $group = getGroupIndex($questionRawId);
             $questionId = getQuestionId($questionRawId);
             $question = $pytania[$group]['questions'][$questionId];
             $response = $question['responses'][$responseId - 1];
-            if (isset($response) and $response) {
+            if (isset($response[1]) and $response[1]) {
                 $array[] = $questionRawId;
             }
         }

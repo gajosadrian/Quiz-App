@@ -43,7 +43,11 @@
             <b-block theme="obramowka" noround full>
                 <template slot="content">
                     <div v-if="result">
-                        WYNIK
+                        <ul>
+                            <li>Poprawne odpowiedzi: <span class="font-w600 text-primary">{{ correctResponsesAmount }}/{{ questions.length }}</span></li>
+                            <li>Czas rozwiązywania: <span class="font-w600 text-primary">{{ getTime(time) }}</span></li>
+                        </ul>
+                        <a :href="route('user.logout')" class="btn btn-primary btn-noborder">Wyloguj</a>
                     </div>
                     <div v-else>
                         <h4><i class="fa fa-spinner fa-pulse"></i> Proszę czekać...</h4>
@@ -99,6 +103,8 @@ export default {
         // timer: 50,
         timer: 3000, // 50 min
         questions: [],
+        correctResponsesAmount: 0,
+        time: 0,
     }},
     methods: {
         start() {
@@ -117,7 +123,10 @@ export default {
                     timeLeft: this.timer,
                 })
                 .then((response) => {
+                    let data = response.data;
                     this.result = true;
+                    this.correctResponsesAmount = data.correctResponsesAmount;
+                    this.time = data.time;
                     console.log(response.data);
                 }, (error) => {
                     //
@@ -211,6 +220,9 @@ export default {
         removeVal(array, element) {
             const index = array.indexOf(element);
             array.splice(index, 1);
+        },
+        route(name) {
+            return route(name);
         },
     },
     mounted() {

@@ -27,20 +27,20 @@ class QuizController extends Controller
         $responses = array_filter($request->input('responses'), 'strlen');
         $timeLeft = $request->input('timeLeft');
         $uczestnik = Uczestnik();
-        $uczestnik->czas = $timeLeft;
+        $uczestnik->czas = 3000 - $timeLeft;
         $uczestnik->data_zakonczenia_testu = Carbon::now();
         $uczestnik->odpowiedzi = $responses;
         $uczestnik->save();
         return response()->json([
-            'correctResponsesAmount' => getCorrectQuestionIds($responses),
-            'timeLeft' => $timeLeft,
+            'correctResponsesAmount' => sizeof(getCorrectQuestionIds($responses)),
+            'time' => $uczestnik->czas,
         ]);
         // return response()->json('success', 200);
     }
 
     public function getQuestions()
     {
-        $pytania = include public_path('quiz-app/' . getPytaniaId() . '.php');
+        $pytania = getPytania();
         $questions = [];
 
         foreach ($pytania as $index => $v) {

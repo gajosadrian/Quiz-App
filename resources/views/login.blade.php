@@ -40,12 +40,12 @@
                         <form action="{{ route('user.tryLogin') }}" method="post">
                             @csrf
                             <div class="form-group">
-                                <label for="email">E-mail</label>
+                                <label for="email">E-mail opiekuna</label>
                                 <input type="email" class="form-control" id="email" name="email" required>
                             </div>
                             <div class="form-group">
-                                <label for="login">Login</label>
-                                <input type="text" class="form-control" id="login" name="login" required>
+                                <label for="login">Kod dostępowy</label>
+                                <input type="password" class="form-control" id="login" name="login" required>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary btn-noborder">Zaloguj</button>
