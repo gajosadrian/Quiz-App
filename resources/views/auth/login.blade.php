@@ -4,12 +4,8 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="block block-rounded block-fx-shadow">
-                <div class="block-header block-header-default">
-                    <h3 class="block-title">Logowanie do Panelu Admina</h3>
-                </div>
-
-                <div class="block-content block-content-full">
+            <b-block title="Logowanie do Panelu Admina" theme="obramowka" noround full>
+                <template slot="content">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
@@ -65,8 +61,8 @@
                             </div>
                         </div>
                     </form>
-                </div>
-            </div>
+                </template>
+            </b-block>
         </div>
     </div>
 </div>

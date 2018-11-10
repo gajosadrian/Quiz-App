@@ -18,6 +18,7 @@ window.Vue = require('vue');
 Vue.component('b-block', require('./components/bootstrap/b-block.vue'));
 Vue.component('b-alert', require('./components/bootstrap/b-alert.vue'));
 Vue.component('quiz-app', require('./components/quiz/app.vue'));
+Vue.component('test-quiz-app', require('./components/quiz/test_app.vue'));
 
 const app = new Vue({
     el: '#app'

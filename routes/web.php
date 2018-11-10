@@ -18,7 +18,7 @@ Route::get('/', function () {
 
 // auth
 Route::post('/uczestnik', 'UczestnikController@post')->name('uczestnik.post');
-Route::get('/admin', 'LoginController@index')->name('admin');
+Route::get('/admin', 'AdminController@index')->name('admin');
 
 // uczestnik
 Route::get('/test', 'TestController@index')->name('test');

@@ -33,52 +33,23 @@
                         </div>
                         <div class="float-right">
                             <button v-if="questionIndex < questions.length" type="button" class="btn btn-primary btn-noborder" @click="next">Dalej</button>
-                            <button type="button" class="btn btn-primary btn-noborder" @click="questionIndex=46">MAGIC</button>
                         </div>
                     </div>
                 </template>
             </b-block>
         </div>
-        <div v-if="finished">
+        <div v-if="questionIndex + 1 > questions.length">
             <b-block theme="obramowka" noround full>
                 <template slot="content">
-                    <div v-if="result">
-                        WYNIK
-                    </div>
-                    <div v-else>
-                        <h4><i class="fa fa-spinner fa-pulse"></i> Proszę czekać...</h4>
-                    </div>
-                </template>
-            </b-block>
-        </div>
-        <div v-else-if="questionIndex + 1 > questions.length">
-            <b-block theme="obramowka" noround full>
-                <template slot="content">
-                    Brakuje odpowiedzi w {{ getNoResponsesAmount() }} {{ getNoResponsesAmount() == 1 && 'pytaniu' || 'pytaniach' }}:
-                    <ul>
-                        <li v-for="(question_index, index) in noResponseIndexes" :key="index"><span class="font-w600 text-primary">#{{ question_index + 1 }}:</span> {{ questions[question_index].text }}</li>
-                    </ul>
-                    <div class="clearfix">
-                        <div class="float-left">
-                            <button type="button" class="btn btn-secondary" @click="prev">Cofnij</button>
-                            <button type="button" class="btn btn-secondary ml-5" @click="prev(null, true)">Cofnij do początku</button>
-                        </div>
-                        <div class="float-right">
-                            <button type="button" class="btn btn-sm btn-info btn-noborder" @click="finish"><i class="fa fa-warning"></i> Zakończ quiz mimo to</button>
-                        </div>
-                    </div>
+                    <p>Pod koniec rozwiązanego quizu pokaże się wynik.</p>
+                    <a :href="route('test')" class="btn btn-primary btn-noborder">Przejdź do quizu właściwego</a>
                 </template>
             </b-block>
         </div>
     </div>
     <div v-else>
         <div class="text-center">
-            <div v-if="loading">
-                Ładowanie quizu...
-            </div>
-            <div v-else>
-                <button type="button" class="btn btn-primary btn-noborder" :disabled="disableStart" @click="start">Rozpocznij quiz</button>
-            </div>
+            <button type="button" class="btn btn-primary btn-noborder" :disabled="disableStart" @click="start">Rozpocznij quiz kontrolny</button>
         </div>
     </div>
 </template>
@@ -87,82 +58,56 @@
 export default {
     data() { return {
         finished: false,
-        result: false,
-        loading: true,
         started: false,
         questionIndex: 0,
         questionId: [],
         userResponses: [],
-        noResponseIndexes: [],
         rememberResponses: Array(45).fill(false),
         disableStart: false,
-        // timer: 50,
         timer: 3000, // 50 min
         questions: [],
     }},
     methods: {
         start() {
             this.disableStart = true;
-            axios.post(route('quiz.start'))
-                .then((response) => {
-                    this.started = true;
-                }, (error) => {
-                    //
-                });
+            this.started = true;
         },
         finish() {
             this.finished = true;
-            axios.post(route('quiz.finish'), {
-                    responses: this.userResponses,
-                    timeLeft: this.timer,
-                })
-                .then((response) => {
-                    this.result = true;
-                    console.log(response.data);
-                }, (error) => {
-                    //
-                });
-            console.log('finished');
         },
         tryFinish() {
-            if (this.canFinish() && !this.finished) {
+            if (this.questionIndex >= this.questions.length) {
                 this.finish();
             }
         },
-        canFinish() {
-            return (this.questionIndex >= this.questions.length && this.isComplete()) || (this.timer <= 0) || this.finished;
-        },
-        countDown() {
-            if (this.timer > 0 && this.started && !this.finished) {
-                this.timer--;
-                this.tryFinish();
-            }
-        },
-        getResponsesAmount() {
-            let amount = 0;
-            this.userResponses.forEach(function(response) {
-                if (response > 0) {
-                    amount++;
-                }
-            });
-            return amount;
-        },
-        getNoResponsesAmount() {
-            return this.questions.length - this.getResponsesAmount();
-        },
-        isComplete() {
-            return this.getNoResponsesAmount() <= 0;
-        },
         getQuestions() {
-            this.loading = true;
-            axios.get(route('quiz.questions'))
-                .then((response) => {
-                    this.loading = false;
-                    this.questions = response.data;
-                    this.fillResponses();
-                }, (error) => {
-                    //
-                });
+            let responses = [
+                { id: 1, text: 'Przykładowa odpowiedź #1' },
+                { id: 2, text: 'Przykładowa odpowiedź #2' },
+                { id: 3, text: 'Przykładowa odpowiedź #3' },
+                { id: 4, text: 'Przykładowa odpowiedź #4' },
+            ];
+            this.questions = [
+                {
+                    id: 1,
+                    text: 'Przykładowe pytanie #1',
+                    image: null,
+                    responses: responses,
+                },
+                {
+                    id: 2,
+                    text: 'Przykładowe pytanie #2',
+                    image: null,
+                    responses: responses,
+                },
+                {
+                    id: 3,
+                    text: 'Przykładowe pytanie #3',
+                    image: null,
+                    responses: responses,
+                },
+            ];
+            this.fillResponses();
         },
         fillResponses() {
             let self = this;
@@ -170,14 +115,10 @@ export default {
                 self.userResponses[question.id] = 0;
                 self.questionId.push(question.id);
             });
-            for (let questionIndex = 0; questionIndex < this.questions.length; questionIndex++) {
-                this.noResponseIndexes.push(questionIndex);
-            }
         },
         rememberResponse(question_id, questionIndex) {
             if (this.userResponses[question_id] > 0 && !this.rememberResponses[question_id]) {
                 this.rememberResponses[question_id] = true;
-                this.removeVal(this.noResponseIndexes, questionIndex);
             }
         },
         click(question_id, response_id) {
@@ -197,6 +138,11 @@ export default {
                 this.questionIndex = 0;
             }
         },
+        countDown() {
+            if (this.timer > 0 && this.started && !this.finished) {
+                this.timer--;
+            }
+        },
         getTime(value) {
             let hours =  parseInt(Math.floor(value / 3600));
             let minutes = parseInt(Math.floor((value - (hours * 3600)) / 60));
@@ -208,10 +154,9 @@ export default {
 
             return dMins + ' min ' + dSecs + ' s';
         },
-        removeVal(array, element) {
-            const index = array.indexOf(element);
-            array.splice(index, 1);
-        },
+        route(name) {
+            return route(name);
+        }
     },
     mounted() {
         this.getQuestions();
@@ -220,9 +165,6 @@ export default {
                 this.countDown();
             }, 1000);
         })
-        window.onbeforeunload = function() {
-            return true;
-        };
     },
 }
 </script>
