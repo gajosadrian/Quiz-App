@@ -36,7 +36,7 @@ class QuizController extends Controller
         //     'time' => $uczestnik->czas,
         // ]);
         return response()->json([
-            'correctResponsesAmount' => 45,
+            'correctResponsesAmount' => $request->input('responses'),
             'time' => 123,
         ]);
         // return response()->json('success', 200);
