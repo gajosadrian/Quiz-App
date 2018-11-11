@@ -120,7 +120,7 @@ export default {
             this.finished = true;
             console.log(this.userResponses);
             axios.post(route('quiz.finish'), {
-                    responses: this.userResponses,
+                    responses: JSON.stringify(this.userResponses),
                     timeLeft: this.timer,
                 })
                 .then((response) => {

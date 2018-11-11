@@ -48203,7 +48203,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.finished = true;
             console.log(this.userResponses);
             axios.post(route('quiz.finish'), {
-                responses: this.userResponses,
+                responses: JSON.stringify(this.userResponses),
                 timeLeft: this.timer
             }).then(function (response) {
                 var data = response.data;
