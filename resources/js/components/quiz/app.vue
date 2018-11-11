@@ -118,9 +118,10 @@ export default {
         },
         finish() {
             this.finished = true;
-            console.log(JSON.stringify(this.userResponses));
+            this.userResponses = this.userResponses.filter((v) => { return v != null });
+            console.log(this.userResponses);
             axios.post(route('quiz.finish'), {
-                    responses: JSON.stringify(this.userResponses),
+                    responses: this.userResponses,
                     timeLeft: this.timer,
                 })
                 .then((response) => {
