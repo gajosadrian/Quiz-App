@@ -41,7 +41,13 @@
         <div v-if="questionIndex + 1 > questions.length">
             <b-block theme="obramowka" noround full>
                 <template slot="content">
-                    <p>Pod koniec rozwiązanego quizu pokaże się wynik.</p>
+                    <p>Dałeś radę, teraz zaczyna się prawdziwy test. Pod koniec rozwiązanego quizu pokaże się wynik.</p>
+                    <p class="text-primary font-w600 mb-0">Przypomnijmy założenia:</p>
+                    <ul>
+                        <li>Quiz składa się z 45 pytań i trwa 50 min</li>
+                        <li>Nie można zmieniać odpowiedzi</li>
+                        <li>Można wrócić do pytań bez odpowiedzi</li>
+                    </ul>
                     <a :href="route('test')" class="btn btn-primary btn-noborder">Przejdź do quizu właściwego</a>
                 </template>
             </b-block>

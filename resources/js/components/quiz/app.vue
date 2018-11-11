@@ -27,13 +27,16 @@
                             {{ response.text }}
                         </a>
                     </div>
+                    <div v-if="rememberResponses[question.id]" class="push">
+                        <p class="text-primary text-center"><i>Nie możesz zmienić już odpowiedzi</i></p>
+                    </div>
                     <div class="clearfix">
                         <div class="float-left" v-if="questionIndex > 0">
                             <button type="button" class="btn btn-secondary" @click="prev">Cofnij</button>
                         </div>
                         <div class="float-right">
+                            <button type="button" class="btn btn-sm btn-info btn-noborder" @click="questionIndex=45">(dla testów)</button>
                             <button v-if="questionIndex < questions.length" type="button" class="btn btn-primary btn-noborder" @click="next">Dalej</button>
-                            <button type="button" class="btn btn-primary btn-noborder" @click="questionIndex=46">MAGIC</button>
                         </div>
                     </div>
                 </template>

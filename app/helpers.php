@@ -1,5 +1,15 @@
 <?php
 
+// ========================== //
+function getPytaniaId()
+{
+    // pytania1 / pytania2
+    return 'pytania1';
+}
+// ========================== //
+
+
+
 function Uczestnik() {
     $id = session('uczestnik', false);
     if (!$id) return false;
@@ -18,7 +28,7 @@ function randomGen($min, $max, $quantity) {
 
 function getPytania()
 {
-    return include public_path('quiz-app/pytania2.php');
+    return include public_path('quiz-app/' . getPytaniaId() . '.php');
 }
 function getGroupIndex($questionRawId)
 {

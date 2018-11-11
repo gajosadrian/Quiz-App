@@ -48064,7 +48064,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -48075,6 +48075,9 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
 //
 //
 //
@@ -48456,6 +48459,22 @@ var render = function() {
                             })
                           ),
                           _vm._v(" "),
+                          _vm.rememberResponses[question.id]
+                            ? _c("div", { staticClass: "push" }, [
+                                _c(
+                                  "p",
+                                  { staticClass: "text-primary text-center" },
+                                  [
+                                    _c("i", [
+                                      _vm._v(
+                                        "Nie możesz zmienić już odpowiedzi"
+                                      )
+                                    ])
+                                  ]
+                                )
+                              ])
+                            : _vm._e(),
+                          _vm._v(" "),
                           _c("div", { staticClass: "clearfix" }, [
                             _vm.questionIndex > 0
                               ? _c("div", { staticClass: "float-left" }, [
@@ -48472,6 +48491,21 @@ var render = function() {
                               : _vm._e(),
                             _vm._v(" "),
                             _c("div", { staticClass: "float-right" }, [
+                              _c(
+                                "button",
+                                {
+                                  staticClass:
+                                    "btn btn-sm btn-info btn-noborder",
+                                  attrs: { type: "button" },
+                                  on: {
+                                    click: function($event) {
+                                      _vm.questionIndex = 45
+                                    }
+                                  }
+                                },
+                                [_vm._v("(dla testów)")]
+                              ),
+                              _vm._v(" "),
                               _vm.questionIndex < _vm.questions.length
                                 ? _c(
                                     "button",
@@ -48483,21 +48517,7 @@ var render = function() {
                                     },
                                     [_vm._v("Dalej")]
                                   )
-                                : _vm._e(),
-                              _vm._v(" "),
-                              _c(
-                                "button",
-                                {
-                                  staticClass: "btn btn-primary btn-noborder",
-                                  attrs: { type: "button" },
-                                  on: {
-                                    click: function($event) {
-                                      _vm.questionIndex = 46
-                                    }
-                                  }
-                                },
-                                [_vm._v("MAGIC")]
-                              )
+                                : _vm._e()
                             ])
                           ])
                         ])
@@ -48794,7 +48814,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -48805,6 +48825,12 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -49145,8 +49171,22 @@ var render = function() {
                       _c("template", { slot: "content" }, [
                         _c("p", [
                           _vm._v(
-                            "Pod koniec rozwiązanego quizu pokaże się wynik."
+                            "Dałeś radę, teraz zaczyna się prawdziwy test. Pod koniec rozwiązanego quizu pokaże się wynik."
                           )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("Przypomnimy założenia:")]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [
+                            _vm._v("Quiz składa się z 45 pytań i trwa 50 min")
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [_vm._v("Nie można zmieniać odpowiedzi")]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v("Można wrócić do pytań bez odpowiedzi")
+                          ])
                         ]),
                         _vm._v(" "),
                         _c(

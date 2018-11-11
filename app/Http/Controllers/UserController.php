@@ -18,7 +18,8 @@ class UserController extends Controller
 
         $login = $request->input('login');
         $email = $request->input('email');
-        $uczestnik = Uczestnik::where('nazwa', $login)->where('email', $email)->first();
+        $pytaniaId = getPytaniaId();
+        $uczestnik = Uczestnik::where('grupa', $pytaniaId)->where('nazwa', $login)->where('email', $email)->first();
 
         if ($uczestnik) {
             if ($uczestnik->loggable) {

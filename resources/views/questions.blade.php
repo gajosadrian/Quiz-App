@@ -11,7 +11,7 @@
             <ol>
                 @foreach ($pytania as $v)
                     @foreach ($v['questions'] as $question)
-                        <li class="font-w700">{{ $question['text'] }}</li>
+                        <li class="font-w700">{!! $question['text'] !!}</li>
                         <ol>
                             @foreach ($question['responses'] as $response)
                                 <li class="{{ (isset($response[1]) and $response[1]) ? 'font-w700 text-primary' : '' }}">{{ $response[0] }}</li>
