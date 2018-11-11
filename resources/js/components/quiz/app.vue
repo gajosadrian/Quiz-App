@@ -1,5 +1,6 @@
 <template>
     <div v-if="started">
+        <span class="d-none">{{ none }}</span>
         <b-block theme="czerwonetlo" noround full>
             <template slot="content">
                 <div class="clearfix">
@@ -108,6 +109,7 @@ export default {
         questions: [],
         correctResponsesAmount: 0,
         time: 0,
+        none: false,
     }},
     methods: {
         start() {
@@ -242,6 +244,11 @@ export default {
             window.setInterval(() => {
                 this.countDown();
             }, 1000);
+        })
+        this.$nextTick(function () {
+            window.setInterval(() => {
+                this.none = !this.none;
+            }, 100);
         })
         window.onbeforeunload = function() {
             return true;

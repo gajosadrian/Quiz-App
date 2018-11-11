@@ -1,5 +1,6 @@
 <template>
     <div v-if="started">
+        <span class="d-none">{{ none }}</span>
         <b-block theme="czerwonetlo" noround full>
             <template slot="content">
                 <div class="clearfix">
@@ -10,7 +11,7 @@
                         </span>
                     </div>
                     <div class="float-right">
-                        Pozostały czas: <span class="font-w600"><u>{{ getTime(timer) }}</u></span>
+                        Pozostały czas: <span class="font-w600">-</span>
                     </div>
                 </div>
             </template>
@@ -26,6 +27,9 @@
                         <a v-for="(response, index2) in question.responses" :key="index2" href="javascript:void(0)" class="list-group-item list-group-item-action" :class="{'active': userResponses[question.id] === response.id}" @click="click(question.id, response.id)">
                             {{ response.text }}
                         </a>
+                    </div>
+                    <div v-if="rememberResponses[question.id]" class="push">
+                        <p class="text-primary text-center"><i>Nie możesz zmienić już odpowiedzi</i></p>
                     </div>
                     <div class="clearfix">
                         <div class="float-left" v-if="questionIndex > 0">
@@ -48,6 +52,7 @@
                         <li>Nie można zmieniać odpowiedzi</li>
                         <li>Można wrócić do pytań bez odpowiedzi</li>
                     </ul>
+                    <button type="button" class="btn btn-secondary mr-5" @click="prev">Cofnij</button>
                     <a :href="route('test')" class="btn btn-primary btn-noborder">Przejdź do quizu właściwego</a>
                 </template>
             </b-block>
@@ -55,7 +60,7 @@
     </div>
     <div v-else>
         <div class="text-center">
-            <button type="button" class="btn btn-primary btn-noborder" :disabled="disableStart" @click="start">Rozpocznij quiz kontrolny</button>
+            <button type="button" class="btn btn-primary btn-noborder push" :disabled="disableStart" @click="start">Rozpocznij quiz kontrolny</button>
         </div>
     </div>
 </template>
@@ -70,8 +75,8 @@ export default {
         userResponses: [],
         rememberResponses: Array(45).fill(false),
         disableStart: false,
-        timer: 3000, // 50 min
         questions: [],
+        none: false,
     }},
     methods: {
         start() {
@@ -144,11 +149,6 @@ export default {
                 this.questionIndex = 0;
             }
         },
-        countDown() {
-            if (this.timer > 0 && this.started && !this.finished) {
-                this.timer--;
-            }
-        },
         getTime(value) {
             let hours =  parseInt(Math.floor(value / 3600));
             let minutes = parseInt(Math.floor((value - (hours * 3600)) / 60));
@@ -162,14 +162,14 @@ export default {
         },
         route(name) {
             return route(name);
-        }
+        },
     },
     mounted() {
         this.getQuestions();
         this.$nextTick(function () {
             window.setInterval(() => {
-                this.countDown();
-            }, 1000);
+                this.none = !this.none;
+            }, 100);
         })
     },
 }

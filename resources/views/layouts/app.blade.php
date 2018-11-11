@@ -26,16 +26,7 @@
 
     <div id="page-container" class="sidebar-inverse side-scroll page-header-fixed page-header-glass page-header-inverse main-content-boxed">
         <main id="main-container">
-            <header class="row m-0">
-                <div class="col-sm-3 col-md-2 col-lg-1 p-0" style="border: 3px solid #d4213d">
-                    <img src="https://doniepodleglej.pl/wp-content/uploads/2018/10/logo_pl_skrocony-z-bn-780x231.png" class="img-fluid" alt="logo">
-                </div>
-                <div class="col-sm-9 col-md-10 col-lg-11 p-0" style="border: 3px solid #d4213d">
-                    <h2 class="text-center mt-10 mb-10" style="font-family:'Teko'; color:#d4213d">QUIZ HISTORYCZNY</h2>
-                    <div style="background:#d4213d; height:50px">
-                    </div>
-                </div>
-            </header>
+            @include('layouts.header')
 
             <div id="app" class="content">
                 @yield('content')

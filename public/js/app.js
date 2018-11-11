@@ -48064,7 +48064,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -48075,6 +48075,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
 //
 //
 //
@@ -48185,7 +48186,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             timer: 3000, // 50 min
             questions: [],
             correctResponsesAmount: 0,
-            time: 0
+            time: 0,
+            none: false
         };
     },
 
@@ -48340,6 +48342,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this4.countDown();
             }, 1000);
         });
+        this.$nextTick(function () {
+            var _this5 = this;
+
+            window.setInterval(function () {
+                _this5.none = !_this5.none;
+            }, 100);
+        });
         window.onbeforeunload = function () {
             return true;
         };
@@ -48358,6 +48367,8 @@ var render = function() {
     ? _c(
         "div",
         [
+          _c("span", { staticClass: "d-none" }, [_vm._v(_vm._s(_vm.none))]),
+          _vm._v(" "),
           _c(
             "b-block",
             { attrs: { theme: "czerwonetlo", noround: "", full: "" } },
@@ -48887,6 +48898,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -48898,8 +48914,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             userResponses: [],
             rememberResponses: Array(45).fill(false),
             disableStart: false,
-            timer: 3000, // 50 min
-            questions: []
+            questions: [],
+            none: false
         };
     },
 
@@ -48967,11 +48983,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 this.questionIndex = 0;
             }
         },
-        countDown: function countDown() {
-            if (this.timer > 0 && this.started && !this.finished) {
-                this.timer--;
-            }
-        },
         getTime: function getTime(value) {
             var hours = parseInt(Math.floor(value / 3600));
             var minutes = parseInt(Math.floor((value - hours * 3600) / 60));
@@ -49003,8 +49014,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             window.setInterval(function () {
-                _this.countDown();
-            }, 1000);
+                _this.none = !_this.none;
+            }, 100);
         });
     }
 });
@@ -49021,6 +49032,8 @@ var render = function() {
     ? _c(
         "div",
         [
+          _c("span", { staticClass: "d-none" }, [_vm._v(_vm._s(_vm.none))]),
+          _vm._v(" "),
           _c(
             "b-block",
             { attrs: { theme: "czerwonetlo", noround: "", full: "" } },
@@ -49045,9 +49058,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("div", { staticClass: "float-right" }, [
                     _vm._v("\n                    Pozostały czas: "),
-                    _c("span", { staticClass: "font-w600" }, [
-                      _c("u", [_vm._v(_vm._s(_vm.getTime(_vm.timer)))])
-                    ])
+                    _c("span", { staticClass: "font-w600" }, [_vm._v("-")])
                   ])
                 ])
               ])
@@ -49119,6 +49130,22 @@ var render = function() {
                               )
                             })
                           ),
+                          _vm._v(" "),
+                          _vm.rememberResponses[question.id]
+                            ? _c("div", { staticClass: "push" }, [
+                                _c(
+                                  "p",
+                                  { staticClass: "text-primary text-center" },
+                                  [
+                                    _c("i", [
+                                      _vm._v(
+                                        "Nie możesz zmienić już odpowiedzi"
+                                      )
+                                    ])
+                                  ]
+                                )
+                              ])
+                            : _vm._e(),
                           _vm._v(" "),
                           _c("div", { staticClass: "clearfix" }, [
                             _vm.questionIndex > 0
@@ -49194,6 +49221,16 @@ var render = function() {
                         ]),
                         _vm._v(" "),
                         _c(
+                          "button",
+                          {
+                            staticClass: "btn btn-secondary mr-5",
+                            attrs: { type: "button" },
+                            on: { click: _vm.prev }
+                          },
+                          [_vm._v("Cofnij")]
+                        ),
+                        _vm._v(" "),
+                        _c(
                           "a",
                           {
                             staticClass: "btn btn-primary btn-noborder",
@@ -49217,7 +49254,7 @@ var render = function() {
           _c(
             "button",
             {
-              staticClass: "btn btn-primary btn-noborder",
+              staticClass: "btn btn-primary btn-noborder push",
               attrs: { type: "button", disabled: _vm.disableStart },
               on: { click: _vm.start }
             },
