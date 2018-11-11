@@ -24,7 +24,7 @@ class QuizController extends Controller
 
     public function finish(Request $request)
     {
-        $responses = array_filter($request->input('responses'), 'strlen');
+        // $responses = array_filter($request->input('responses'), 'strlen');
         $timeLeft = $request->input('timeLeft');
         // $uczestnik = Uczestnik();
         // $uczestnik->czas = 3000 - $timeLeft;
