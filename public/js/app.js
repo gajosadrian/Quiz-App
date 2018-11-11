@@ -48580,17 +48580,24 @@ var render = function() {
                       { attrs: { theme: "obramowka", noround: "", full: "" } },
                       [
                         _c("template", { slot: "content" }, [
-                          _vm._v(
-                            "\n                Brakuje odpowiedzi w " +
-                              _vm._s(_vm.getNoResponsesAmount()) +
+                          _c("p", [
+                            _vm._v("Brakuje odpowiedzi w "),
+                            _c(
+                              "span",
+                              { staticClass: "text-primary font-w600" },
+                              [_vm._v(_vm._s(_vm.getNoResponsesAmount()))]
+                            ),
+                            _vm._v(
                               " " +
-                              _vm._s(
-                                (_vm.getNoResponsesAmount() == 1 &&
-                                  "pytaniu") ||
-                                  "pytaniach"
-                              ) +
-                              ":\n                "
-                          ),
+                                _vm._s(
+                                  (_vm.getNoResponsesAmount() == 1 &&
+                                    "pytaniu") ||
+                                    "pytaniach"
+                                ) +
+                                ":"
+                            )
+                          ]),
+                          _vm._v(" "),
                           _c(
                             "ul",
                             _vm._l(_vm.noResponseIndexes, function(
@@ -48607,10 +48614,14 @@ var render = function() {
                                     )
                                   ]
                                 ),
-                                _vm._v(
-                                  " " +
-                                    _vm._s(_vm.questions[question_index].text)
-                                )
+                                _vm._v(" "),
+                                _c("span", {
+                                  domProps: {
+                                    innerHTML: _vm._s(
+                                      _vm.questions[question_index].text
+                                    )
+                                  }
+                                })
                               ])
                             })
                           ),

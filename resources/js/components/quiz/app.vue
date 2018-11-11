@@ -58,7 +58,7 @@
         <div v-else-if="questionIndex + 1 > questions.length">
             <b-block theme="obramowka" noround full>
                 <template slot="content">
-                    Brakuje odpowiedzi w {{ getNoResponsesAmount() }} {{ getNoResponsesAmount() == 1 && 'pytaniu' || 'pytaniach' }}:
+                    <p>Brakuje odpowiedzi w <span class="text-primary font-w600">{{ getNoResponsesAmount() }}</span> {{ getNoResponsesAmount() == 1 && 'pytaniu' || 'pytaniach' }}:</p>
                     <ul>
                         <li v-for="(question_index, index) in noResponseIndexes" :key="index"><span class="font-w600 text-primary">#{{ question_index + 1 }}:</span> <span v-html="questions[question_index].text"></span></li>
                     </ul>
