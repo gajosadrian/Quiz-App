@@ -35,7 +35,7 @@ class QuizController extends Controller
         //     'correctResponsesAmount' => sizeof(getCorrectQuestionIds($responses)),
         //     'time' => $uczestnik->czas,
         // ]);
-        return response()->json('success', 200);
+        return response()->json([$request->input('responses')]);
     }
 
     public function getQuestions()
