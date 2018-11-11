@@ -49175,7 +49175,11 @@ var render = function() {
                           )
                         ]),
                         _vm._v(" "),
-                        _c("p", [_vm._v("Przypomnimy założenia:")]),
+                        _c(
+                          "p",
+                          { staticClass: "text-primary font-w600 mb-0" },
+                          [_vm._v("Przypomnijmy założenia:")]
+                        ),
                         _vm._v(" "),
                         _c("ul", [
                           _c("li", [
