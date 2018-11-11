@@ -37,7 +37,7 @@ class QuizController extends Controller
         // ]);
         return response()->json([
             'correctResponsesAmount' => $request->input('responses'),
-            'time' => 123,
+            'time' => 0,
         ]);
         // return response()->json('success', 200);
     }

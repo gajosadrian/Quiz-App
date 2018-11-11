@@ -118,6 +118,7 @@ export default {
         },
         finish() {
             this.finished = true;
+            console.log(this.userResponses);
             axios.post(route('quiz.finish'), {
                     responses: this.userResponses,
                     timeLeft: this.timer,
@@ -127,7 +128,7 @@ export default {
                     this.result = true;
                     this.correctResponsesAmount = data.correctResponsesAmount;
                     this.time = data.time;
-                    console.log(response.data);
+                    console.log(data);
                 }, (error) => {
                     //
                 });
