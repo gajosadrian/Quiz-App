@@ -33,7 +33,7 @@ class AdminController extends Controller
     public function responses()
     {
         return view('responses', [
-            'uczestnicy' => Uczestnik::get(),
+            'uczestnicy' => Uczestnik::orderBy('odpowiedzi', 'desc')->orderBy('czas')->get(),
         ]);
     }
 

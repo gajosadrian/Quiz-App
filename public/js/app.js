@@ -48392,7 +48392,9 @@ var render = function() {
                       { attrs: { theme: "obramowka", noround: "", full: "" } },
                       [
                         _c("template", { slot: "content" }, [
-                          _c("h4", [_vm._v(_vm._s(question.text))]),
+                          _c("h4", {
+                            domProps: { innerHTML: _vm._s(question.text) }
+                          }),
                           _vm._v(" "),
                           question.image
                             ? _c("div", { staticClass: "text-center push" }, [

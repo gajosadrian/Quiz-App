@@ -24,18 +24,18 @@ class QuizController extends Controller
 
     public function finish(Request $request)
     {
-        $responses = array_filter($request->input('responses'), 'strlen');
-        $timeLeft = $request->input('timeLeft');
-        $uczestnik = Uczestnik();
-        $uczestnik->czas = 3000 - $timeLeft;
-        $uczestnik->data_zakonczenia_testu = Carbon::now();
-        $uczestnik->odpowiedzi = $responses;
-        $uczestnik->save();
-        return response()->json([
-            'correctResponsesAmount' => sizeof(getCorrectQuestionIds($responses)),
-            'time' => $uczestnik->czas,
-        ]);
-        // return response()->json('success', 200);
+        // $responses = array_filter($request->input('responses'), 'strlen');
+        // $timeLeft = $request->input('timeLeft');
+        // $uczestnik = Uczestnik();
+        // $uczestnik->czas = 3000 - $timeLeft;
+        // $uczestnik->data_zakonczenia_testu = Carbon::now();
+        // $uczestnik->odpowiedzi = $responses;
+        // $uczestnik->save();
+        // return response()->json([
+        //     'correctResponsesAmount' => sizeof(getCorrectQuestionIds($responses)),
+        //     'time' => $uczestnik->czas,
+        // ]);
+        return response()->json('success', 200);
     }
 
     public function getQuestions()
@@ -46,6 +46,10 @@ class QuizController extends Controller
         foreach ($pytania as $index => $v) {
             $drawnQuestionIds = randomGen(1, sizeof($v['questions']), $v['amount']);
             foreach ($drawnQuestionIds as $questionId) {
+                // if (!isset($v['questions'][$questionId])) {
+                //     echo '>>'.$index.'-'.$questionId.'<<';
+                //     break;
+                // }
                 $question = $v['questions'][$questionId];
                 $responses = [];
                 foreach ($question['responses'] as $responseIndex => $response) {
@@ -55,6 +59,7 @@ class QuizController extends Controller
                     ];
                 }
                 shuffle($responses);
+                // if (getRawQuestionId($index, $questionId) == 1102)
                 $questions[] = [
                     'id' => getRawQuestionId($index, $questionId),
                     'text' => $question['text'],

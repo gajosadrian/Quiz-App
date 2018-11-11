@@ -3,7 +3,7 @@
 function Uczestnik() {
     $id = session('uczestnik', false);
     if (!$id) return false;
-    return App\Uczestnik::where('nazwa', $id)->first();
+    return App\Uczestnik::find($id);
 }
 
 function UczestnikLogout() {
@@ -18,7 +18,7 @@ function randomGen($min, $max, $quantity) {
 
 function getPytania()
 {
-    return include public_path('quiz-app/pytania1.php');
+    return include public_path('quiz-app/pytania2.php');
 }
 function getGroupIndex($questionRawId)
 {

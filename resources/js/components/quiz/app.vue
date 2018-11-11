@@ -18,7 +18,7 @@
         <div v-for="(question, index) in questions" :key="index">
             <b-block v-if="index === questionIndex && !finished" theme="obramowka" noround full>
                 <template slot="content">
-                    <h4>{{ question.text }}</h4>
+                    <h4 v-html="question.text"></h4>
                     <div v-if="question.image" class="text-center push">
                         <img :src="question.image" class="img-fluid" style="max-width:100%;max-height:400px" :alt="question.id">
                     </div>

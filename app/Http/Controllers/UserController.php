@@ -26,7 +26,7 @@ class UserController extends Controller
                 $uczestnik->data_ostatniego_logowania = Carbon::now();
                 $uczestnik->user_agent = $request->header('User-Agent');
                 $uczestnik->save();
-                session([ 'uczestnik' => $login ]);
+                session([ 'uczestnik' => $uczestnik->id ]);
                 return redirect()->route('test_kontrolny');
             } else {
                 return redirect()->back()->withErrors([ 'Logowanie o tej godzinie jest niemożliwe!' ]);
