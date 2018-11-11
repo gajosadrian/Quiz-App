@@ -26,7 +26,7 @@ class QuizController extends Controller
     {
         $responses = array_filter($request->input('responses'), 'strlen');
         $timeLeft = $request->input('timeLeft');
-        $uczestnik = Uczestnik();
+        // $uczestnik = Uczestnik();
         // $uczestnik->czas = 3000 - $timeLeft;
         // $uczestnik->data_zakonczenia_testu = Carbon::now();
         // $uczestnik->odpowiedzi = $responses;
