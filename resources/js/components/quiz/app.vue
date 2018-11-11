@@ -60,7 +60,7 @@
                 <template slot="content">
                     Brakuje odpowiedzi w {{ getNoResponsesAmount() }} {{ getNoResponsesAmount() == 1 && 'pytaniu' || 'pytaniach' }}:
                     <ul>
-                        <li v-for="(question_index, index) in noResponseIndexes" :key="index"><span class="font-w600 text-primary">#{{ question_index + 1 }}:</span> {{ questions[question_index].text }}</li>
+                        <li v-for="(question_index, index) in noResponseIndexes" :key="index"><span class="font-w600 text-primary">#{{ question_index + 1 }}:</span> <span v-html="questions[question_index].text"></span></li>
                     </ul>
                     <div class="clearfix">
                         <div class="float-left">
@@ -118,10 +118,17 @@ export default {
         },
         finish() {
             this.finished = true;
-            this.userResponses = this.userResponses.filter((v) => { return v != null });
-            console.log(this.userResponses);
+            let responses = [];
+            this.userResponses.forEach(function(response, response_id) {
+                if (response != null) {
+                    responses.push({
+                        id: String(response_id),
+                        response: response,
+                    });
+                }
+            });
             axios.post(route('quiz.finish'), {
-                    responses: this.userResponses,
+                    responses: responses,
                     timeLeft: this.timer,
                 })
                 .then((response) => {
@@ -129,7 +136,6 @@ export default {
                     this.result = true;
                     this.correctResponsesAmount = data.correctResponsesAmount;
                     this.time = data.time;
-                    console.log(data);
                 }, (error) => {
                     //
                 });
