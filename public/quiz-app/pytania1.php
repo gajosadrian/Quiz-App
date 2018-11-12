@@ -629,7 +629,7 @@ return [
             ],
             17 => [
             	'text' => 'Jaką bitwę przedstawia fragment obrazu?',
-            	'image' => url('public/quiz-app/obrazy/d180d108.jpg'),
+            	'image' => url('quiz-app/obrazy/d180d108.jpg'),
             	'responses' => [
             		['bitwę pod Grunwaldem'],
             		['bitwę pod Kłuszynem'],
@@ -639,7 +639,7 @@ return [
             ],
             18 => [
             	'text' => 'Kogo przedstawia obraz?',
-            	'image' => url('public/quiz-app/obrazy/dm219dj190.jpg'),
+            	'image' => url('quiz-app/obrazy/dm219dj190.jpg'),
             	'responses' => [
             		['pierwszego króla elekcyjnego Henryka Walezego'],
             		['cesarza austriackiego Franciszka Józefa'],
@@ -649,7 +649,7 @@ return [
             ],
             19 => [
             	'text' => 'Kogo przedstawia ilustracja?',
-            	'image' => url('public/quiz-app/obrazy/jfj2190kf.jpg'),
+            	'image' => url('quiz-app/obrazy/jfj2190kf.jpg'),
             	'responses' => [
             		['średniowiecznego rycerza'],
             		['husarza', true],
@@ -1273,7 +1273,7 @@ return [
             ],
             4 => [
             	'text' => 'Na przykładzie obrazu przedstawiającego bitwę pod Ostrołęka z 1831 r. oraz wiedzy własnej odpowiedz czy w powstaniu listopadowym polskie oddziały walczyły jako regularne wojsko?',
-            	'image' => url('public/quiz-app/obrazy/dk19209.jpg'),
+            	'image' => url('quiz-app/obrazy/dk19209.jpg'),
             	'responses' => [
             		['Tak', true],
             		['Nie'],
@@ -1347,7 +1347,7 @@ return [
         'questions' => [
             1 => [
             	'text' => ' Jaki wkład w odzyskanie niepodległości przez Polskę miał człowiek przedstawiony na zdjęciu?',
-            	'image' => url('public/quiz-app/obrazy/d1k120f2.jpg'),
+            	'image' => url('quiz-app/obrazy/d1k120f2.jpg'),
             	'responses' => [
             		['dokonał zamachu na cara Mikołaja II i arcyksięcia Franciszka Ferdynanda'],
             		['był twórcą legionów walczących u boku państw centralnych'],
@@ -1357,7 +1357,7 @@ return [
             ],
             2 => [
             	'text' => ' Kogo przedstawia to zdjęcie?',
-            	'image' => url('public/quiz-app/obrazy/jd9210d2190.jpg'),
+            	'image' => url('quiz-app/obrazy/jd9210d2190.jpg'),
             	'responses' => [
             		['Ignacego Jana Paderewskiego', true],
             		['Wincentego Witosa'],
@@ -1975,7 +1975,7 @@ return [
             ],
             13 => [
             	'text' => 'Kto jest autorem obrazu?',
-            	'image' => url('public/quiz-app/obrazy/jf812f1s.jpg'),
+            	'image' => url('quiz-app/obrazy/jf812f1s.jpg'),
             	'responses' => [
             		['Józef Mehoffer'],
             		['Tamara Łempicka', true],
@@ -1985,7 +1985,7 @@ return [
             ],
             14 => [
             	'text' => 'W którym mieście wzniesiono budynek z poniższej ilustracji?',
-            	'image' => url('public/quiz-app/obrazy/d1d2j1902.jpg'),
+            	'image' => url('quiz-app/obrazy/d1d2j1902.jpg'),
             	'responses' => [
             		['w Gdyni', true],
             		['w Kielcach'],
@@ -2010,7 +2010,7 @@ return [
         'questions' => [
             1 => [
             	'text' => 'Który z artystów jest twórcą obrazu?',
-            	'image' => url('public/quiz-app/obrazy/d21dk21921.jpg'),
+            	'image' => url('quiz-app/obrazy/d21dk21921.jpg'),
             	'responses' => [
             		['Wojciech Kossak'],
             		['Tamara Łempicka'],
@@ -2020,7 +2020,7 @@ return [
             ],
             2 => [
             	'text' => 'Na obrazie przedstawiono Błękitną Armię. Kto jest autorem obrazu?',
-            	'image' => url('public/quiz-app/obrazy/d219dk190d12.jpg'),
+            	'image' => url('quiz-app/obrazy/d219dk190d12.jpg'),
             	'responses' => [
             		['Wojciech Kossak', true],
             		['Stanisław Batowski'],
@@ -2030,7 +2030,7 @@ return [
             ],
             3 => [
             	'text' => 'Który pseudonim odnosi się do postaci przedstawionej na portrecie autorstwa Rafała Malczewskiego?',
-            	'image' => url('public/quiz-app/obrazy/d21j19021f2.jpg'),
+            	'image' => url('quiz-app/obrazy/d21j19021f2.jpg'),
             	'responses' => [
             		['Witkacy', true],
             		['Harryman'],
@@ -2040,7 +2040,7 @@ return [
             ],
             4 => [
             	'text' => 'Który z literatów został przedstawiony na portrecie?',
-            	'image' => url('public/quiz-app/obrazy/jif1211f2.jpg'),
+            	'image' => url('quiz-app/obrazy/jif1211f2.jpg'),
             	'responses' => [
             		['Bolesław Prus'],
             		['Antoni Słonimski'],

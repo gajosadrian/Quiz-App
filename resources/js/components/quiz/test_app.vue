@@ -5,9 +5,8 @@
             <template slot="content">
                 <div class="clearfix">
                     <div class="float-left">
-                        Pytanie: <span class="font-w600">
-                            <span v-if="finished || questionIndex + 1 > questions.length">-</span>
-                            <span v-else>{{ questionIndex + 1 }}/{{ questions.length }}</span>
+                        <span v-if="finished || questionIndex + 1 > questions.length">Koniec</span>
+                        <span v-else>Pytanie: <span class="font-w600">{{ questionIndex + 1 }}/{{ questions.length }}</span>
                         </span>
                     </div>
                     <div class="float-right">

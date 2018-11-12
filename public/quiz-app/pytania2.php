@@ -127,7 +127,7 @@ return [
             ],
             13 => [
             	'text' => 'Z którego wieku pochodzi zbroja przedstawiona na ilustracji?',
-            	'image' => url('public/quiz-app/obrazy/v4n7289418.jpg'),
+            	'image' => url('quiz-app/obrazy/v4n7289418.jpg'),
             	'responses' => [
             		['XI'],
             		['XII'],
@@ -317,7 +317,7 @@ return [
             ],
             32 => [
             	'text' => 'Z którego wieku pochodził wojownik przedstawiony na ilustracji?',
-            	'image' => url('public/quiz-app/obrazy/fhj181j8fddw.jpg'),
+            	'image' => url('quiz-app/obrazy/fhj181j8fddw.jpg'),
             	'responses' => [
             		['XI', true],
             		['XIV'],
@@ -558,7 +558,7 @@ return [
             ],
             5 => [
             	'text' => 'Do kogo należy element z poniższej ilustracji?',
-            	'image' => url('public/quiz-app/obrazy/d12fj91ju9021f1.jpg'),
+            	'image' => url('quiz-app/obrazy/d12fj91ju9021f1.jpg'),
             	'responses' => [
             		['woja'],
             		['husarza', true],
@@ -794,7 +794,7 @@ return [
             ],
             29 => [
             	'text' => 'Kogo przedstawia obraz?',
-            	'image' => url('public/quiz-app/obrazy/dm219dj190.jpg'),
+            	'image' => url('quiz-app/obrazy/dm219dj190.jpg'),
             	'responses' => [
             		['pierwszego króla elekcyjnego Henryka Walezego'],
             		['cesarza austriackiego Franciszka Józefa'],
@@ -804,7 +804,7 @@ return [
             ],
             30 => [
             	'text' => 'Kogo przedstawia ilustracja?',
-            	'image' => url('public/quiz-app/obrazy/jfj2190kf.jpg'),
+            	'image' => url('quiz-app/obrazy/jfj2190kf.jpg'),
             	'responses' => [
             		['średniowiecznego rycerza'],
             		['husarza', true],
@@ -1014,7 +1014,7 @@ return [
             ],
             51 => [
             	'text' => 'Z którego wieku pochodzi poniższa zbroja?',
-            	'image' => url('public/quiz-app/obrazy/vg3v2vg21b1.jpg'),
+            	'image' => url('quiz-app/obrazy/vg3v2vg21b1.jpg'),
             	'responses' => [
             		['XII'],
             		['XIII'],
@@ -1393,7 +1393,7 @@ return [
             ],
             16 => [
             	'text' => 'Na przykładzie obrazu przedstawiającego bitwę pod Ostrołęka z 1831 r. oraz wiedzy własnej odpowiedz czy w powstaniu listopadowym polskie oddziały walczyły jako regularne wojsko?',
-            	'image' => url('public/quiz-app/obrazy/dk19209.jpg'),
+            	'image' => url('quiz-app/obrazy/dk19209.jpg'),
             	'responses' => [
             		['Tak', true],
             		['Nie'],
@@ -1401,7 +1401,7 @@ return [
             ],
             17 => [
             	'text' => 'Herb jakiego państwa przedstawia zdjęcie?',
-            	'image' => url('public/quiz-app/obrazy/bb1j32b1j9021.jpg'),
+            	'image' => url('quiz-app/obrazy/bb1j32b1j9021.jpg'),
             	'responses' => [
             		['Rzeczypospolitej Obojga Narodów'],
             		['Księstwa Warszawskiego'],
@@ -1871,7 +1871,7 @@ return [
             ],
             13 => [
             	'text' => ' Jaki wkład w odzyskanie niepodległości przez Polskę miał człowiek przedstawiony na zdjęciu?',
-            	'image' => url('public/quiz-app/obrazy/d1k120f2.jpg'),
+            	'image' => url('quiz-app/obrazy/d1k120f2.jpg'),
             	'responses' => [
             		['dokonał zamachu na cara Mikołaja II i arcyksięcia Franciszka Ferdynanda'],
             		['był twórcą legionów walczących u boku państw centralnych'],
@@ -1881,7 +1881,7 @@ return [
             ],
             14 => [
             	'text' => 'Kogo przedstawia to zdjęcie?',
-            	'image' => url('public/quiz-app/obrazy/jd9210d2190.jpg'),
+            	'image' => url('quiz-app/obrazy/jd9210d2190.jpg'),
             	'responses' => [
             		['Ignacego Jana Paderewskiego', true],
             		['Wincentego Witosa'],
@@ -2322,7 +2322,7 @@ return [
         'questions' => [
             1 => [
             	'text' => 'Który z artystów jest twórcą obrazu?',
-            	'image' => url('public/quiz-app/obrazy/d21dk21921.jpg'),
+            	'image' => url('quiz-app/obrazy/d21dk21921.jpg'),
             	'responses' => [
             		['Wojciech Kossak'],
             		['Tamara Łempicka'],
@@ -2397,7 +2397,7 @@ return [
             ],
             8 => [
             	'text' => 'Który pseudonim odnosi się do postaci przedstawionej na portrecie autorstwa Rafała Malczewskiego?',
-            	'image' => url('public/quiz-app/obrazy/d21j19021f2.jpg'),
+            	'image' => url('quiz-app/obrazy/d21j19021f2.jpg'),
             	'responses' => [
             		['Witkacy', true],
             		['Harryman'],
@@ -2467,7 +2467,7 @@ return [
         'questions' => [
             1 => [
             	'text' => 'Kto jest twórcą pomnika przedstawionego na poniższej ilustracji?',
-            	'image' => url('public/quiz-app/obrazy/g1f2f1mi11.jpg'),
+            	'image' => url('quiz-app/obrazy/g1f2f1mi11.jpg'),
             	'responses' => [
             		['Jan Raszka', true],
             		['Stanisław Ostrowski'],

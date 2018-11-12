@@ -8,6 +8,7 @@
 
     <div class="row">
         <div class="col-12">
+            <p>Wyszukiwanie: <span class="text-primary font-w600">Ctrl + F</span></p>
             <table class="table table-striped table-vcenter">
                 <thead class="thead-light">
                     <tr>
@@ -21,12 +22,12 @@
                 </thead>
                 <tbody>
                     @foreach ($uczestnicy as $index => $uczestnik)
-                        <tr class="{{ sizeof($uczestnik->correctQuestionIds) == 0 ? 'table-danger text-danger font-w600' : '' }}">
+                        <tr class="{{ !$uczestnik->data_rozpoczecia_testu ? 'table-danger text-danger font-w600' : '' }}">
                             <td class="text-center">{{ $index + 1 }}</td>
                             <td>{{ $uczestnik->email }}</td>
                             <td>{{ $uczestnik->nazwa }}</td>
                             <td>{{ sizeof($uczestnik->correctQuestionIds) }}</td>
-                            <td>{{ $uczestnik->czas }} s</td>
+                            <td>{{ gmdate('i', $uczestnik->czas) }} min {{ gmdate('s', $uczestnik->czas) }} s</td>
                             <td class="text-center">
                                 <div class="btn-group">
                                     <a href="#!" class="btn btn-sm btn-secondary js-tooltip" data-toggle="tooltip" title="Zobacz">

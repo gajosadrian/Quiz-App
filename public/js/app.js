@@ -48835,7 +48835,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -48846,7 +48846,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
 //
 //
 //
@@ -49055,19 +49054,18 @@ var render = function() {
               _c("template", { slot: "content" }, [
                 _c("div", { staticClass: "clearfix" }, [
                   _c("div", { staticClass: "float-left" }, [
-                    _vm._v("\n                    Pytanie: "),
-                    _c("span", { staticClass: "font-w600" }, [
-                      _vm.finished ||
-                      _vm.questionIndex + 1 > _vm.questions.length
-                        ? _c("span", [_vm._v("-")])
-                        : _c("span", [
+                    _vm.finished || _vm.questionIndex + 1 > _vm.questions.length
+                      ? _c("span", [_vm._v("Koniec")])
+                      : _c("span", [
+                          _vm._v("Pytanie: "),
+                          _c("span", { staticClass: "font-w600" }, [
                             _vm._v(
                               _vm._s(_vm.questionIndex + 1) +
                                 "/" +
                                 _vm._s(_vm.questions.length)
                             )
                           ])
-                    ])
+                        ])
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "float-right" }, [
