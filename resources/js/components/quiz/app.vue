@@ -5,9 +5,8 @@
             <template slot="content">
                 <div class="clearfix">
                     <div class="float-left">
-                        Pytanie: <span class="font-w600">
-                            <span v-if="finished || questionIndex + 1 > questions.length">-</span>
-                            <span v-else>{{ questionIndex + 1 }}/{{ questions.length }}</span>
+                        <span v-if="finished || questionIndex + 1 > questions.length">Koniec</span>
+                        <span v-else>Pytanie: <span class="font-w600">{{ questionIndex + 1 }}/{{ questions.length }}</span>
                         </span>
                     </div>
                     <div class="float-right">
@@ -47,11 +46,13 @@
             <b-block theme="obramowka" noround full>
                 <template slot="content">
                     <div v-if="result">
+                        <p>Gratulujemy ukończenia testu!</p>
                         <ul>
                             <li>Poprawne odpowiedzi: <span class="font-w600 text-primary">{{ correctResponsesAmount }}/{{ questions.length }}</span></li>
                             <li>Czas rozwiązywania: <span class="font-w600 text-primary">{{ getTime(time) }}</span></li>
                         </ul>
-                        <a :href="route('user.logout')" class="btn btn-primary btn-noborder">Wyloguj</a>
+                        <p>Dziękujemy za udział w konkursie. Ostatecznie wyniki 16 listopada 2018 r.</p>
+                        <a :href="route('user.logout')" class="btn btn-primary btn-noborder">Koniec</a>
                     </div>
                     <div v-else>
                         <h4><i class="fa fa-spinner fa-pulse"></i> Proszę czekać...</h4>

@@ -45,12 +45,12 @@
         <div v-if="questionIndex + 1 > questions.length">
             <b-block theme="obramowka" noround full>
                 <template slot="content">
-                    <p>Dałeś radę, teraz zaczyna się prawdziwy test. Pod koniec rozwiązanego quizu pokaże się wynik.</p>
+                    <p>Dałeś radę, teraz zaczyna się prawdziwy test. Po zakończeniu quizu zobaczysz liczbę uzyskanych punktów i czas.</p>
                     <p class="text-primary font-w600 mb-0">Przypomnijmy założenia:</p>
                     <ul>
-                        <li>Quiz składa się z 45 pytań i trwa 50 min</li>
-                        <li>Nie można zmieniać odpowiedzi</li>
-                        <li>Można wrócić do pytań bez odpowiedzi</li>
+                        <li>Quiz składa się z 45 pytań i trwa maksymalnie 50 minut</li>
+                        <li>Zastanów się przed zaznaczeniem odpowiedzi</li>
+                        <li>Nie można zmienić odpowiedzi po naciśnięciu „Dalej”</li>
                     </ul>
                     <button type="button" class="btn btn-secondary mr-5" @click="prev">Cofnij</button>
                     <a :href="route('test')" class="btn btn-primary btn-noborder">Przejdź do quizu właściwego</a>
@@ -84,7 +84,7 @@ export default {
             this.started = true;
         },
         finish() {
-            this.finished = true;
+            // this.finished = true;
         },
         tryFinish() {
             if (this.questionIndex >= this.questions.length) {
@@ -92,30 +92,50 @@ export default {
             }
         },
         getQuestions() {
-            let responses = [
-                { id: 1, text: 'Przykładowa odpowiedź #1' },
-                { id: 2, text: 'Przykładowa odpowiedź #2' },
-                { id: 3, text: 'Przykładowa odpowiedź #3' },
-                { id: 4, text: 'Przykładowa odpowiedź #4' },
-            ];
             this.questions = [
                 {
                     id: 1,
-                    text: 'Przykładowe pytanie #1',
+                    text: 'Z ilu pytań składa się test?',
                     image: null,
-                    responses: responses,
+                    responses: [
+                        { id: 1, text: '50' },
+                        { id: 2, text: '» 45' },
+                        { id: 3, text: '10' },
+                        { id: 4, text: '100' },
+                    ],
                 },
                 {
                     id: 2,
-                    text: 'Przykładowe pytanie #2',
+                    text: 'Ile punktów uzyskujemy za poprawną odpowiedź?',
                     image: null,
-                    responses: responses,
+                    responses: [
+                        { id: 1, text: '2' },
+                        { id: 2, text: '5' },
+                        { id: 3, text: '» 1' },
+                        { id: 4, text: '0' },
+                    ],
                 },
                 {
                     id: 3,
-                    text: 'Przykładowe pytanie #3',
+                    text: 'Ile wynosi limit czasu w quizie?',
                     image: null,
-                    responses: responses,
+                    responses: [
+                        { id: 1, text: '» 50 minut' },
+                        { id: 2, text: '60 minut' },
+                        { id: 3, text: '30 minut' },
+                        { id: 4, text: '45 minut' },
+                    ],
+                },
+                {
+                    id: 4,
+                    text: 'O zajętym miejscu decyduje w pierwszej kolejności?',
+                    image: null,
+                    responses: [
+                        { id: 1, text: '» Liczba uzyskanych punktów' },
+                        { id: 2, text: 'Czas' },
+                        { id: 3, text: 'Moment logowania' },
+                        { id: 4, text: 'Losowanie' },
+                    ],
                 },
             ];
             this.fillResponses();

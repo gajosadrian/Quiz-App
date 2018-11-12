@@ -11,7 +11,9 @@
                         <li>Możliwość powrotu do niezaakceptowanych odpowiedzi</li>
                         <li>Za każdą poprawną odpowiedź otrzymuje się 1 punkt, za błędną 0</li>
                         <li>Przycisk „Dalej” zatwierdza odpowiedź</li>
+                        <li>Możliwość powrotu do niezatwierdzonych odpowiedzi</li>
                     </ul>
+                    <p>Zwróć uwagę na różnicę między pytaniem z zaznaczoną odpowiedzią, a pytaniem bez odpowiedzi!</p>
                 </template>
             </b-block>
         </div>

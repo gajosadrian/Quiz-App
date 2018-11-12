@@ -48064,7 +48064,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -48075,6 +48075,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
 //
 //
 //
@@ -48376,19 +48377,18 @@ var render = function() {
               _c("template", { slot: "content" }, [
                 _c("div", { staticClass: "clearfix" }, [
                   _c("div", { staticClass: "float-left" }, [
-                    _vm._v("\n                    Pytanie: "),
-                    _c("span", { staticClass: "font-w600" }, [
-                      _vm.finished ||
-                      _vm.questionIndex + 1 > _vm.questions.length
-                        ? _c("span", [_vm._v("-")])
-                        : _c("span", [
+                    _vm.finished || _vm.questionIndex + 1 > _vm.questions.length
+                      ? _c("span", [_vm._v("Koniec")])
+                      : _c("span", [
+                          _vm._v("Pytanie: "),
+                          _c("span", { staticClass: "font-w600" }, [
                             _vm._v(
                               _vm._s(_vm.questionIndex + 1) +
                                 "/" +
                                 _vm._s(_vm.questions.length)
                             )
                           ])
-                    ])
+                        ])
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "float-right" }, [
@@ -48552,6 +48552,10 @@ var render = function() {
                       _c("template", { slot: "content" }, [
                         _vm.result
                           ? _c("div", [
+                              _c("p", [
+                                _vm._v("Gratulujemy ukończenia testu!")
+                              ]),
+                              _vm._v(" "),
                               _c("ul", [
                                 _c("li", [
                                   _vm._v("Poprawne odpowiedzi: "),
@@ -48578,13 +48582,19 @@ var render = function() {
                                 ])
                               ]),
                               _vm._v(" "),
+                              _c("p", [
+                                _vm._v(
+                                  "Dziękujemy za udział w konkursie. Ostatecznie wyniki 16 listopada 2018 r."
+                                )
+                              ]),
+                              _vm._v(" "),
                               _c(
                                 "a",
                                 {
                                   staticClass: "btn btn-primary btn-noborder",
                                   attrs: { href: _vm.route("user.logout") }
                                 },
-                                [_vm._v("Wyloguj")]
+                                [_vm._v("Koniec")]
                               )
                             ])
                           : _c("div", [
@@ -48825,7 +48835,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -48925,7 +48935,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.started = true;
         },
         finish: function finish() {
-            this.finished = true;
+            // this.finished = true;
         },
         tryFinish: function tryFinish() {
             if (this.questionIndex >= this.questions.length) {
@@ -48933,22 +48943,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
         },
         getQuestions: function getQuestions() {
-            var responses = [{ id: 1, text: 'Przykładowa odpowiedź #1' }, { id: 2, text: 'Przykładowa odpowiedź #2' }, { id: 3, text: 'Przykładowa odpowiedź #3' }, { id: 4, text: 'Przykładowa odpowiedź #4' }];
             this.questions = [{
                 id: 1,
-                text: 'Przykładowe pytanie #1',
+                text: 'Z ilu pytań składa się test?',
                 image: null,
-                responses: responses
+                responses: [{ id: 1, text: '50' }, { id: 2, text: '» 45' }, { id: 3, text: '10' }, { id: 4, text: '100' }]
             }, {
                 id: 2,
-                text: 'Przykładowe pytanie #2',
+                text: 'Ile punktów uzyskujemy za poprawną odpowiedź?',
                 image: null,
-                responses: responses
+                responses: [{ id: 1, text: '2' }, { id: 2, text: '5' }, { id: 3, text: '» 1' }, { id: 4, text: '0' }]
             }, {
                 id: 3,
-                text: 'Przykładowe pytanie #3',
+                text: 'Ile wynosi limit czasu w quizie?',
                 image: null,
-                responses: responses
+                responses: [{ id: 1, text: '» 50 minut' }, { id: 2, text: '60 minut' }, { id: 3, text: '30 minut' }, { id: 4, text: '45 minut' }]
+            }, {
+                id: 4,
+                text: 'O zajętym miejscu decyduje w pierwszej kolejności?',
+                image: null,
+                responses: [{ id: 1, text: '» Liczba uzyskanych punktów' }, { id: 2, text: 'Czas' }, { id: 3, text: 'Moment logowania' }, { id: 4, text: 'Losowanie' }]
             }];
             this.fillResponses();
         },
@@ -49198,7 +49212,7 @@ var render = function() {
                       _c("template", { slot: "content" }, [
                         _c("p", [
                           _vm._v(
-                            "Dałeś radę, teraz zaczyna się prawdziwy test. Pod koniec rozwiązanego quizu pokaże się wynik."
+                            "Dałeś radę, teraz zaczyna się prawdziwy test. Po zakończeniu quizu zobaczysz liczbę uzyskanych punktów i czas."
                           )
                         ]),
                         _vm._v(" "),
@@ -49210,13 +49224,19 @@ var render = function() {
                         _vm._v(" "),
                         _c("ul", [
                           _c("li", [
-                            _vm._v("Quiz składa się z 45 pytań i trwa 50 min")
+                            _vm._v(
+                              "Quiz składa się z 45 pytań i trwa maksymalnie 50 minut"
+                            )
                           ]),
                           _vm._v(" "),
-                          _c("li", [_vm._v("Nie można zmieniać odpowiedzi")]),
+                          _c("li", [
+                            _vm._v("Zastanów się przed zaznaczeniem odpowiedzi")
+                          ]),
                           _vm._v(" "),
                           _c("li", [
-                            _vm._v("Można wrócić do pytań bez odpowiedzi")
+                            _vm._v(
+                              "Nie można zmienić odpowiedzi po naciśnięciu „Dalej”"
+                            )
                           ])
                         ]),
                         _vm._v(" "),

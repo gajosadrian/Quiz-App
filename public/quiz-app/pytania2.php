@@ -1,9 +1,9 @@
 <?php
 
 return [
-    // 1.1 średniowiecze (4)
+    // 1.1 średniowiecze (7)
     [ // latwe 1.1
-        'amount' => 3,
+        'amount' => 5,
         'questions' => [
             1 => [
             	'text' => 'Kto był ojcem Mieszka I według Anonima zwanego Gallem?',
@@ -127,7 +127,7 @@ return [
             ],
             13 => [
             	'text' => 'Z którego wieku pochodzi zbroja przedstawiona na ilustracji?',
-            	'image' => url('quiz-app/obrazy/v4n7289418.jpg'),
+            	'image' => url('public/quiz-app/obrazy/v4n7289418.jpg'),
             	'responses' => [
             		['XI'],
             		['XII'],
@@ -317,7 +317,7 @@ return [
             ],
             32 => [
             	'text' => 'Z którego wieku pochodził wojownik przedstawiony na ilustracji?',
-            	'image' => url('quiz-app/obrazy/fhj181j8fddw.jpg'),
+            	'image' => url('public/quiz-app/obrazy/fhj181j8fddw.jpg'),
             	'responses' => [
             		['XI', true],
             		['XIV'],
@@ -398,7 +398,7 @@ return [
         ],
     ],
     [ // trudne 1.1
-        'amount' => 1,
+        'amount' => 2,
         'questions' => [
             1 => [
             	'text' => 'Kto dowodził oddziałem tatarskim, który zaatakował ziemie polskie w 1241 r.?',
@@ -512,9 +512,9 @@ return [
             ],
         ],
     ],
-    // 1.2 nowożytność (6)
+    // 1.2 nowożytność (8)
     [ // latwe 1.2
-        'amount' => 5,
+        'amount' => 6,
         'questions' => [
             1 => [
             	'text' => 'W 2. poł. XV i na początku XVI w. królowie Czech i Węgier pochodzili z dynastii:',
@@ -558,7 +558,7 @@ return [
             ],
             5 => [
             	'text' => 'Do kogo należy element z poniższej ilustracji?',
-            	'image' => url('quiz-app/obrazy/d12fj91ju9021f1.jpg'),
+            	'image' => url('public/quiz-app/obrazy/d12fj91ju9021f1.jpg'),
             	'responses' => [
             		['woja'],
             		['husarza', true],
@@ -735,7 +735,7 @@ return [
             	],
             ],
             23 => [
-            	'text' => 'W myśl Konstytucji 3 Maja Polska stała się:',
+            	'text' => 'W myśl Konstytucji 3 maja Polska stała się:',
             	'image' => null,
             	'responses' => [
             		['republiką'],
@@ -794,7 +794,7 @@ return [
             ],
             29 => [
             	'text' => 'Kogo przedstawia obraz?',
-            	'image' => url('quiz-app/obrazy/dm219dj190.jpg'),
+            	'image' => url('public/quiz-app/obrazy/dm219dj190.jpg'),
             	'responses' => [
             		['pierwszego króla elekcyjnego Henryka Walezego'],
             		['cesarza austriackiego Franciszka Józefa'],
@@ -804,7 +804,7 @@ return [
             ],
             30 => [
             	'text' => 'Kogo przedstawia ilustracja?',
-            	'image' => url('quiz-app/obrazy/jfj2190kf.jpg'),
+            	'image' => url('public/quiz-app/obrazy/jfj2190kf.jpg'),
             	'responses' => [
             		['średniowiecznego rycerza'],
             		['husarza', true],
@@ -856,7 +856,7 @@ return [
             	'text' => 'Konfederaci barscy podjęli próbę porwania króla:',
             	'image' => null,
             	'responses' => [
-            		['Stanisława Augusta Poniatowskiego'],
+            		['Stanisława Augusta Poniatowskiego', true],
             		['Augusta III Sasa'],
             		['Stanisława Leszczyńskiego'],
             		['Augusta II Mocnego'],
@@ -1014,7 +1014,7 @@ return [
             ],
             51 => [
             	'text' => 'Z którego wieku pochodzi poniższa zbroja?',
-            	'image' => url('quiz-app/obrazy/vg3v2vg21b1.jpg'),
+            	'image' => url('public/quiz-app/obrazy/vg3v2vg21b1.jpg'),
             	'responses' => [
             		['XII'],
             		['XIII'],
@@ -1115,7 +1115,7 @@ return [
         ],
     ],
     [ // trudne 1.2
-        'amount' => 1,
+        'amount' => 2,
         'questions' => [
             1 => [
             	'text' => 'Które z polskich miast nie należało do Hanzy?',
@@ -1241,7 +1241,7 @@ return [
     ],
     // 2.1 XIX w (10)
     [ // latwe 2.1
-        'amount' => 9,
+        'amount' => 8,
         'questions' => [
             1 => [
             	'text' => 'W którym roku utworzono Księstwo Warszawskie?',
@@ -1393,7 +1393,7 @@ return [
             ],
             16 => [
             	'text' => 'Na przykładzie obrazu przedstawiającego bitwę pod Ostrołęka z 1831 r. oraz wiedzy własnej odpowiedz czy w powstaniu listopadowym polskie oddziały walczyły jako regularne wojsko?',
-            	'image' => url('quiz-app/obrazy/dk19209.jpg'),
+            	'image' => url('public/quiz-app/obrazy/dk19209.jpg'),
             	'responses' => [
             		['Tak', true],
             		['Nie'],
@@ -1401,7 +1401,7 @@ return [
             ],
             17 => [
             	'text' => 'Herb jakiego państwa przedstawia zdjęcie?',
-            	'image' => url('quiz-app/obrazy/bb1j32b1j9021.jpg'),
+            	'image' => url('public/quiz-app/obrazy/bb1j32b1j9021.jpg'),
             	'responses' => [
             		['Rzeczypospolitej Obojga Narodów'],
             		['Księstwa Warszawskiego'],
@@ -1444,9 +1444,9 @@ return [
             	'image' => null,
             	'responses' => [
             		['Dionizy Czachowski, Alekander Wielopolski, Marian Langiewicz, Piotr Wysocki'],
-            		['Jan Skrzynecki, Romuald Traugutt, Józef Hanke Bosak'],
+            		['Jan Skrzynecki, Romuald Traugutt, Józef Hauke-Bosak'],
             		['Aleksander Wielopolski, Dionizy Czachowski, Stefan Bobrowski, Zygmunt Sierakowski', true],
-            		['Józef Bem, Romuald Traugutt, Józef Chłopicki, 	Alekander Wielopolski'],
+            		['Józef Bem, Romuald Traugutt, Józef Chłopicki, Alekander Wielopolski'],
             	],
             ],
             22 => [
@@ -1610,8 +1610,8 @@ return [
             ],
         ],
     ],
-    [ // 2.1 trudne
-        'amount' => 1,
+    [ // trudne 2.1
+        'amount' => 2,
         'questions' => [
             1 => [
             	'text' => 'W jakim celu została zawarta konwencja Alvenslebena?',
@@ -1717,7 +1717,7 @@ return [
             	'text' => 'Który z włoskich duchownych był „szczerym przyjacielem sprawy polskiej” w czasie I wojny światowej?',
             	'image' => null,
             	'responses' => [
-            		['kardynał Pietro Gasparii'],
+            		['kardynał Pietro Gasparri'],
             		['papież Pius IX'],
             		['ksiądz Ambrogio Damiano Achille', true],
             		['papież Benedykt XIV'],
@@ -1747,7 +1747,7 @@ return [
     ],
     // 2.2 XX w (10)
     [ // latwe 2.2
-        'amount' => 9,
+        'amount' => 8,
         'questions' => [
             1 => [
             	'text' => 'Które kraje należały do państw centralnych w czasie I wojny światowej?',
@@ -1871,7 +1871,7 @@ return [
             ],
             13 => [
             	'text' => ' Jaki wkład w odzyskanie niepodległości przez Polskę miał człowiek przedstawiony na zdjęciu?',
-            	'image' => url('quiz-app/obrazy/d1k120f2.jpg'),
+            	'image' => url('public/quiz-app/obrazy/d1k120f2.jpg'),
             	'responses' => [
             		['dokonał zamachu na cara Mikołaja II i arcyksięcia Franciszka Ferdynanda'],
             		['był twórcą legionów walczących u boku państw centralnych'],
@@ -1881,7 +1881,7 @@ return [
             ],
             14 => [
             	'text' => 'Kogo przedstawia to zdjęcie?',
-            	'image' => url('quiz-app/obrazy/jd9210d2190.jpg'),
+            	'image' => url('public/quiz-app/obrazy/jd9210d2190.jpg'),
             	'responses' => [
             		['Ignacego Jana Paderewskiego', true],
             		['Wincentego Witosa'],
@@ -2002,7 +2002,7 @@ return [
         ],
     ],
     [ // trudne 2.2
-        'amount' => 1,
+        'amount' => 2,
         'questions' => [
             1 => [
             	'text' => 'Złożenia przysięgi podkreślającej braterstwo broni z wojskami Niemiec i Austro-Węgier odmówili legioniści:',
@@ -2116,9 +2116,9 @@ return [
             ],
         ],
     ],
-    // 3.1 literatura (9)
+    // 3.1 literatura (6)
     [ // latwe 3.1
-        'amount' => 8,
+        'amount' => 5,
         'questions' => [
             1 => [
             	'text' => 'Kto był autorem powieści pod tytułem „Kariera Nikodema Dyzmy”?',
@@ -2131,7 +2131,7 @@ return [
             	],
             ],
             2 => [
-            	'text' => 'Za którą powieść Władysław Stanisław Reymont otrzymał literacką Nagrodę Nobla?',
+            	'text' => 'Za którą powieść Władysław Stanisław Reymont otrzymał Nagrodę Nobla w dziedzinie literatury?',
             	'image' => null,
             	'responses' => [
             		['„Komediantka”'],
@@ -2171,7 +2171,7 @@ return [
             	],
             ],
             6 => [
-            	'text' => 'W 1924 r. nagrodę Literacką Nobla otrzymał:',
+            	'text' => 'W 1924 r. Nagrodę Nobla w dziedzinie literatury otrzymał:',
             	'image' => null,
             	'responses' => [
             		['Henryk Sienkiewicz'],
@@ -2181,12 +2181,12 @@ return [
             	],
             ],
             7 => [
-            	'text' => 'Po I wojnie światowej skamandryci byli kontynuatorami poezji:',
+            	'text' => 'Skamandryci w swojej twórczości nawiązywali do poezji:',
             	'image' => null,
             	'responses' => [
             		['Jana Kasprowicza'],
             		['Leopolda Staffa', true],
-            		['Bolesława Leśmiana'],
+            		['Tadeusza Micińskiego'],
             		['Stanisława Wyspiańskiego'],
             	],
             ],
@@ -2224,10 +2224,10 @@ return [
             	'text' => 'W którym roku powstała Polska Akademia Literatury?',
             	'image' => null,
             	'responses' => [
-            		['1919'],
-            		['1929', true],
-            		['1939'],
-            		['1949'],
+            		['1931'],
+            		['1933', true],
+            		['1923'],
+            		['1921'],
             	],
             ],
             12 => [
@@ -2249,13 +2249,13 @@ return [
             	],
             ],
             14 => [
-            	'text' => 'Który kierunek w literaturze reprezentował Bolesław Leśmian?',
+            	'text' => 'Kto jest autorem dramatu "Uciekła mi przepióreczka"?',
             	'image' => null,
             	'responses' => [
-            		['symbolizm', true],
-            		['atastrofizm'],
-            		['dekadentyzm'],
-            		['naturalizm'],
+            		['Stefan Żeromski', true],
+            		['Karol Hubert Rostworowski'],
+            		['Leopold Staff'],
+            		['Jerzy Szaniawski'],
             	],
             ],
         ],
@@ -2284,13 +2284,13 @@ return [
             	],
             ],
             3 => [
-            	'text' => 'W którym kraju urodził się Karol Szymanowski?',
+            	'text' => 'Kto jest autorem awangardowych dramatów "Osioł i słońce w metamorfozie", "Włamywacz z lepszego towarzystwa", "Wąż, Orfeusz i Euridika"?',
             	'image' => null,
             	'responses' => [
-            		['na Ukrainie', true],
-            		['w Polsce'],
-            		['we Francji'],
-            		['w Czechosłowacji'],
+            		['Karol Hubert Roztworowski'],
+            		['Stanisław Ignacy Witkiewicz'],
+            		['Tytus Czyżewski', true],
+            		['Witold Gombrowicz'],
             	],
             ],
             4 => [
@@ -2303,15 +2303,26 @@ return [
             		['Stanisław Wyspiański'],
             	],
             ],
-        ],
+
+              5 => [
+            	'text' => 'Jak nazywał się pierwszy polski komiks stworzony w  1919 r. przez Karola Mackiewicza i Stanisława Wasylewskiego?',
+            	'image' => null,
+            	'responses' => [
+            		['"Przygody bezrobotnego Froncka"'],
+            		['"Przygody Koziołka Matołka"'],
+            		['"Ogniem i mieczem, czyli przygody szalonego Grzesia"', true],
+            		['"Pan Hilary i jego przygody"'],
+            	],
+            ],
+         ],
     ],
-    // 3.2 muzyka i sztuka (6)
+    // 3.2 muzyka i sztuka (4)
     [ // latwe 3.2
-        'amount' => 5,
+        'amount' => 3,
         'questions' => [
             1 => [
             	'text' => 'Który z artystów jest twórcą obrazu?',
-            	'image' => url('quiz-app/obrazy/d21dk21921.jpg'),
+            	'image' => url('public/quiz-app/obrazy/d21dk21921.jpg'),
             	'responses' => [
             		['Wojciech Kossak'],
             		['Tamara Łempicka'],
@@ -2386,12 +2397,12 @@ return [
             ],
             8 => [
             	'text' => 'Który pseudonim odnosi się do postaci przedstawionej na portrecie autorstwa Rafała Malczewskiego?',
-            	'image' => url('quiz-app/obrazy/d21j19021f2.jpg'),
+            	'image' => url('public/quiz-app/obrazy/d21j19021f2.jpg'),
             	'responses' => [
             		['Witkacy', true],
-            		['Wiktor'],
-            		['Mieczysław'],
-            		['Schyzio'],
+            		['Harryman'],
+            		['Pro-rok'],
+            		['Schyzio Frenik'],
             	],
             ],
             9 => [
@@ -2405,12 +2416,15 @@ return [
             	],
             ],
             10 => [
-            	'text' => 'W jaki sposób zginął bohater, o którym śpiewał Przemysław Gintrowski?',
+            	'text' => 'Jak zginął bohater, o którym śpiewał Przemysław Gintrowski?
+            	 <div class="text-center"><i style="font-size:14px">Przez niego w  duszę sączy się trucizna<br>
+                    Śledztwo prowadźcie zgodnie ze zwyczajem<br>
+                   W mik się przyzna! Prędko się przyzna!</i></div>',
             	'image' => null,
             	'responses' => [
-            		['w czasie powstania listopadowego'],
+            		['w walkach powstańczych'],
             		['w trakcie tortur'],
-            		['w wyniku represji po powstaniu styczniowym'],
+            		['na zesłaniu'],
             		['popełnił samobójstwo', true],
             	],
             ],
@@ -2434,6 +2448,18 @@ return [
             		['Karol Szymanowski'],
             	],
             ],
+
+            13 => [
+            	'text' => 'Do czego nawiązuje podany wers z utworu pt. "Karol Levittoux"?<br>
+            	<i>Szarpie w strzępy ptaszysko dwugłowe (...)</i>',
+            	'image' => null,
+            	'responses' => [
+            		['do Herbu Księstwa Warszawskiego'],
+            		['do Herbu Imperium Rosyjskiego', true],
+            		['do Herbu Prus'],
+            		['do herbu Austro-Węgier'],
+            	],
+            ],
         ],
     ],
     [ // trudne 3.2
@@ -2441,7 +2467,7 @@ return [
         'questions' => [
             1 => [
             	'text' => 'Kto jest twórcą pomnika przedstawionego na poniższej ilustracji?',
-            	'image' => url('quiz-app/obrazy/g1f2f1mi11.jpg'),
+            	'image' => url('public/quiz-app/obrazy/g1f2f1mi11.jpg'),
             	'responses' => [
             		['Jan Raszka', true],
             		['Stanisław Ostrowski'],
@@ -2453,14 +2479,14 @@ return [
             	'text' => 'Którzy z wymienionych artystów należeli do tzw. „Formistów”?',
             	'image' => null,
             	'responses' => [
-            		['Stanisław Igancy Witkiewicz, Władysław Skoczylas i Leon Chwistek', true],
-            		['Jacek Malczewski, Ferdynand Ruszczyc i Wojciech Weiss'],
-            		['Tadeusz Pruszkowski, Władysław Strzemiński i Józef Pankiewicz'],
-            		['Wojciech Kossak, Stanisław Batowski i Leon i Wróblewski'],
+            		['Stanisław Igancy Witkiewicz i Leon Chwistek', true],
+            		['Jacek Malczewski i Wojciech Weiss'],
+            		['Tadeusz Pruszkowski i Józef Pankiewicz'],
+            		['Wojciech Kossak i Leon i Wróblewski'],
             	],
             ],
             3 => [
-            	'text' => 'W 1924 r. jedenaście osób wyjechało do Francji w celu pogłębiania wiedzy i zapoznania się z tamtejszą sztuką. Jak nazywali się twórcy, którzy zebrali pieniądze na ten cel?',
+            	'text' => 'W 1924 r. kilkunastu studentów ASP wyjechało do Francji w celu pogłębiania wiedzy i zapoznania się z tamtejszą sztuką. Jak nazywana jest ta grupa?',
             	'image' => null,
             	'responses' => [
             		['naturaliści'],
@@ -2470,13 +2496,13 @@ return [
             	],
             ],
             4 => [
-            	'text' => 'Który z wymienionych nurtów muzycznych reprezentowali Piotr Maszyński i Stanisław Niewiadomski?',
+            	'text' => 'Kto grał rolę Przełęckiego w spektaklu "Uciekła mi przepióreczka" w realizacji Teatru Narodowego z 1925 r.?',
             	'image' => null,
             	'responses' => [
-            		['postromantyzm', true],
-            		['neoklasycyzm'],
-            		['barok'],
-            		['ekspresjonizm'],
+            		['Arnold Szyfman'],
+            		['Stefan Jaracz'],
+            		['Juliusz Osterwa', true],
+            		['Leon Schiller'],
             	],
             ],
             5 => [
@@ -2499,6 +2525,17 @@ return [
             		['1936 r.'],
             	],
             ],
-        ],
+
+            7 => [
+            	'text' => 'Gdzie prawdopodobnie po raz pierwszy w Warszawie rozbrzmiewała ze sceny muzyka jazzowa?',
+            	'image' => null,
+            	'responses' => [
+            		['w Zielonym Baloniku'],
+            		['w teatrzyku Qui Pro Quo', true],
+            		['w teatrze Morskie Oko'],
+            		['w kabarecie Momus'],
+            	],
+            ],
+          ],
     ],
 ];

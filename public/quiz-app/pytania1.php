@@ -1,9 +1,9 @@
 <?php
 
 return [
-    // 1.1 średniowiecze (4)
+    // 1.1 średniowiecze (7)
     [ // latwe 1.1
-        'amount' => 3,
+        'amount' => 5,
         'questions' => [
             1 => [
                 'text' => 'Kto był ojcem Mieszka I według Anonima zwanego Gallem?',
@@ -86,7 +86,7 @@ return [
                 ],
             ],
             9 => [
-                'text' => 'W którym roku oraz gdzie biskup Wojciech zorganizował słynną wyprawę misyjną',
+                'text' => 'W którym roku oraz dokąd biskup Wojciech zorganizował słynną wyprawę misyjną',
                 'image' => null,
                 'responses' => [
                     ['992 r. na Ruś'],
@@ -116,7 +116,7 @@ return [
                 ],
             ],
             12 => [
-                'text' => 'Który król skazał biskupa krakowskiego Stanisława na śmierć przez obcięcie członków?',
+                'text' => 'Który król skazał biskupa krakowskiego Stanisława ze Szczepanowa na śmierć przez obcięcie członków?',
                 'image' => null,
                 'responses' => [
                     ['Bolesław Chrobry'],
@@ -126,7 +126,7 @@ return [
                 ],
             ],
             13 => [
-                'text' => 'Jaka była bezpośrednia przyczyna Wielkiej Wojny z Krzyżakami?',
+                'text' => 'Jaka była bezpośrednia przyczyna tzw. wielkiej wojny z Krzyżakami?',
                 'image' => null,
                 'responses' => [
                     ['zajęcie Pomorza Gdańskiego przez Krzyżaków'],
@@ -250,19 +250,19 @@ return [
                 'image' => null,
                 'responses' => [
                     ['Mieszko II'],
-                    ['Bolesław Szczodry', true],
-                    ['Bolesław Krzywousty'],
+                    ['Bolesław II Szczodry', true],
+                    ['Bolesław III Krzywousty'],
                     ['Przemysł II'],
                 ],
             ],
             26 => [
-                'text' => 'W czasie zjazdu gnieźnieńskiego cesarz wręczył Bolesławowi Chrobremu:',
+                'text' => 'W czasie tzw. zjazdu gnieźnieńskiego cesarz obdarował Bolesława Chrobrego:',
                 'image' => null,
                 'responses' => [
-                    ['berło i jabłko'],
-                    ['koronę królewską'],
-                    ['tron Karola Wielkiego'],
-                    ['włócznię św. Maurycego', true],
+                    ['berłem i jabłkiem'],
+                    ['złotymi ostrogami'],
+                    ['tronem Karola Wielkiego'],
+                    ['włócznią św. Maurycego', true],
                 ],
             ],
             27 => [
@@ -276,7 +276,7 @@ return [
                 ],
             ],
             28 => [
-                'text' => 'Z kim Bolesław Chrobry spotkał się podczas zjazdu gnieźnieńskiego?',
+                'text' => 'Z kim Bolesław Chrobry spotkał się podczas tzw. zjazdu gnieźnieńskiego?',
                 'image' => null,
                 'responses' => [
                     ['z Ottonem II'],
@@ -296,7 +296,7 @@ return [
                 ],
             ],
             30 => [
-                'text' => 'W jakim języku została napisana najstarsza z polskich kronik przez Anonima zwanego Gallem?',
+                'text' => 'W jakim języku napisał swoją kronikę Anonim zwany Gallem?',
                 'image' => null,
                 'responses' => [
                     ['polskim'],
@@ -316,6 +316,16 @@ return [
                 ],
             ],
             32 => [
+                'text' => 'Środkowa część tarczy była zwana:',
+                'image' => null,
+                'responses' => [
+                    ['głownią'],
+                    ['cięciwą'],
+                    ['umbem', true],
+                    ['płatem'],
+                ],
+            ],
+			33 => [
                 'text' => 'Który z władców zastał Polskę drewnianą, a zostawił murowaną?',
                 'image' => null,
                 'responses' => [
@@ -325,10 +335,21 @@ return [
                     ['Kazimierz Jagiellończyk'],
                 ],
             ],
+
+			34 => [
+                'text' => 'Co nie należało do elementów średniowiecznego rycerza?',
+                'image' => null,
+                'responses' => [
+                    ['tarcza'],
+                    ['miecz'],
+                    ['muszkiet', true],
+                    ['ostrogi'],
+                ],
+            ],
         ],
     ],
     [ // trudne 1.1
-        'amount' => 1,
+        'amount' => 2,
         'questions' => [
             1 => [
             	'text' => 'Który z wymienionych władców koronował się w tym samym roku co jego ojciec?',
@@ -381,7 +402,7 @@ return [
             	],
             ],
             6 => [
-                'text' => 'Zamek krzyżacki w Malborku należy do przykładów zamków budowanych w stylu:',
+                'text' => 'Zamek krzyżacki w Malborku został wybudowany w stylu:',
                 'image' => null,
                 'responses' => [
                     ['romańskim'],
@@ -442,9 +463,9 @@ return [
             ],
         ],
     ],
-    // 1.2 nowożytność (6)
+    // 1.2 nowożytność (8)
     [ // latwe 1.2
-        'amount' => 5,
+        'amount' => 6,
         'questions' => [
             1 => [
             	'text' => 'Po zawarciu unii lubelskiej wspólne dla Korony i Litwy były:',
@@ -477,7 +498,7 @@ return [
             	],
             ],
             4 => [
-            	'text' => 'W jakich latach miały miejsce rozbiory Rzeczypospolitej?',
+            	'text' => 'Rozbiory Rzeczypospolitej miały miejsce w latach:',
             	'image' => null,
             	'responses' => [
             		['1768, 1793, 1794'],
@@ -540,8 +561,8 @@ return [
             	'text' => 'Wskaż władcę, który był inicjatorem unii lubelskiej:',
             	'image' => null,
             	'responses' => [
-            		['Zygmunt Stary'],
-            		['Zygmunt August', true],
+            		['Zygmunt I Stary'],
+            		['Zygmunt II August', true],
             		['Jan III Sobieski'],
             		['Stanisław August Poniatowski'],
             	],
@@ -577,7 +598,7 @@ return [
             	],
             ],
             14 => [
-            	'text' => 'Z jakiego kraju wywodził się pierwszy polski król wybrany na zasadach wolnej elekcji?',
+            	'text' => 'Z którego kraju wywodził się pierwszy polski król wybrany na zasadach wolnej elekcji?',
             	'image' => null,
             	'responses' => [
             		['z Polski'],
@@ -608,7 +629,7 @@ return [
             ],
             17 => [
             	'text' => 'Jaką bitwę przedstawia fragment obrazu?',
-            	'image' => url('quiz-app/obrazy/d180d108.jpg'),
+            	'image' => url('public/quiz-app/obrazy/d180d108.jpg'),
             	'responses' => [
             		['bitwę pod Grunwaldem'],
             		['bitwę pod Kłuszynem'],
@@ -618,7 +639,7 @@ return [
             ],
             18 => [
             	'text' => 'Kogo przedstawia obraz?',
-            	'image' => url('quiz-app/obrazy/dm219dj190.jpg'),
+            	'image' => url('public/quiz-app/obrazy/dm219dj190.jpg'),
             	'responses' => [
             		['pierwszego króla elekcyjnego Henryka Walezego'],
             		['cesarza austriackiego Franciszka Józefa'],
@@ -628,7 +649,7 @@ return [
             ],
             19 => [
             	'text' => 'Kogo przedstawia ilustracja?',
-            	'image' => url('quiz-app/obrazy/jfj2190kf.jpg'),
+            	'image' => url('public/quiz-app/obrazy/jfj2190kf.jpg'),
             	'responses' => [
             		['średniowiecznego rycerza'],
             		['husarza', true],
@@ -727,7 +748,7 @@ return [
             	],
             ],
             29 => [
-            	'text' => 'Konstytucję 3 Maja podpisano na sejmie w:',
+            	'text' => 'Konstytucję 3 maja podpisano na sejmie w:',
             	'image' => null,
             	'responses' => [
             		['Krakowie'],
@@ -736,10 +757,22 @@ return [
             		['Warszawie', true],
             	],
             ],
-        ],
+
+            30 => [
+            	'text' => 'Który element nie pasuje do szabli husarskiej?',
+            	'image' => null,
+            	'responses' => [
+            		['pozłacana rękojeść'],
+            		['wąs jako część rękojeści'],
+            		['ostrzone z obu stron pióro'],
+            		['prosta i obosieczna klinga', true],
+            	],
+            ],
+                  ],
+
     ],
     [ // trudne 1.2
-        'amount' => 1,
+        'amount' => 2,
         'questions' => [
             1 => [
             	'text' => 'W 2. poł. XV i na początku XVI w. królowie Czech i Węgier pochodzili z dynastii:',
@@ -762,7 +795,7 @@ return [
             	],
             ],
             3 => [
-            	'text' => 'Czym były pacta conventa?',
+            	'text' => 'Czym były <i>pacta conventa</i>?',
             	'image' => null,
             	'responses' => [
             		['gwarancją dotychczasowych zasad ustrojowych'],
@@ -841,11 +874,21 @@ return [
             		['Zygmunta Starego i Zygmunta Augusta', true],
             	],
             ],
+            11 => [
+            	'text' => 'Za panowania którego władcy Mazowsze zostało włączone do Korony?',
+            	'image' => null,
+            	'responses' => [
+            		['Kazimierza Wielkiego'],
+            		['Władysława Łokietka'],
+            		['Władysława Jagiełły'],
+            		['Zygmunta Starego', true],
+            	],
+            ],
         ],
     ],
     // 2.1 XIX w (10)
     [ // latwe 2.1
-        'amount' => 9,
+        'amount' => 8,
         'questions' => [
             1 => [
             	'text' => 'W którym roku utworzono Księstwo Warszawskie?',
@@ -978,13 +1021,13 @@ return [
             	],
             ],
             14 => [
-            	'text' => 'Na terenie którego państwa znajdowała się Galicja w XIX w.?',
+            	'text' => 'Na terenie którego państwa utworzono Królestwo Galicji i Lodomerii?',
             	'image' => null,
             	'responses' => [
-            		['Rosji'],
-            		['Austrii', true],
-            		['Prus'],
-            		['Saksonii'],
+            		['Rzeszy Niemieckiej'],
+            		['Cesarstwa Austriackiego', true],
+            		['Cesarstwa Rosyjskiego'],
+            		['II Rzeczypospolitej'],
             	],
             ],
             15 => [
@@ -1076,7 +1119,7 @@ return [
             	],
             ],
             24 => [
-            	'text' => 'Kiedy ustalono polskie barwy narodowe?',
+            	'text' => 'Kiedy ustalono polskie barwy narodowe (biały i czerwony)?',
             	'image' => null,
             	'responses' => [
             		['podczas powstania kościuszkowskiego'],
@@ -1086,7 +1129,7 @@ return [
             	],
             ],
             25 => [
-            	'text' => 'Kto stał na czele Komitetu Narodowego Polski utworzonego w 1831 r.?',
+            	'text' => 'Kto stał na czele Komitetu Narodowego Polskiego utworzonego w 1831 r.?',
             	'image' => null,
             	'responses' => [
             		['Joachim Lelewel', true],
@@ -1195,8 +1238,8 @@ return [
             ],
         ],
     ],
-    [ // 2.1 trudne
-        'amount' => 1,
+    [ // trudne 2.1
+        'amount' => 2,
         'questions' => [
             1 => [
             	'text' => 'Które zdanie nie pasuje do polityki Aleksandra Wielopolskiego przed wybuchem powstania styczniowego?',
@@ -1230,7 +1273,7 @@ return [
             ],
             4 => [
             	'text' => 'Na przykładzie obrazu przedstawiającego bitwę pod Ostrołęka z 1831 r. oraz wiedzy własnej odpowiedz czy w powstaniu listopadowym polskie oddziały walczyły jako regularne wojsko?',
-            	'image' => url('quiz-app/obrazy/dk19209.jpg'),
+            	'image' => url('public/quiz-app/obrazy/dk19209.jpg'),
             	'responses' => [
             		['Tak', true],
             		['Nie'],
@@ -1257,7 +1300,7 @@ return [
             	],
             ],
             7 => [
-            	'text' => 'Kogo dotyczą słowa Joachima Lelewela?',
+            	'text' => 'Kogo dotyczą słowa Joachima Lelewela? <br><i>Utrzymywano wprawdzie, że on kochał Polaków, a dobrze tę miłość porównywano do psotnego dziecka, które lubi cacka i lalki, aby je tłuc i psuć, a Polacy długo służyli za lalki, za cacka temu potwornemu i drapieżnemu dziecku.</i>',
             	'image' => null,
             	'responses' => [
             		['księcia Konstantego', true],
@@ -1300,11 +1343,11 @@ return [
     ],
     // 2.2 XX w (10)
     [ // latwe 2.2
-        'amount' => 9,
+        'amount' => 8,
         'questions' => [
             1 => [
             	'text' => ' Jaki wkład w odzyskanie niepodległości przez Polskę miał człowiek przedstawiony na zdjęciu?',
-            	'image' => url('quiz-app/obrazy/d1k120f2.jpg'),
+            	'image' => url('public/quiz-app/obrazy/d1k120f2.jpg'),
             	'responses' => [
             		['dokonał zamachu na cara Mikołaja II i arcyksięcia Franciszka Ferdynanda'],
             		['był twórcą legionów walczących u boku państw centralnych'],
@@ -1314,7 +1357,7 @@ return [
             ],
             2 => [
             	'text' => ' Kogo przedstawia to zdjęcie?',
-            	'image' => url('quiz-app/obrazy/jd9210d2190.jpg'),
+            	'image' => url('public/quiz-app/obrazy/jd9210d2190.jpg'),
             	'responses' => [
             		['Ignacego Jana Paderewskiego', true],
             		['Wincentego Witosa'],
@@ -1513,7 +1556,7 @@ return [
         ],
     ],
     [ // trudne 2.2
-        'amount' => 1,
+        'amount' => 2,
         'questions' => [
             1 => [
             	'text' => 'Które kraje należały do państw centralnych w czasie I wojny światowej?',
@@ -1526,7 +1569,7 @@ return [
             	],
             ],
             2 => [
-            	'text' => 'Ile państw weszło w skład entente cordiale w czasie I wojny światowej?',
+            	'text' => 'Ile państw weszło w skład <i>entente cordiale</i> w czasie I wojny światowej?',
             	'image' => null,
             	'responses' => [
             		['5'],
@@ -1546,7 +1589,7 @@ return [
             	],
             ],
             4 => [
-            	'text' => 'Jaką nazwę państwa polskiego proklamowano w Akcie 5 Listopada ?',
+            	'text' => 'Jaką nazwę państwa polskiego proklamowano w <i>Akcie 5 listopada</i> ?',
             	'image' => null,
             	'responses' => [
             		['Provinz Posen'],
@@ -1617,12 +1660,12 @@ return [
             ],
         ],
     ],
-    // 3.1 literatura (9)
+    // 3.1 literatura (6)
     [ // latwe 3.1
-        'amount' => 8,
+        'amount' => 5,
         'questions' => [
             1 => [
-            	'text' => 'W 1924 r. nagrodę Literacką Nobla otrzymał:',
+            	'text' => 'W 1924 r. Nagrodę Nobla w dziedzinie literatury otrzymał:',
             	'image' => null,
             	'responses' => [
             		['Henryk Sienkiewicz'],
@@ -1632,12 +1675,12 @@ return [
             	],
             ],
             2 => [
-            	'text' => 'Po I wojnie światowej skamandryci byli kontynuatorami poezji:',
+            	'text' => 'Skamandryci w swojej twórczości nawiązywali do poezji:',
             	'image' => null,
             	'responses' => [
             		['Jana Kasprowicza'],
             		['Leopolda Staffa', true],
-            		['Bolesława Leśmiana'],
+            		['Tadeusza Micińskiego'],
             		['Stanisława Wyspiańskiego'],
             	],
             ],
@@ -1645,24 +1688,24 @@ return [
             	'text' => 'W oparciu o poniższe zestawienia zaznacz zbiór wybitnych poetów:',
             	'image' => null,
             	'responses' => [
-            		['Tamara Łempnicka, Józef Mehoffer i Leon Wyczółkowski'],
+            		['Tamara Łempicka, Józef Mehoffer i Leon Wyczółkowski'],
             		['Adolf Szyszko-Bohusz, Kazimierz Tołłoczko i Stefan Bryła'],
             		['Adolf Dymsza, Wojciech Kossak i Stefan Banach'],
             		['Antoni Słonimski, Julian Tuwim i Jan Lechoń', true],
             	],
             ],
             4 => [
-            	'text' => 'Co oznacza pojęcie awangarda?',
+            	'text' => 'Co oznacza pojęcie awangarda w odniesieniu do sztuki?',
             	'image' => null,
             	'responses' => [
-            		['rozszerzenie powszechnie obowiązujących trendów w sztuce'],
-            		['stopniowe wprowadzanie zmian w sztuce do obowiązujących norm'],
-            		['radykalne wprowadzenie zmian w stosunku do obowiązujących norm w sztuce', true],
+            		['powrót do ideałów antycznych'],
+            		['obronę tradycyjnych wzorców'],
+            		['radykalne nowatorstwo', true],
             		['nurt, który zapowiadał zagładę kultury europejskiej'],
             	],
             ],
             5 => [
-            	'text' => 'Który z podanych twórców był przedstawicielem katastrofizmu?',
+            	'text' => 'Który z podanych twórców był znany zarówno jako pisarz, jak i malarz?',
             	'image' => null,
             	'responses' => [
             		['Stefan Żeromski'],
@@ -1672,23 +1715,23 @@ return [
             	],
             ],
             6 => [
-            	'text' => 'Jaki kierunek w literaturze reprezentował Bolesław Leśmian?',
+            	'text' => 'Którego z utworów nie napisał Kornel Makuszyński?',
             	'image' => null,
             	'responses' => [
-            		['symbolizm', true],
-            		['atastrofizm'],
-            		['dekadentyzm'],
-            		['naturalizm'],
+            		['"Król Maciuś Pierwszy"', true],
+            		['"Szatan z siódmej klasy"'],
+            		['"Awantura o Basię"'],
+            		['"Przygody Koziołka Matołka"'],
             	],
             ],
             7 => [
-            	'text' => 'Od kiedy rozwinął się nurt zwany pozytywizmem?',
+            	'text' => 'Jakie są ramy czasowe dwudziestolecia międzywojennego?',
             	'image' => null,
             	'responses' => [
-            		['po upadku powstania listopadowego'],
-            		['między powstaniem listopadowym a Wiosną Ludów'],
-            		['po powstaniu styczniowym', true],
-            		['po I wojnie światowej'],
+            		['1914-1939'],
+            		['1918-1945'],
+            		['1918-1939', true],
+            		['1920-1940'],
             	],
             ],
             8 => [
@@ -1702,23 +1745,23 @@ return [
             	],
             ],
             9 => [
-            	'text' => 'Które z poniższych dzieł nie jest związane z epoką pozytywizmu?',
+            	'text' => 'Które z poniższych dzieł jest związane z epoką pozytywizmu?',
             	'image' => null,
             	'responses' => [
-            		['„Dziady”', true],
-            		['„Ludzie bezdomni”'],
+            		['„Lalka”', true],
+            		['„Dziady”'],
             		['„Wesele”'],
-            		['„Lalka”'],
+            		['„Przedwiośnie”'],
             	],
             ],
             10 => [
-            	'text' => 'Kto jest autorem powieści „Nad Niemnem”?',
+            	'text' => 'Kto jest autorem powieści „Akademia Pana Kleksa”?',
             	'image' => null,
             	'responses' => [
-            		['Maria Konopnicka'],
-            		['Eliza Orzeszkowa', true],
-            		['Zofia Nałkowska'],
-            		['Wisława Szymborska'],
+            		['Julian Tuwim'],
+            		['Jan Brzechwa', true],
+            		['Stefan Żeromski'],
+            		['Kornel Makuszyński'],
             	],
             ],
             11 => [
@@ -1732,13 +1775,13 @@ return [
             	],
             ],
             12 => [
-            	'text' => 'Które dzieło nie zostało napisane przez Stanisława Wyspiańskiego?',
+            	'text' => 'Który z twórców grupy "Skamander" znany jest jako autor poezji dla dzieci?',
             	'image' => null,
             	'responses' => [
-            		['„Noc listopadowa”'],
-            		['„Warszawianka”'],
-            		['„Wesele”'],
-            		['„Granica”', true],
+            		['Kazimierz Wierzyński'],
+            		['Jarosław Iwaszkiewicz'],
+            		['Antoni Słonimski'],
+            		['Julian Tuwim', true],
             	],
             ],
         ],
@@ -1757,7 +1800,7 @@ return [
             	],
             ],
             2 => [
-            	'text' => 'Za którą powieść Władysław Stanisław Reymont otrzymał literacką Nagrodę Nobla?',
+            	'text' => 'Za którą powieść Władysław Stanisław Reymont otrzymał Nagrodę Nobla w dziedzinie literatury?',
             	'image' => null,
             	'responses' => [
             		['„Komediantka”'],
@@ -1787,20 +1830,20 @@ return [
             	],
             ],
             5 => [
-            	'text' => 'W czyim artykule po raz pierwszy został zawarty program nurtu zwanego pozytywizmem?',
+            	'text' => 'Które z czasopism było skierowane do dzieci?',
             	'image' => null,
             	'responses' => [
-            		['Henryka Sienkiewicza'],
-            		['Aleksandra Świętochowskiego', true],
-            		['Aleksandra Głowackiego'],
-            		['Stanisława Wyspiańskiego'],
+            		['"Bluszcz"'],
+            		['"Płomyczek"', true],
+            		['"Droga"'],
+            		['"Ewa"'],
             	],
             ],
         ],
     ],
-    // 3.2 muzyka i sztuka (6)
+    // 3.2 muzyka i sztuka (4)
     [ // latwe 3.2
-        'amount' => 5,
+        'amount' => 3,
         'questions' => [
             1 => [
             	'text' => 'Kto jest autorem słów utworu pod tytułem „Karol Levittoux”? ',
@@ -1813,7 +1856,11 @@ return [
             	],
             ],
             2 => [
-            	'text' => 'Na podstawie wybranych wersów utworu skomponowanego przez Przemysława Gintrowskiego wskaż postać, której one dotyczą:',
+            	'text' => 'Na podstawie wybranych wersów utworu skomponowanego przez Przemysława Gintrowskiego wskaż postać, której one dotyczą:
+                    <div class="text-center"><i style="font-size:14px">Twej pogardy nikt ci nie wybaczy<br>
+                    Myśmy ciemni, zapalni i łzawi<br>
+                    A tyś dumny, tyś z nami nie raczył<br>
+                    W narodowym barszczu się pławić(...)</i></div>',
             	'image' => null,
             	'responses' => [
             		['Fryderyk Chopin'],
@@ -1823,7 +1870,11 @@ return [
             	],
             ],
             3 => [
-            	'text' => 'Na podstawie wybranych wersów utworu podaj jego tytuł:',
+            	'text' => 'Na podstawie wybranych wersów utworu podaj jego tytuł:
+            	 <div class="text-center"><i style="font-size:14px">A ja o Polsce marzę co nie jest tylko witrażem<br>
+                   	I nie komedią na scenie, ale spełnieniem<br>
+                    Niechże się taka stanie co by nie była udaniem<br>
+                    Szyldem tylko nie była, lecz żeby żyła</i></div>',
             	'image' => null,
             	'responses' => [
             		['„Margrabia Wielopolski”'],
@@ -1903,7 +1954,7 @@ return [
             	],
             ],
             11 => [
-            	'text' => 'Kto był projektantem pierwszych polskich wieżowców - warszawskiego „Prudentiału” i katowickiego „drapacza chmur”?',
+            	'text' => 'Kto był projektantem pierwszych polskich wieżowców - warszawskiego „Prudentialu” i katowickiego „drapacza chmur”?',
             	'image' => null,
             	'responses' => [
             		['Adolf Szyszko-Bohusz'],
@@ -1924,7 +1975,7 @@ return [
             ],
             13 => [
             	'text' => 'Kto jest autorem obrazu?',
-            	'image' => url('quiz-app/obrazy/jf812f1s.jpg'),
+            	'image' => url('public/quiz-app/obrazy/jf812f1s.jpg'),
             	'responses' => [
             		['Józef Mehoffer'],
             		['Tamara Łempicka', true],
@@ -1934,7 +1985,7 @@ return [
             ],
             14 => [
             	'text' => 'W którym mieście wzniesiono budynek z poniższej ilustracji?',
-            	'image' => url('quiz-app/obrazy/d1d2j1902.jpg'),
+            	'image' => url('public/quiz-app/obrazy/d1d2j1902.jpg'),
             	'responses' => [
             		['w Gdyni', true],
             		['w Kielcach'],
@@ -1959,7 +2010,7 @@ return [
         'questions' => [
             1 => [
             	'text' => 'Który z artystów jest twórcą obrazu?',
-            	'image' => url('quiz-app/obrazy/d21dk21921.jpg'),
+            	'image' => url('public/quiz-app/obrazy/d21dk21921.jpg'),
             	'responses' => [
             		['Wojciech Kossak'],
             		['Tamara Łempicka'],
@@ -1968,8 +2019,8 @@ return [
             	],
             ],
             2 => [
-            	'text' => 'Na obrazie przedstawiono Błękitną Armię pod dowództwem Józefa Hallera. Kto jest autorem obrazu?',
-            	'image' => url('quiz-app/obrazy/d219dk190d12.jpg'),
+            	'text' => 'Na obrazie przedstawiono Błękitną Armię. Kto jest autorem obrazu?',
+            	'image' => url('public/quiz-app/obrazy/d219dk190d12.jpg'),
             	'responses' => [
             		['Wojciech Kossak', true],
             		['Stanisław Batowski'],
@@ -1979,17 +2030,17 @@ return [
             ],
             3 => [
             	'text' => 'Który pseudonim odnosi się do postaci przedstawionej na portrecie autorstwa Rafała Malczewskiego?',
-            	'image' => url('quiz-app/obrazy/d21j19021f2.jpg'),
+            	'image' => url('public/quiz-app/obrazy/d21j19021f2.jpg'),
             	'responses' => [
             		['Witkacy', true],
-            		['Wiktor'],
-            		['Mieczysław'],
-            		['Schyzio'],
+            		['Harryman'],
+            		['Pro-rok'],
+            		['Schyzio Frenik'],
             	],
             ],
             4 => [
             	'text' => 'Który z literatów został przedstawiony na portrecie?',
-            	'image' => url('quiz-app/obrazy/jif1211f2.jpg'),
+            	'image' => url('public/quiz-app/obrazy/jif1211f2.jpg'),
             	'responses' => [
             		['Bolesław Prus'],
             		['Antoni Słonimski'],
@@ -2008,17 +2059,21 @@ return [
             	],
             ],
             6 => [
-            	'text' => 'W jaki sposób zginął bohater, o którym śpiewał Przemysław Gintrowski?',
+            	'text' => 'Jak zginął bohater, o którym śpiewał Przemysław Gintrowski?
+            	 <div class="text-center"><i style="font-size:14px">Przez niego w duszę sączy się trucizna<br>
+                   Śledztwo prowadźcie zgodnie ze zwyczajem<br>
+                    W mig się przyzna! Prędko się przyzna!</i></div>',
             	'image' => null,
             	'responses' => [
-            		['w czasie powstania listopadowego'],
+            		['w walkach powstańczych'],
             		['w trakcie tortur'],
-            		['w wyniku represji po powstaniu styczniowym'],
+            		['na zesłaniu'],
             		['popełnił samobójstwo', true],
             	],
             ],
             7 => [
-            	'text' => 'Aktorką kina niemego o międzynarodowej sławie była:',
+            	'text' => 'Aktorką kina niemego o międzynarodowej sławie była:
+            	',
             	'image' => null,
             	'responses' => [
             		['Tola Mankiewiczówna'],

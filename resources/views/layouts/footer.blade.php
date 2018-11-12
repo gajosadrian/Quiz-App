@@ -10,7 +10,7 @@
         </div>
         <div class="float-left">
             {{-- © {{ now()->year }} {{ config('app.name') }} --}}
-            “Sfinansowano ze środków Ministerstwa Edukacji Narodowej w ramach Programu Wieloletniego Niepodległa na lata 2017 – 2021”
+            <em>„Sfinansowano ze środków Ministerstwa Edukacji Narodowej w ramach Programu Wieloletniego Niepodległa na lata 2017 – 2021”</em>
         </div>
     </div>
 </footer>

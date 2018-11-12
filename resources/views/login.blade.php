@@ -6,7 +6,7 @@
             <div class="col-md-6">
                 <b-block title="QUIZ HISTORYCZNY" theme="czerwonetlo" noround full>
                     <template slot="content">
-                        <p><em>„Póty żyć będzie, póki tylko stanie Jednego męża, jednego pałasza – To Polska! … Polska!... To Ojczyzna nasza.”</em><p>
+                        <h4 class="text-white"><em>„Póty żyć będzie, póki tylko stanie Jednego męża, jednego pałasza – To Polska! … Polska!... To Ojczyzna nasza.”</em></h4>
                         <p>
                             Zakres tematyczny obejmuje całość dziejów Polski ze szczególnym uwzględnieniem dróg do
                             odzyskania niepodległości w XIX i XX wieku oraz zagadnień dotyczących literatury i sztuki
@@ -14,14 +14,16 @@
                         </p>
                         <p>
                             <ul>
-                                <li>Poziom: podstawowy + gimnazjalny</li>
+                                <li>Kategoria: szkoła podstawowa i gimnazjum</li>
                                 <li>Ilość pytań: 45</li>
                                 <li>Limit czasu: 50 minut</li>
                                 <li>Pytania tekstowe i obrazkowe</li>
                                 <li>Pytania zamknięte - zwykle 4 odpowiedzi do wyboru (wybór jednokrotny)</li>
                             </ul>
                         </p>
-                        {{ ini_get('session.gc_maxlifetime') }}<br>
+                        <p>
+                            O zajętym miejscu decyduje w pierwszej kolejności liczba uzyskanych punktów. Po zalogowaniu najpierw masz możliwość rozwiązania testu kontrolnego. Sprawdź dostępne funkcje bez straty czasu! Czas upływa dopiero po wciśnięciu <em>„Rozpocznij quiz”</em>.<br>
+                        </p>
                     </template>
                 </b-block>
             </div>
