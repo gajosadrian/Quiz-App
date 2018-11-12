@@ -93,7 +93,7 @@
 </template>
 
 <script>
-var is_finished = false;
+var is_finished = true;
 window.onbeforeunload = function() {
     if (!is_finished) {
         return true;
@@ -123,6 +123,7 @@ export default {
             this.disableStart = true;
             axios.post(route('quiz.start'))
                 .then((response) => {
+                    is_finished = false;
                     this.started = true;
                 }, (error) => {
                     //
