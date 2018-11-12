@@ -12,7 +12,10 @@
                 @foreach ($pytania as $v)
                     @foreach ($v['questions'] as $question)
                         <li class="font-w700">{!! $question['text'] !!}</li>
-                        <ol>
+                        @if ($question['image'])
+                            <img src="{{ $question['image'] }}" style="max-height:200px">
+                        @endif
+                        <ol class="push">
                             @foreach ($question['responses'] as $response)
                                 <li class="{{ (isset($response[1]) and $response[1]) ? 'font-w700 text-primary' : '' }}">{{ $response[0] }}</li>
                             @endforeach

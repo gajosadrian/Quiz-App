@@ -19,7 +19,7 @@ class Test
 
         if ($uczestnik->banned) {
             UczestnikLogout();
-            return redirect()->route('index')->withErrors([ 'Test już był uruchamiany!' ]);
+            return redirect()->route('index')->withErrors([ 'Login został wykorzystany! Jeśli chcecie poznać więcej szczegołów związanych z Waszymi odpowiedziami, prosimy o kontakt: <span class="font-w600">grzegorz@doniepodleglej.pl</span>. Prześlemy wasze odpowiedzi wraz z modelem. Dziękujemy za udział, Organizatorzy quizu.' ]);
         }
         if (!$uczestnik->test_kontrolny and $request->route()->getName() != 'test_kontrolny') {
             return redirect()->route('test_kontrolny')->withErrors([ 'Najpierw wypełnij test kontrolny!' ]);

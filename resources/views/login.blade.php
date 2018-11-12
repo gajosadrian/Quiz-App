@@ -3,6 +3,14 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
+            <div class="col-md-10">
+                <noscript>
+                    <div class="alert alert-danger alert-dismissable" role="alert">
+                        <h3 class="alert-heading font-size-h4 font-w400">Błąd</h3>
+                        <p class="mb-0">Do działania strony wymagany jest włączony JavaScript!</p>
+                    </div>
+                </noscript>
+            </div>
             <div class="col-md-6">
                 <b-block title="QUIZ HISTORYCZNY" theme="czerwonetlo" noround full>
                     <template slot="content">

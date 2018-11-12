@@ -16,7 +16,7 @@ class QuizController extends Controller
     public function start(Request $request)
     {
         $uczestnik = Uczestnik();
-        // $uczestnik->banned = true;
+        $uczestnik->banned = true;
         $uczestnik->data_rozpoczecia_testu = Carbon::now();
         $uczestnik->save();
         return response()->json('success', 200);

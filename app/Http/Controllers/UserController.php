@@ -19,18 +19,22 @@ class UserController extends Controller
         $login = $request->input('login');
         $email = $request->input('email');
         $pytaniaId = getPytaniaId();
-        $uczestnik = Uczestnik::where('grupa', $pytaniaId)->where('nazwa', $login)->where('email', $email)->first();
+        $uczestnik = Uczestnik::where('nazwa', $login)->where('email', $email)->first();
 
         if ($uczestnik) {
-            if ($uczestnik->loggable) {
-                $uczestnik->last_ip = $request->ip();
-                $uczestnik->data_ostatniego_logowania = Carbon::now();
-                $uczestnik->user_agent = $request->header('User-Agent');
-                $uczestnik->save();
-                session([ 'uczestnik' => $uczestnik->id ]);
-                return redirect()->route('test_kontrolny');
+            if ($uczestnik->grupa == $pytaniaId) {
+                if ($uczestnik->loggable) {
+                    $uczestnik->last_ip = $request->ip();
+                    $uczestnik->data_ostatniego_logowania = Carbon::now();
+                    $uczestnik->user_agent = $request->header('User-Agent');
+                    $uczestnik->save();
+                    session([ 'uczestnik' => $uczestnik->id ]);
+                    return redirect()->route('test_kontrolny');
+                } else {
+                    return redirect()->back()->withErrors([ 'Logowanie o tej godzinie jest niemożliwe!' ]);
+                }
             } else {
-                return redirect()->back()->withErrors([ 'Logowanie o tej godzinie jest niemożliwe!' ]);
+                return redirect()->back()->withErrors([ 'Sprawdź w regulaminie datę swojego logowania. W razie wątpliwości prosimy o kontakt <span class="font-w600">grzegorz@doniepodleglej.pl<span>' ]);
             }
         } else {
             return redirect()->back()->withErrors([ 'Podany login jest błędny!' ]);

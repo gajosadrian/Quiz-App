@@ -35,7 +35,7 @@
                             <button type="button" class="btn btn-secondary" @click="prev">Cofnij</button>
                         </div>
                         <div class="float-right">
-                            <button type="button" class="btn btn-sm btn-info btn-noborder" @click="questionIndex=45">(dla testów)</button>
+                            <!-- <button type="button" class="btn btn-sm btn-info btn-noborder" @click="questionIndex=45">(dla testów)</button> -->
                             <button v-if="questionIndex < questions.length" type="button" class="btn btn-primary btn-noborder" @click="next">Dalej</button>
                         </div>
                     </div>
@@ -113,6 +113,9 @@ export default {
         disableStart: false,
         // timer: 50,
         timer: 3000, // 50 min
+        maxTimer: 3000, // 50 min
+        timerStart: 0,
+        timerFinish: 0,
         questions: [],
         correctResponsesAmount: 0,
         time: 0,
@@ -125,6 +128,7 @@ export default {
                 .then((response) => {
                     is_finished = false;
                     this.started = true;
+                    this.timerStart = Math.floor(Date.now() / 1000);
                 }, (error) => {
                     //
                 });
@@ -165,8 +169,11 @@ export default {
         },
         countDown() {
             if (this.timer > 0 && this.started && !this.finished) {
-                this.timer--;
+                let currentTime = Math.floor(Date.now() / 1000);
+                this.timer = this.maxTimer - (currentTime - this.timerStart);
                 this.tryFinish();
+            } else {
+                // this.timer = 0;
             }
         },
         getResponsesAmount() {

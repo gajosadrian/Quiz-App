@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 use Auth;
 use App\Uczestnik;
 
@@ -27,13 +28,14 @@ class AdminController extends Controller
     {
         return view('admin', [
             'user' => Auth::user(),
+            'currentTime' => Carbon::now(),
         ]);
     }
 
     public function responses()
     {
         return view('responses', [
-            'uczestnicy' => Uczestnik::orderBy('odpowiedzi', 'desc')->orderBy('czas')->get(),
+            'uczestnicy' => Uczestnik::orderBy('odpowiedzi', 'desc')->orderBy('czas')->where('grupa', getPytaniaId())->get(),
         ]);
     }
 

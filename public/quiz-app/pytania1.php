@@ -86,7 +86,7 @@ return [
                 ],
             ],
             9 => [
-                'text' => 'W którym roku oraz dokąd biskup Wojciech zorganizował słynną wyprawę misyjną',
+                'text' => 'W którym roku oraz dokąd biskup Wojciech zorganizował słynną wyprawę misyjną dzięki wsparciu Bolesława Chrobrego?',
                 'image' => null,
                 'responses' => [
                     ['992 r. na Ruś'],
@@ -96,7 +96,7 @@ return [
                 ],
             ],
             10 => [
-                'text' => 'Który władca z dynastii Piastów był ostatnim królem Polski?',
+                'text' => 'Który władca był ostatnim królem Polski z dynastii Piastów?',
                 'image' => null,
                 'responses' => [
                     ['Bolesław Krzywousty'],
@@ -548,7 +548,7 @@ return [
             	],
             ],
             9 => [
-            	'text' => 'W roku 1683 r. Król Jan III Sobieski pokonał:',
+            	'text' => 'W roku 1683 r. król Jan III Sobieski pokonał:',
             	'image' => null,
             	'responses' => [
             		['Szwecję'],
@@ -558,7 +558,7 @@ return [
             	],
             ],
             10 => [
-            	'text' => 'Wskaż władcę, który był inicjatorem unii lubelskiej:',
+            	'text' => 'Za panowania którego władcy została zawarta unia lubelska?',
             	'image' => null,
             	'responses' => [
             		['Zygmunt I Stary'],
@@ -583,8 +583,8 @@ return [
             	'responses' => [
             		['obradującego w latach 1788-92', true],
             		['obradującego w roku 1795'],
-            		['obradującego w roku 1922-24'],
-            		['obradującego w roku 1989-93'],
+            		['obradującego w latach 1922-24'],
+            		['obradującego w latach 1989-93'],
             	],
             ],
             13 => [
@@ -744,7 +744,7 @@ return [
             		['Jana Sobieskiego'],
             		['Augusta II Mocnego'],
             		['Stanisława Leszczyńskiego'],
-            		['Stanisława Augusta Poniatowskiego', true],
+            		['Stanisława A. Poniatowskiego', true],
             	],
             ],
             29 => [
@@ -870,7 +870,7 @@ return [
             	'responses' => [
             		['Zygmunta Augusta i Barbary Radziwiłłówny'],
             		['Kazimierza Jagiellończyka i Elżbiety Rakuszanki'],
-            		['Zygmunta Starego i Bony Sforza'],
+            		['Zygmunta Starego i Bony Sforzy'],
             		['Zygmunta Starego i Zygmunta Augusta', true],
             	],
             ],
@@ -950,16 +950,18 @@ return [
             		['1880'],
             	],
             ],
-            7 => [
-            	'text' => 'W którym z państw zostały utworzone Legiony Dąbrowskiego:',
+            
+             7 => [
+            	'text' => 'Obóz księcia Adama Czartoryskiego, jednego z przywódców Wielkiej Emigracji, nazywany był również',
             	'image' => null,
             	'responses' => [
-            		['we Włoszech', true],
-            		['we Francji'],
-            		['w Rosji'],
-            		['w Hiszpanii'],
+            		['Hotelem Lambert', true],
+            		['Komitetem Narodowym Polskim'],
+            		['Towarzystwem Demokratycznym Polskim'],
+            		['Gromadami Ludu Polskiego'],
             	],
-            ],
+            ],            
+            
             8 => [
             	'text' => 'W jakich latach istniało Księstwo Warszawskie?',
             	'image' => null,
@@ -1021,13 +1023,14 @@ return [
             	],
             ],
             14 => [
-            	'text' => 'Na terenie którego państwa utworzono Królestwo Galicji i Lodomerii?',
+            	'text' => 'Po upadku powstania styczniowego władze carskie, w miejsce Królestwa Polskiego, wprowadziły nazwę',
             	'image' => null,
             	'responses' => [
-            		['Rzeszy Niemieckiej'],
-            		['Cesarstwa Austriackiego', true],
-            		['Cesarstwa Rosyjskiego'],
-            		['II Rzeczypospolitej'],
+            		['ziemie zabrane'],
+            		['Kraj Nadwiślański', true],
+            		['Księstwo Warszawskie'],
+            		['Kongresówka'],         
+            
             	],
             ],
             15 => [
@@ -1216,26 +1219,7 @@ return [
             		['Piotr Wysocki', true],
             	],
             ],
-            34 => [
-            	'text' => 'Po upadku powstania styczniowego władze carskie, w miejsce Królestwa Polskiego, wprowadziły nazwę',
-            	'image' => null,
-            	'responses' => [
-            		['ziemie zabrane'],
-            		['Kraj Nadwiślański', true],
-            		['Księstwo Warszawskie'],
-            		['Kongresówka'],
-            	],
-            ],
-            35 => [
-            	'text' => 'Obóz księcia Adama Czartoryskiego, jednego z przywódców Wielkiej Emigracji, nazywany był również',
-            	'image' => null,
-            	'responses' => [
-            		['Hotelem Lambert', true],
-            		['Komitetem Narodowym Polskim'],
-            		['Towarzystwem Demokratycznym Polskim'],
-            		['Gromadami Ludu Polskiego'],
-            	],
-            ],
+           
         ],
     ],
     [ // trudne 2.1
@@ -1320,7 +1304,7 @@ return [
             	],
             ],
             9 => [
-            	'text' => 'Jaki był tytuł obecnego hymnu narodowego na przełomie XVIII/XIX w.?',
+            	'text' => 'Jaki był pierwotny tytuł obecnego Hymnu Polski?',
             	'image' => null,
             	'responses' => [
             		['„Hymn Legionów”'],
@@ -1352,7 +1336,7 @@ return [
             		['dokonał zamachu na cara Mikołaja II i arcyksięcia Franciszka Ferdynanda'],
             		['był twórcą legionów walczących u boku państw centralnych'],
             		['pokonał bolszewików w 1920 roku'],
-            		['reprezentował interesy polskie na konferencji pokojowej w Wersalu', true],
+            		['reprezentował interesy polskie na konferencji pokojowej w Paryżu', true],
             	],
             ],
             2 => [
@@ -1507,10 +1491,10 @@ return [
             	'text' => 'Kto propagował sprawę polską w Kanadzie i Stanach Zjednoczonych podczas I wojny światowej?',
             	'image' => null,
             	'responses' => [
-            		['car Mikołaj II'],
-            		['cesarz Wilhelm II'],
-            		['kompozytor Ignacy Jan Paderewski', true],
-            		['poeta Kazimierz Przerwa-Tetmajer'],
+            		['Mikołaj II'],
+            		['Wilhelm II'],
+            		['Ignacy Jan Paderewski', true],
+            		['Kazimierz Przerwa-Tetmajer'],
             	],
             ],
             18 => [

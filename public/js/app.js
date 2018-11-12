@@ -48064,7 +48064,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -48191,6 +48191,9 @@ window.onbeforeunload = function () {
             disableStart: false,
             // timer: 50,
             timer: 3000, // 50 min
+            maxTimer: 3000, // 50 min
+            timerStart: 0,
+            timerFinish: 0,
             questions: [],
             correctResponsesAmount: 0,
             time: 0,
@@ -48206,6 +48209,7 @@ window.onbeforeunload = function () {
             axios.post(route('quiz.start')).then(function (response) {
                 is_finished = false;
                 _this.started = true;
+                _this.timerStart = Math.floor(Date.now() / 1000);
             }, function (error) {
                 //
             });
@@ -48247,8 +48251,11 @@ window.onbeforeunload = function () {
         },
         countDown: function countDown() {
             if (this.timer > 0 && this.started && !this.finished) {
-                this.timer--;
+                var currentTime = Math.floor(Date.now() / 1000);
+                this.timer = this.maxTimer - (currentTime - this.timerStart);
                 this.tryFinish();
+            } else {
+                // this.timer = 0;
             }
         },
         getResponsesAmount: function getResponsesAmount() {
@@ -48507,21 +48514,6 @@ var render = function() {
                               : _vm._e(),
                             _vm._v(" "),
                             _c("div", { staticClass: "float-right" }, [
-                              _c(
-                                "button",
-                                {
-                                  staticClass:
-                                    "btn btn-sm btn-info btn-noborder",
-                                  attrs: { type: "button" },
-                                  on: {
-                                    click: function($event) {
-                                      _vm.questionIndex = 45
-                                    }
-                                  }
-                                },
-                                [_vm._v("(dla testów)")]
-                              ),
-                              _vm._v(" "),
                               _vm.questionIndex < _vm.questions.length
                                 ? _c(
                                     "button",
