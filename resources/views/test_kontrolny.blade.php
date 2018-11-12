@@ -8,7 +8,6 @@
                 <template slot="content">
                     <p>Celem testu kontrolnego jest opanowanie interfejsu i oswojenie się z nim, czyli parę przykładowych pytań z pokazaniem jak poprawnie uzupełnić test.</p>
                     <ul>
-                        <li>Możliwość powrotu do niezaakceptowanych odpowiedzi</li>
                         <li>Za każdą poprawną odpowiedź otrzymuje się 1 punkt, za błędną 0</li>
                         <li>Przycisk „Dalej” zatwierdza odpowiedź</li>
                         <li>Możliwość powrotu do niezatwierdzonych odpowiedzi</li>

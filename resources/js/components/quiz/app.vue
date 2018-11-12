@@ -93,6 +93,12 @@
 </template>
 
 <script>
+var is_finished = false;
+window.onbeforeunload = function() {
+    if (!is_finished) {
+        return true;
+    }
+};
 export default {
     data() { return {
         finished: false,
@@ -124,6 +130,7 @@ export default {
         },
         finish() {
             this.finished = true;
+            is_finished = true;
             let responses = [];
             this.userResponses.forEach(function(response, response_id) {
                 if (response != null) {
@@ -251,9 +258,6 @@ export default {
                 this.none = !this.none;
             }, 100);
         })
-        window.onbeforeunload = function() {
-            return true;
-        };
     },
 }
 </script>

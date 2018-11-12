@@ -22,7 +22,7 @@
                             </ul>
                         </p>
                         <p>
-                            O zajętym miejscu decyduje w pierwszej kolejności liczba uzyskanych punktów. Po zalogowaniu najpierw masz możliwość rozwiązania testu kontrolnego. Sprawdź dostępne funkcje bez straty czasu! Czas upływa dopiero po wciśnięciu <em>„Rozpocznij quiz”</em>.<br>
+                            O zajętym miejscu decyduje, w pierwszej kolejności, liczba uzyskanych punktów. Po zalogowaniu najpierw masz możliwość rozwiązania testu kontrolnego. Sprawdź dostępne funkcje bez straty czasu! Czas upływa dopiero po wciśnięciu <em>„Rozpocznij quiz”</em>.<br>
                         </p>
                     </template>
                 </b-block>
