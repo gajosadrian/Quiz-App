@@ -48064,7 +48064,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -48075,6 +48075,10 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
 //
 //
 //
@@ -48180,6 +48184,7 @@ window.onbeforeunload = function () {
     data: function data() {
         return {
             finished: false,
+            fail: false,
             result: false,
             loading: true,
             started: false,
@@ -48218,6 +48223,7 @@ window.onbeforeunload = function () {
             var _this2 = this;
 
             this.finished = true;
+            this.fail = false;
             is_finished = true;
             var responses = [];
             this.userResponses.forEach(function (response, response_id) {
@@ -48237,7 +48243,7 @@ window.onbeforeunload = function () {
                 _this2.correctResponsesAmount = data.correctResponsesAmount;
                 _this2.time = data.time;
             }, function (error) {
-                //
+                _this2.fail = true;
             });
             console.log('finished');
         },
@@ -48514,6 +48520,21 @@ var render = function() {
                               : _vm._e(),
                             _vm._v(" "),
                             _c("div", { staticClass: "float-right" }, [
+                              _c(
+                                "button",
+                                {
+                                  staticClass:
+                                    "btn btn-sm btn-info btn-noborder",
+                                  attrs: { type: "button" },
+                                  on: {
+                                    click: function($event) {
+                                      _vm.questionIndex = 45
+                                    }
+                                  }
+                                },
+                                [_vm._v("(dla testów)")]
+                              ),
+                              _vm._v(" "),
                               _vm.questionIndex < _vm.questions.length
                                 ? _c(
                                     "button",
@@ -48594,14 +48615,35 @@ var render = function() {
                                 [_vm._v("Koniec")]
                               )
                             ])
-                          : _c("div", [
-                              _c("h4", [
-                                _c("i", {
-                                  staticClass: "fa fa-spinner fa-pulse"
-                                }),
-                                _vm._v(" Proszę czekać...")
+                          : _vm.fail
+                            ? _c("div", [
+                                _c("p", [
+                                  _vm._v(
+                                    "Nie zamykaj tej strony! Wystąpił problem podczas wysyłania wyniku. Prosimy z korzystać z przycisku poniżej, a w razie problemów prosimy o kontakt tel. 797 028 476"
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "button",
+                                  {
+                                    staticClass: "btn btn-info btn-noborder",
+                                    attrs: { type: "button" },
+                                    on: { click: _vm.finish }
+                                  },
+                                  [
+                                    _c("i", { staticClass: "fa fa-warning" }),
+                                    _vm._v(" Spróbuj wysłać jeszcze raz")
+                                  ]
+                                )
                               ])
-                            ])
+                            : _c("div", [
+                                _c("h4", [
+                                  _c("i", {
+                                    staticClass: "fa fa-spinner fa-pulse"
+                                  }),
+                                  _vm._v(" Proszę czekać...")
+                                ])
+                              ])
                       ])
                     ],
                     2

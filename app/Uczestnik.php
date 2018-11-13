@@ -23,6 +23,15 @@ class Uczestnik extends Model
         'odpowiedzi' => 'array',
     ];
 
+    public function calcResponses()
+    {
+        $correct = count($this->correctQuestionIds);
+        if ($this->_correct != $correct) {
+            $this->_correct = $correct;
+            $this->save();
+        }
+    }
+
     public function getLoggableAttribute()
     {
         $now = Carbon::now();
@@ -36,6 +45,6 @@ class Uczestnik extends Model
 
     public function getCorrectQuestionIdsAttribute()
     {
-        return getCorrectQuestionIds($this->odpowiedzi ?? []);
+        return getCorrectQuestionIds($this->odpowiedzi ?? [], $this->grupa);
     }
 }

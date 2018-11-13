@@ -35,7 +35,7 @@
                             <button type="button" class="btn btn-secondary" @click="prev">Cofnij</button>
                         </div>
                         <div class="float-right">
-                            <!-- <button type="button" class="btn btn-sm btn-info btn-noborder" @click="questionIndex=45">(dla testów)</button> -->
+                            <button type="button" class="btn btn-sm btn-info btn-noborder" @click="questionIndex=45">(dla testów)</button>
                             <button v-if="questionIndex < questions.length" type="button" class="btn btn-primary btn-noborder" @click="next">Dalej</button>
                         </div>
                     </div>
@@ -53,6 +53,10 @@
                         </ul>
                         <p>Dziękujemy za udział w konkursie. Ostatecznie wyniki 16 listopada 2018 r.</p>
                         <a :href="route('user.logout')" class="btn btn-primary btn-noborder">Koniec</a>
+                    </div>
+                    <div v-else-if="fail">
+                        <p>Nie zamykaj tej strony! Wystąpił problem podczas wysyłania wyniku. Prosimy z korzystać z przycisku poniżej, a w razie problemów prosimy o kontakt tel. 797 028 476</p>
+                        <button type="button" class="btn btn-info btn-noborder" @click="finish"><i class="fa fa-warning"></i> Spróbuj wysłać jeszcze raz</button>
                     </div>
                     <div v-else>
                         <h4><i class="fa fa-spinner fa-pulse"></i> Proszę czekać...</h4>
@@ -102,6 +106,7 @@ window.onbeforeunload = function() {
 export default {
     data() { return {
         finished: false,
+        fail: false,
         result: false,
         loading: true,
         started: false,
@@ -135,6 +140,7 @@ export default {
         },
         finish() {
             this.finished = true;
+            this.fail = false;
             is_finished = true;
             let responses = [];
             this.userResponses.forEach(function(response, response_id) {
@@ -155,7 +161,7 @@ export default {
                     this.correctResponsesAmount = data.correctResponsesAmount;
                     this.time = data.time;
                 }, (error) => {
-                    //
+                    this.fail = true;
                 });
             console.log('finished');
         },

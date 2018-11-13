@@ -95,14 +95,14 @@ return [
             		['Luksemburgów'],
             	],
             ],
-            10 => [
-            	'text' => 'Przysłowie mówi, że za jego panowania wyginęła szlachta. Którego z władców ono dotyczy?',
+               10 => [
+            	'text' => 'Środkowa część tarczy była zwana:',
             	'image' => null,
             	'responses' => [
-            		['Władysława Warneńczyka'],
-            		['Kazimierza Jagiellończyka'],
-            		['Jana Olbrachta', true],
-            		['Aleksandra Jagiellończyka'],
+            		['głownią'],
+            		['umbem', true],
+            		['cięciwą'],
+            		['płatem'],
             	],
             ],
             11 => [
@@ -176,7 +176,7 @@ return [
             	],
             ],
             18 => [
-            	'text' => 'Pierwsza próba jednoczenia ziem polskich i koronacja w okresie rozbicia dzielnicowego miała miejsce w roku:',
+            	'text' => 'Pierwsza próba zjednoczenia ziem polskich i koronacja w okresie rozbicia dzielnicowego miała miejsce w roku:',
             	'image' => null,
             	'responses' => [
             		['1226'],
@@ -196,7 +196,7 @@ return [
             	],
             ],
             20 => [
-            	'text' => 'Na dworze którego króla kronikę tworzył Anonim zwany Gallem?',
+            	'text' => 'Na dworze którego króla kronikę pisał Anonim zwany Gallem?',
             	'image' => null,
             	'responses' => [
             		['Bolesława Chrobrego'],
@@ -276,7 +276,7 @@ return [
             	],
             ],
             28 => [
-            	'text' => 'Które treści zawarto w dokumencie <i>Degome iudex</i>?',
+            	'text' => 'Które treści zawarto w dokumencie <i>Dagome iudex</i>?',
             	'image' => null,
             	'responses' => [
             		['najstarszy spis ziem polskich', true],
@@ -385,16 +385,6 @@ return [
             		['Mieszko Stary'],
             	],
             ],
-            39 => [
-            	'text' => 'Środkowa część tarczy była zwana:',
-            	'image' => null,
-            	'responses' => [
-            		['głownią'],
-            		['umbem', true],
-            		['cięciwą'],
-            		['płatem'],
-            	],
-            ],
         ],
     ],
     [ // trudne 1.1
@@ -455,7 +445,7 @@ return [
             	'image' => null,
             	'responses' => [
             		['Krakowie'],
-            		['ołobrzegu'],
+            		['Kołobrzegu'],
             		['Wrocławiu'],
             		['Poznaniu', true],
             	],
@@ -491,7 +481,7 @@ return [
             	],
             ],
             10 => [
-            	'text' => ' Gród, który zasłyną bohaterską obroną w czasie wojny z cesarzem Henrykiem V to:',
+            	'text' => ' Gród, który zasłynął bohaterską obroną w czasie wojny z cesarzem Henrykiem V, to:',
             	'image' => null,
             	'responses' => [
             		['Wiślica'],
@@ -651,8 +641,8 @@ return [
             	'image' => null,
             	'responses' => [
             		['1768, 1793, 1794'],
-            		['1772, 1773, 1795', true],
-            		['1772, 1793, 1795'],
+            		['1772, 1773, 1795'],
+            		['1772, 1793, 1795', true],
             		['1768, 1792, 1795'],
             	],
             ],
@@ -1023,7 +1013,7 @@ return [
             	],
             ],
             52 => [
-            	'text' => 'Sejm niemy miał miejsce w roku:',
+            	'text' => 'Sejm niemy obradował w roku:',
             	'image' => null,
             	'responses' => [
             		['1715'],
@@ -1382,7 +1372,7 @@ return [
             	],
             ],
             15 => [
-            	'text' => 'Wincenty Witos był słynnym działaczem partii:',
+            	'text' => 'Wincenty Witos był działaczem partii:',
             	'image' => null,
             	'responses' => [
             		['PSL', true],
@@ -1475,7 +1465,7 @@ return [
             		['jednym z przywódców powstania listopadowego'],
             		['przywódcą chłopów w powstaniu krakowskim', true],
             		['przywódcą chłopów w powstaniu kościuszkowskim'],
-            		['obrońcą oddziałów partyzanckich w okresie powstania styczniowego'],
+            		['uczestnikiem powstania styczniowego'],
             	],
             ],
             25 => [
@@ -1548,14 +1538,14 @@ return [
             		['Józef Bem'],
             	],
             ],
-            32 => [
-            	'text' => 'W styczniu 1797 r. gen. Jan Henryk Dąbrowski podpisał umowę w spawie utworzenia Legionów z:',
+             32 => [
+            	'text' => 'W Królestwie Polskim książę Franciszek Ksawery Drucki-Lubecki był ministrem:',
             	'image' => null,
             	'responses' => [
-            		['rządem Francji'],
-            		['rządem Piemontu'],
-            		['rządem Lombardii', true],
-            		['Napoleonem'],
+            		['armii'],
+            		['oświaty'],
+            		['skarbu', true],
+            		['obrony'],
             	],
             ],
             33 => [
@@ -1596,16 +1586,6 @@ return [
             		['berliński'],
             		['wiedeński', true],
             		['paryski'],
-            	],
-            ],
-            37 => [
-            	'text' => 'W Królestwie Polskim książę Franciszek Ksawery Drucki-Lubecki był ministrem:',
-            	'image' => null,
-            	'responses' => [
-            		['armii'],
-            		['oświaty'],
-            		['skarbu', true],
-            		['obrony'],
             	],
             ],
         ],
@@ -1664,7 +1644,7 @@ return [
             	],
             ],
             6 => [
-            	'text' => 'Który organ stał na czele Wolnego Miasta Krakowa po 1815 r.?',
+            	'text' => 'Który organ stał na czele Wolnego Miasta Krakowa?',
             	'image' => null,
             	'responses' => [
             		['Zgromadzenie Reprezentantów'],
@@ -1804,7 +1784,7 @@ return [
             	'image' => null,
             	'responses' => [
             		['28 października 1918 r.'],
-            		['7 listopada 1918 r.', true],
+            		['7 października 1918 r.', true],
             		['11 listopada 1918 r.'],
             		['16 listopada 1918 r.'],
             	],
@@ -1840,7 +1820,7 @@ return [
             	],
             ],
             10 => [
-            	'text' => 'W którym roku został nadany <i>Akt 5 listopada</i> skierowany do Polaków przez cesarzy Austro-Węgier i Niemiec?',
+            	'text' => 'W którym roku został nadany <i>Akt 5 listopada</i> skierowany do Polaków?',
             	'image' => null,
             	'responses' => [
             		['1914'],
@@ -1876,7 +1856,7 @@ return [
             		['dokonał zamachu na cara Mikołaja II i arcyksięcia Franciszka Ferdynanda'],
             		['był twórcą legionów walczących u boku państw centralnych'],
             		['pokonał bolszewików w 1920 roku'],
-            		['reprezentował interesy polskie na konferencji pokojowej w Wersalu', true],
+            		['reprezentował interesy polskie na konferencji pokojowej w Paryżu', true],
             	],
             ],
             14 => [
@@ -1989,32 +1969,23 @@ return [
             		['Legiony odmówiły walki zbrojnej przeciwko państwom centralnym'],
             	],
             ],
-            25 => [
-            	'text' => 'Kazimierz Badeni był premierem:',
-            	'image' => null,
-            	'responses' => [
-            		['Austrii', true],
-            		['Prus'],
-            		['Rosji'],
-            		['Francji'],
-            	],
-            ],
+
         ],
     ],
     [ // trudne 2.2
         'amount' => 2,
         'questions' => [
             1 => [
-            	'text' => 'Złożenia przysięgi podkreślającej braterstwo broni z wojskami Niemiec i Austro-Węgier odmówili legioniści:',
+            	'text' => 'Z kim Józef Piłsudski przebywał w więzieniu po tzw. kryzysie przysięgowym?',
             	'image' => null,
             	'responses' => [
-            		['I i II Brygady'],
-            		['II i III Brygady'],
-            		['I i III Brygady', true],
-            		['II Brygady'],
+            		['Romanem Dmowskim'],
+            		['Ignacym Paderewskim'],
+            		['Kazimierzem Sosnkowskim', true],
+            		['Wincentym Witosem'],
             	],
             ],
-            2 => [
+             2 => [
             	'text' => 'Która z poniższych postaci nie należała do grona rywali Józefa Piłsudskiego w czasie I wojny światowej?',
             	'image' => null,
             	'responses' => [
@@ -2104,16 +2075,7 @@ return [
             		['w Nowym Jorku'],
             	],
             ],
-            11 => [
-            	'text' => 'Z kim Józef Piłsudski przebywał w więzieniu w Magdeburgu po tzw. kryzysie przysięgowym?',
-            	'image' => null,
-            	'responses' => [
-            		['Romanem Dmowskim'],
-            		['Ignacym Paderewskim'],
-            		['Kazimierzem Sosnkowskim', true],
-            		['Wincentym Witosem'],
-            	],
-            ],
+
         ],
     ],
     // 3.1 literatura (6)
@@ -2197,7 +2159,7 @@ return [
             		['Stanisława Ignacego Witkiewicza', true],
             		['Witolda Gombrowicza'],
             		['Juliusza Kadena-Bandrowskiego'],
-            		['Bruno Schulza'],
+            		['Brunona Schulza'],
             	],
             ],
             9 => [
@@ -2346,7 +2308,11 @@ return [
             	],
             ],
             3 => [
-            	'text' => 'Na podstawie wybranych wersów utworu podaj jego nazwę:',
+            	'text' => 'Na podstawie wybranych wersów utworu podaj jego nazwę:
+            	<div class="text-center"><i style="font-size:14px">A ja o Polsce marzę co nie jest tylko witrażem<br>
+                    I nie komedią na scenie, ale spełnieniem<br>
+                    Niechże się taka stanie co by nie była udaniem<br>
+                    Szyldem tylko nie była, lecz żeby żyła(...)</i></div>',
             	'image' => null,
             	'responses' => [
             		['„Margrabia Wielopolski”'],
@@ -2419,7 +2385,7 @@ return [
             	'text' => 'Jak zginął bohater, o którym śpiewał Przemysław Gintrowski?
             	 <div class="text-center"><i style="font-size:14px">Przez niego w  duszę sączy się trucizna<br>
                     Śledztwo prowadźcie zgodnie ze zwyczajem<br>
-                   W mik się przyzna! Prędko się przyzna!</i></div>',
+                   W mig się przyzna! Prędko się przyzna!</i></div>',
             	'image' => null,
             	'responses' => [
             		['w walkach powstańczych'],

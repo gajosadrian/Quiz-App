@@ -3,7 +3,7 @@
 @section('content')
 <div class="content">
     <h2 class="content-heading pt-5">
-        <a href="{{ URL::previous() }}" class="btn btn-primary btn-noborder">Wróć</a>
+        <a href="{{ route('admin') }}" class="btn btn-primary btn-noborder">Wróć</a>
     </h2>
 
     <div class="row">

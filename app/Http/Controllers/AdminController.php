@@ -32,10 +32,14 @@ class AdminController extends Controller
         ]);
     }
 
-    public function responses()
+    public function responses(string $grupa = null)
     {
+        $grupa = $grupa ?? getPytaniaId();
+        foreach (Uczestnik::where('grupa', $grupa)->get() as $uczestnik) {
+            $uczestnik->calcResponses();
+        }
         return view('responses', [
-            'uczestnicy' => Uczestnik::orderBy('odpowiedzi', 'desc')->orderBy('czas')->where('grupa', getPytaniaId())->get(),
+            'uczestnicy' => Uczestnik::orderBy('_correct', 'desc')->orderBy('data_rozpoczecia_testu', 'desc')->orderBy('czas')->where('grupa', $grupa)->get(),
         ]);
     }
 
@@ -49,14 +53,14 @@ class AdminController extends Controller
     public function userResponses(int $uczestnik_id)
     {
         $uczestnik = Uczestnik::find($uczestnik_id);;
-        if (!$uczestnik or !$uczestnik->odpowiedzi or $uczestnik->grupa != getPytaniaId()) {
+        if (!$uczestnik or !$uczestnik->odpowiedzi) {
             abort(404);
         }
 
         return view('user_responses', [
             'uczestnik' => $uczestnik,
-            'correctQuestionsAmount' => count(getCorrectQuestionIds($uczestnik->odpowiedzi)),
-            'pytania' => getPytania(),
+            'correctQuestionsAmount' => count($uczestnik->correctQuestionIds),
+            'pytania' => getPytania($uczestnik->grupa),
         ]);
     }
 }

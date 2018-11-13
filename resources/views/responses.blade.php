@@ -3,7 +3,7 @@
 @section('content')
 <div class="content">
     <h2 class="content-heading pt-5">
-        <a href="{{ URL::previous() }}" class="btn btn-primary btn-noborder">Wróć</a>
+        <a href="{{ route('admin') }}" class="btn btn-primary btn-noborder">Wróć</a>
     </h2>
 
     <div class="row">
@@ -23,7 +23,7 @@
                 </thead>
                 <tbody>
                     @foreach ($uczestnicy as $index => $uczestnik)
-                        <tr class="{{ !$uczestnik->data_rozpoczecia_testu ? 'table-danger text-danger font-w600' : '' }}">
+                        <tr class="{{ !$uczestnik->data_rozpoczecia_testu ? 'table-danger text-danger' : '' }}">
                             <td class="text-center">{{ $index + 1 }}</td>
                             <td>{{ $uczestnik->email }}</td>
                             <td>{{ $uczestnik->nazwa }}</td>

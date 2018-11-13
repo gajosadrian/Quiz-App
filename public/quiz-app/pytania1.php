@@ -502,8 +502,8 @@ return [
             	'image' => null,
             	'responses' => [
             		['1768, 1793, 1794'],
-            		['1772, 1773, 1795', true],
-            		['1772, 1793, 1795'],
+            		['1772, 1773, 1795'],
+            		['1772, 1793, 1795', true],
             		['1768, 1792, 1795'],
             	],
             ],
@@ -950,7 +950,7 @@ return [
             		['1880'],
             	],
             ],
-            
+
              7 => [
             	'text' => 'Obóz księcia Adama Czartoryskiego, jednego z przywódców Wielkiej Emigracji, nazywany był również',
             	'image' => null,
@@ -960,8 +960,8 @@ return [
             		['Towarzystwem Demokratycznym Polskim'],
             		['Gromadami Ludu Polskiego'],
             	],
-            ],            
-            
+            ],
+
             8 => [
             	'text' => 'W jakich latach istniało Księstwo Warszawskie?',
             	'image' => null,
@@ -1029,8 +1029,8 @@ return [
             		['ziemie zabrane'],
             		['Kraj Nadwiślański', true],
             		['Księstwo Warszawskie'],
-            		['Kongresówka'],         
-            
+            		['Kongresówka'],
+
             	],
             ],
             15 => [
@@ -1219,7 +1219,7 @@ return [
             		['Piotr Wysocki', true],
             	],
             ],
-           
+
         ],
     ],
     [ // trudne 2.1
@@ -1606,10 +1606,11 @@ return [
             	'text' => 'Kiedy Rada Regencyjna ogłosiła niepodległość Polski?',
             	'image' => null,
             	'responses' => [
-            		['28 października 1918 r.'],
-            		['7 listopada 1918 r.', true],
-            		['11 listopada 1918 r.'],
-            		['16 listopada 1918 r.'],
+                    // TODO: naprawić po konkursie
+            		['28 października 1918 r.', true],
+            		['7 października 1918 r.', true], // <---
+            		['11 listopada 1918 r.', true],
+            		['16 listopada 1918 r.', true],
             	],
             ],
             8 => [

@@ -4,7 +4,7 @@
 function getPytaniaId()
 {
     // pytania1 / pytania2
-    return 'pytania1';
+    return 'pytania2';
 }
 // ========================== //
 
@@ -26,9 +26,10 @@ function randomGen($min, $max, $quantity) {
     return array_slice($numbers, 0, $quantity);
 }
 
-function getPytania()
+function getPytania(string $pytaniaId = null)
 {
-    return include public_path('quiz-app/' . getPytaniaId() . '.php');
+    $pytaniaId = $pytaniaId ?? getPytaniaId();
+    return include public_path('quiz-app/' . $pytaniaId . '.php');
 }
 function getGroupIndex($questionRawId)
 {
@@ -42,10 +43,10 @@ function getRawQuestionId($groupIndex, $questionId)
 {
     return (int) ('1' . sprintf('%02d', $groupIndex) . $questionId);
 }
-function getCorrectQuestionIds($responses)
+function getCorrectQuestionIds($responses, string $pytaniaId = null)
 {
     $array = [];
-    $pytania = getPytania();
+    $pytania = getPytania($pytaniaId);
     foreach ($responses as $questionRawId => $responseId) {
         if ($responseId > 0) {
             $group = getGroupIndex($questionRawId);
