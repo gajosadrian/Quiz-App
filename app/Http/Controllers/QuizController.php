@@ -31,6 +31,7 @@ class QuizController extends Controller
             $responses[$response['id']] = $response['response'];
         }
         $timeLeft = $request->input('timeLeft');
+        if ($timeLeft < 0) $timeLeft = 0;
         $uczestnik = Uczestnik();
         $uczestnik->czas = 3000 - $timeLeft;
         $uczestnik->data_zakonczenia_testu = Carbon::now();
