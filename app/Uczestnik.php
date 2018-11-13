@@ -31,8 +31,7 @@ class Uczestnik extends Model
         if ($now >= $start and $now <= $end) {
             return true;
         }
-        return true;
-        // return false;
+        return false;
     }
 
     public function getCorrectQuestionIdsAttribute()
