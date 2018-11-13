@@ -8,7 +8,46 @@
 
     <div class="row">
         <div class="col-12">
-            {{ $uczestnik->id }}
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <th style="width:20%">E-mail opiekuna:</th>
+                        <td>{{ $uczestnik->email }}</td>
+                    </tr>
+                    <tr>
+                        <th>Kod dostępowy:</th>
+                        <td>{{ $uczestnik->nazwa }}</td>
+                    </tr>
+                    <tr>
+                        <th>Uzyskane punkty:</th>
+                        <td>{{ $correctQuestionsAmount }} / 45</td>
+                    </tr>
+                    <tr>
+                        <th>Czas trwania quizu:</th>
+                        <td>{{ gmdate('i', $uczestnik->czas) }} min {{ gmdate('s', $uczestnik->czas) }} s</td>
+                    </tr>
+                    <tr>
+                        <th>Data rozpoczęcia quizu:</th>
+                        <td>{{ $uczestnik->data_rozpoczecia_testu }}</td>
+                    </tr>
+                    <tr>
+                        <th>Data zakończenia quizu:</th>
+                        <td>{{ $uczestnik->data_zakonczenia_testu }}</td>
+                    </tr>
+                    <tr>
+                        <th>Data ostatniego logowania:</th>
+                        <td>{{ $uczestnik->data_ostatniego_logowania }}</td>
+                    </tr>
+                    <tr>
+                        <th>Ostatnie IP:</th>
+                        <td>{{ $uczestnik->last_ip }}</td>
+                    </tr>
+                    <tr>
+                        <th>Aplikacja kliencka:</th>
+                        <td>{{ $uczestnik->user_agent }}</td>
+                    </tr>
+                </tbody>
+            </table>
             <p>
                 Prawidłowa odpowiedź uczestnika zaznaczona na <span class="font-w700 text-success">zielono</span>.<br>
                 Nieprawidłowa odpowiedź uczestnika zaznaczona na <span class="font-w700 text-danger">czerwono</span>.<br>

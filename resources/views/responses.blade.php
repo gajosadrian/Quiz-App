@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col-12">
             <p>Wyszukiwanie: <span class="text-primary font-w600">Ctrl + F</span></p>
-            <table class="table table-striped table-vcenter">
+            <table class="table table-responsive table-striped table-vcenter">
                 <thead class="thead-light">
                     <tr>
                         <th class="text-center">#</th>
@@ -17,6 +17,7 @@
                         <th>Kod dostępowy</th>
                         <th>Poprawne odp.</th>
                         <th>Czas wykonania</th>
+                        <th>Status</th>
                         <th class="text-center">Akcje</th>
                     </tr>
                 </thead>
@@ -28,9 +29,10 @@
                             <td>{{ $uczestnik->nazwa }}</td>
                             <td>{{ sizeof($uczestnik->correctQuestionIds) }}</td>
                             <td>{{ gmdate('i', $uczestnik->czas) }} min {{ gmdate('s', $uczestnik->czas) }} s</td>
+                            <td>{{ $uczestnik->data_rozpoczecia_testu ? 'Login wykorzystany' : 'Brak odpowiedzi' }}</td>
                             <td class="text-center">
                                 <div class="btn-group">
-                                    <a href="#!" class="btn btn-sm btn-secondary js-tooltip" data-toggle="tooltip" title="Zobacz">
+                                    <a href="{{ route('admin.userResponses', ['uczestnik_id' => $uczestnik->id]) }}" class="btn btn-sm btn-secondary js-tooltip" data-toggle="tooltip" title="Zobacz">
                                         <i class="fa fa-eye"></i>
                                     </a>
                                 </div>

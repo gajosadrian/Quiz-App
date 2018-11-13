@@ -49,12 +49,13 @@ class AdminController extends Controller
     public function userResponses(int $uczestnik_id)
     {
         $uczestnik = Uczestnik::find($uczestnik_id);;
-        if (!$uczestnik) {
+        if (!$uczestnik or !$uczestnik->odpowiedzi or $uczestnik->grupa != getPytaniaId()) {
             abort(404);
         }
 
         return view('user_responses', [
             'uczestnik' => $uczestnik,
+            'correctQuestionsAmount' => count(getCorrectQuestionIds($uczestnik->odpowiedzi)),
             'pytania' => getPytania(),
         ]);
     }
