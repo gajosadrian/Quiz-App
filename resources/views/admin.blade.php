@@ -15,6 +15,7 @@
                 <li><a href="{{ route('admin.responses') }}">Odpowiedzi uczestników</a></li>
                 <li><a href="{{ route('admin.questions') }}">Baza pytań</a></li>
                 <li>Żywotność sesji: <span class="text-primary">{{ ini_get('session.gc_maxlifetime') }}</span>. Powinno być 7200</li>
+                <li>Czas systemowy: <span class="text-primary">{{ $currentTime }}</span></li>
             </ul>
         </div>
     </div>

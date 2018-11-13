@@ -21,6 +21,7 @@ Route::post('/uczestnik', 'UczestnikController@post')->name('uczestnik.post');
 Route::get('/admin', 'AdminController@index')->name('admin');
 Route::get('/admin/responses', 'AdminController@responses')->name('admin.responses');
 Route::get('/admin/questions', 'AdminController@questions')->name('admin.questions');
+Route::get('/admin/user-responses/{uczestnik_id}', 'AdminController@userResponses')->name('admin.userResponses');
 
 // uczestnik
 Route::get('/test', 'TestController@index')->name('test');

@@ -45,4 +45,17 @@ class AdminController extends Controller
             'pytania' => getPytania(),
         ]);
     }
+
+    public function userResponses(int $uczestnik_id)
+    {
+        $uczestnik = Uczestnik::find($uczestnik_id);;
+        if (!$uczestnik) {
+            abort(404);
+        }
+
+        return view('user_responses', [
+            'uczestnik' => $uczestnik,
+            'pytania' => getPytania(),
+        ]);
+    }
 }
