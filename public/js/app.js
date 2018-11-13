@@ -48520,21 +48520,6 @@ var render = function() {
                               : _vm._e(),
                             _vm._v(" "),
                             _c("div", { staticClass: "float-right" }, [
-                              _c(
-                                "button",
-                                {
-                                  staticClass:
-                                    "btn btn-sm btn-info btn-noborder",
-                                  attrs: { type: "button" },
-                                  on: {
-                                    click: function($event) {
-                                      _vm.questionIndex = 45
-                                    }
-                                  }
-                                },
-                                [_vm._v("(dla testów)")]
-                              ),
-                              _vm._v(" "),
                               _vm.questionIndex < _vm.questions.length
                                 ? _c(
                                     "button",
