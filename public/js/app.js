@@ -48604,7 +48604,7 @@ var render = function() {
                             ? _c("div", [
                                 _c("p", [
                                   _vm._v(
-                                    "Nie zamykaj tej strony! Wystąpił problem podczas wysyłania wyniku. Prosimy z korzystać z przycisku poniżej, a w razie problemów prosimy o kontakt tel. 797 028 476"
+                                    "Nie zamykaj tej strony! Wystąpił problem podczas wysyłania wyniku. Prosimy skorzystać z przycisku poniżej, a w razie problemów prosimy o kontakt tel. 797 028 476"
                                   )
                                 ]),
                                 _vm._v(" "),

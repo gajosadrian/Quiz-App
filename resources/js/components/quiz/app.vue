@@ -55,7 +55,7 @@
                         <a :href="route('user.logout')" class="btn btn-primary btn-noborder">Koniec</a>
                     </div>
                     <div v-else-if="fail">
-                        <p>Nie zamykaj tej strony! Wystąpił problem podczas wysyłania wyniku. Prosimy z korzystać z przycisku poniżej, a w razie problemów prosimy o kontakt tel. 797 028 476</p>
+                        <p>Nie zamykaj tej strony! Wystąpił problem podczas wysyłania wyniku. Prosimy skorzystać z przycisku poniżej, a w razie problemów prosimy o kontakt tel. 797 028 476</p>
                         <button type="button" class="btn btn-info btn-noborder" @click="finish"><i class="fa fa-warning"></i> Spróbuj wysłać jeszcze raz</button>
                     </div>
                     <div v-else>

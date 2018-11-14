@@ -959,7 +959,7 @@ return [
             		['Hugo Kołłątaj'],
             		['Stanisław Staszic'],
             		['Franciszek Bohomolec', true],
-            		['Ignacy Krasicki'],
+            		['Ignacy Krasicki', true],
             	],
             ],
             47 => [
