@@ -39,7 +39,7 @@ class AdminController extends Controller
             $uczestnik->calcResponses();
         }
         return view('responses', [
-            'uczestnicy' => Uczestnik::orderBy('_correct', 'desc')->orderBy('data_rozpoczecia_testu', 'desc')->orderBy('czas')->where('grupa', $grupa)->get(),
+            'uczestnicy' => Uczestnik::orderBy('_correct', 'desc')->orderBy('czas')->where('grupa', $grupa)->get(),
         ]);
     }
 

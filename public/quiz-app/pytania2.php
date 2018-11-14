@@ -1037,7 +1037,7 @@ return [
             	'image' => null,
             	'responses' => [
             		['Mikołaj Rej'],
-            		['Andrzej Frycz Modrzewski'],
+            		['Andrzej Frycz Modrzewski', true],
             		['Jan Kochanowski'],
             		['Mikołaj Kopernik'],
             	],
@@ -2346,7 +2346,7 @@ return [
             	'image' => null,
             	'responses' => [
             		['skutków „potopu” szwedzkiego'],
-            		['rozbiorów Rzeczypospolitej'],
+            		['rozbiorów Rzeczypospolitej', true],
             		['okresu po powstaniu styczniowym'],
             		['czasów po I wojnie światowej'],
             	],
