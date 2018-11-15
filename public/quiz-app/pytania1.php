@@ -1376,7 +1376,7 @@ return [
             		['7 XI 1918'],
             		['11 XI 1918', true],
             		['11 XI 1919'],
-            		['28 VI 1919'],
+            		['28 VI 1919', true],
             	],
             ],
             6 => [
@@ -1608,7 +1608,7 @@ return [
             	'responses' => [
                     // TODO: naprawić po konkursie
             		['28 października 1918 r.', true],
-            		['7 października 1918 r.', true], // <---
+            		['7 listopada 1918 r.', true],
             		['11 listopada 1918 r.', true],
             		['16 listopada 1918 r.', true],
             	],
