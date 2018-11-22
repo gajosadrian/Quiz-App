@@ -15,6 +15,7 @@
                 @for ($i = 1; $i <= 4; $i++)
                     <li><a href="{{ route('admin.responses', ['grupa' => 'pytania' . $i]) }}">Odpowiedzi uczestników: pytania{{ $i }}</a></li>
                     <li><a href="{{ route('admin.questions', ['grupa' => 'pytania' . $i]) }}">Baza pytań: pytania{{ $i }}</a></li>
+                    <br>
                 @endfor
                 <li>Żywotność sesji: <span class="text-primary">{{ ini_get('session.gc_maxlifetime') }}</span>. Powinno być 7200</li>
                 <li>Czas systemowy: <span class="text-primary">{{ $currentTime }}</span></li>
