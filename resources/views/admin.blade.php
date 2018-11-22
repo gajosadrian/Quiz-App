@@ -14,7 +14,10 @@
             <ul>
                 <li><a href="{{ route('admin.responses', ['grupa' => 'pytania1']) }}">Odpowiedzi uczestników: pytania1</a></li>
                 <li><a href="{{ route('admin.responses', ['grupa' => 'pytania2']) }}">Odpowiedzi uczestników: pytania2</a></li>
-                <li><a href="{{ route('admin.questions') }}">Baza pytań: {{ getPytaniaId() }}</a></li>
+                <li><a href="{{ route('admin.questions', ['grupa' => 'pytania1']) }}">Baza pytań: pytania1</a></li>
+                <li><a href="{{ route('admin.questions', ['grupa' => 'pytania2']) }}">Baza pytań: pytania2</a></li>
+                <li><a href="{{ route('admin.questions', ['grupa' => 'pytania3']) }}">Baza pytań: pytania3</a></li>
+                <li><a href="{{ route('admin.questions', ['grupa' => 'pytania4']) }}">Baza pytań: pytania4</a></li>
                 <li>Żywotność sesji: <span class="text-primary">{{ ini_get('session.gc_maxlifetime') }}</span>. Powinno być 7200</li>
                 <li>Czas systemowy: <span class="text-primary">{{ $currentTime }}</span></li>
             </ul>

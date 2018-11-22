@@ -48064,7 +48064,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -48194,9 +48194,8 @@ window.onbeforeunload = function () {
             noResponseIndexes: [],
             rememberResponses: Array(45).fill(false),
             disableStart: false,
-            // timer: 50,
-            timer: 3000, // 50 min
-            maxTimer: 3000, // 50 min
+            timer: 3600, // 60 min
+            maxTimer: 3600, // 60 min
             timerStart: 0,
             timerFinish: 0,
             questions: [],
@@ -48980,7 +48979,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 id: 3,
                 text: 'Ile wynosi limit czasu w quizie?',
                 image: null,
-                responses: [{ id: 1, text: '» 50 minut' }, { id: 2, text: '60 minut' }, { id: 3, text: '30 minut' }, { id: 4, text: '45 minut' }]
+                responses: [{ id: 1, text: '50 minut' }, { id: 2, text: '» 60 minut' }, { id: 3, text: '30 minut' }, { id: 4, text: '45 minut' }]
             }, {
                 id: 4,
                 text: 'O zajętym miejscu decyduje w pierwszej kolejności?',
@@ -49247,7 +49246,7 @@ var render = function() {
                         _c("ul", [
                           _c("li", [
                             _vm._v(
-                              "Quiz składa się z 45 pytań i trwa maksymalnie 50 minut"
+                              "Quiz składa się z 45 pytań i trwa maksymalnie 60 minut"
                             )
                           ]),
                           _vm._v(" "),

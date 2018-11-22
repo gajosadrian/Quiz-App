@@ -43,10 +43,10 @@ class AdminController extends Controller
         ]);
     }
 
-    public function questions()
+    public function questions(string $grupa = null)
     {
         return view('questions', [
-            'pytania' => getPytania(),
+            'pytania' => getPytania($grupa),
         ]);
     }
 

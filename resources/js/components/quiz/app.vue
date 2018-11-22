@@ -116,9 +116,8 @@ export default {
         noResponseIndexes: [],
         rememberResponses: Array(45).fill(false),
         disableStart: false,
-        // timer: 50,
-        timer: 3000, // 50 min
-        maxTimer: 3000, // 50 min
+        timer: 3600, // 60 min
+        maxTimer: 3600, // 60 min
         timerStart: 0,
         timerFinish: 0,
         questions: [],

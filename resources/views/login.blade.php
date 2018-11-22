@@ -22,9 +22,9 @@
                         </p>
                         <p>
                             <ul>
-                                <li>Kategoria: szkoła podstawowa i gimnazjum</li>
+                                {{-- <li>Kategoria: szkoła podstawowa i gimnazjum</li> --}}
                                 <li>Ilość pytań: 45</li>
-                                <li>Limit czasu: 50 minut</li>
+                                <li>Limit czasu: 60 minut</li>
                                 <li>Pytania tekstowe i obrazkowe</li>
                                 <li>Pytania zamknięte - zwykle 4 odpowiedzi do wyboru (wybór jednokrotny)</li>
                             </ul>

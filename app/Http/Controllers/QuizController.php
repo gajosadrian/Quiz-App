@@ -16,7 +16,7 @@ class QuizController extends Controller
     public function start(Request $request)
     {
         $uczestnik = Uczestnik();
-        if (!in_array($uczestnik->email, ['test1@test.pl', 'test2@test.pl'])) {
+        if (!in_array($uczestnik->email, ['test1@test.pl', 'test2@test.pl', 'test3@test.pl', 'test4@test.pl'])) {
             $uczestnik->banned = true;
         }
         $uczestnik->data_rozpoczecia_testu = Carbon::now();
@@ -33,7 +33,7 @@ class QuizController extends Controller
         $timeLeft = $request->input('timeLeft');
         if ($timeLeft < 0) $timeLeft = 0;
         $uczestnik = Uczestnik();
-        $uczestnik->czas = 3000 - $timeLeft;
+        $uczestnik->czas = 3600 - $timeLeft;
         $uczestnik->data_zakonczenia_testu = Carbon::now();
         $uczestnik->odpowiedzi = $responses;
         $uczestnik->save();
@@ -47,7 +47,9 @@ class QuizController extends Controller
 
     public function getQuestions()
     {
-        $pytania = getPytania();
+        $uczestnik = Uczestnik();
+        // $pytania = getPytania();
+        $pytania = getPytania($uczestnik->grupa);
         $questions = [];
 
         foreach ($pytania as $index => $v) {

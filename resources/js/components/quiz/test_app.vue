@@ -47,7 +47,7 @@
                     <p>Dałeś radę, teraz zaczyna się prawdziwy test. Po zakończeniu quizu zobaczysz liczbę uzyskanych punktów i czas.</p>
                     <p class="text-primary font-w600 mb-0">Przypomnijmy założenia:</p>
                     <ul>
-                        <li>Quiz składa się z 45 pytań i trwa maksymalnie 50 minut</li>
+                        <li>Quiz składa się z 45 pytań i trwa maksymalnie 60 minut</li>
                         <li>Zastanów się przed zaznaczeniem odpowiedzi</li>
                         <li>Nie można zmienić odpowiedzi po naciśnięciu „Dalej”</li>
                     </ul>
@@ -119,8 +119,8 @@ export default {
                     text: 'Ile wynosi limit czasu w quizie?',
                     image: null,
                     responses: [
-                        { id: 1, text: '» 50 minut' },
-                        { id: 2, text: '60 minut' },
+                        { id: 1, text: '50 minut' },
+                        { id: 2, text: '» 60 minut' },
                         { id: 3, text: '30 minut' },
                         { id: 4, text: '45 minut' },
                     ],

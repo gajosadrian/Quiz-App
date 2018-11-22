@@ -22,8 +22,8 @@ class UserController extends Controller
         $uczestnik = Uczestnik::where('nazwa', $login)->where('email', $email)->first();
 
         if ($uczestnik) {
-            if ($uczestnik->grupa == $pytaniaId) {
-                if ($uczestnik->loggable or in_array($uczestnik->email, ['test1@test.pl', 'test2@test.pl'])) {
+            // if ($uczestnik->grupa == $pytaniaId) {
+                if ($uczestnik->loggable or in_array($uczestnik->email, ['test1@test.pl', 'test2@test.pl', 'test3@test.pl', 'test4@test.pl'])) {
                     $uczestnik->last_ip = $request->ip();
                     $uczestnik->data_ostatniego_logowania = Carbon::now();
                     $uczestnik->user_agent = $request->header('User-Agent');
@@ -33,9 +33,9 @@ class UserController extends Controller
                 } else {
                     return redirect()->back()->withErrors([ 'Logowanie o tej godzinie jest niemożliwe!' ]);
                 }
-            } else {
-                return redirect()->back()->withErrors([ 'Sprawdź w regulaminie datę swojego logowania. W razie wątpliwości prosimy o kontakt <span class="font-w600">grzegorz@doniepodleglej.pl<span>' ]);
-            }
+            // } else {
+            //     return redirect()->back()->withErrors([ 'Sprawdź w regulaminie datę swojego logowania. W razie wątpliwości prosimy o kontakt <span class="font-w600">grzegorz@doniepodleglej.pl<span>' ]);
+            // }
         } else {
             return redirect()->back()->withErrors([ 'Podany login jest błędny!' ]);
         }
